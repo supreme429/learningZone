@@ -18,6 +18,6 @@ export default Vue.extend({
     clickThis(): void {
       console.log(this.testLog);
     },
-  }
+  },
 });
 </script>
