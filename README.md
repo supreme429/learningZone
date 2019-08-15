@@ -10,3 +10,6 @@ https://www.bilibili.com/video/av63518189/
 https://github.com/lxl0928/it_blacklist_company
 
 https://juejin.im/post/5d53b0a6f265da03e275e2ab?tdsourcetag=s_pctim_aiomsg
+
+## typescript learningBook
+https://jkchao.github.io/typescript-book-chinese/#why
