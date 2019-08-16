@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#传入commit参数
 commitName=$1
 
 git status
