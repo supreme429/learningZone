@@ -24,3 +24,6 @@ https://www.liaoxuefeng.com/wiki/1022910821149312/1024327002617536
 
 ### axios 解析
 https://juejin.im/post/5d501512518825159e3d7be6
+
+### es6
+https://www.jianshu.com/p/287e0bb867ae
