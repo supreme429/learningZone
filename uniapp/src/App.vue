@@ -1,6 +1,27 @@
 <script>
     export default {
+        methods: {
+            test: () => {
+                let arr = ['1','2','a','b','4','3']
+                console.log(arr)
+                let Reg = /^\d$/
+                let numArr = []
+                let letterArr = []
+                for(let item of arr) {
+                    let result = Reg.test(item)
+                    console.log(item, result)
+                    if(result) {
+                        numArr.push(parseInt(item))
+                    } else {
+                        letterArr.push(item)
+                    }
+                    console.log(numArr.sort())
+                    console.log(letterArr)
+                }
+            }
+        },
         onLaunch: function() {
+            this.test()
             console.log('App Launch');
             // #ifdef APP-PLUS
             // 锁定屏幕方向

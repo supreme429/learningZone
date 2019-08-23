@@ -15,7 +15,12 @@
 		</view>
 		<view class="example-title">插入slot</view>
 		<view class="example-body">
-			<uni-nav-bar :fixed="false" color="#333333" background-color="#FFFFFF" right-icon="scan" @click-left="showCity" @click-right="scan">
+			<uni-nav-bar :fixed="false"
+										color="#333333"
+										background-color="#FFFFFF"
+										right-icon="scan"
+										@click-left="showCity"
+										@click-right="scan">
 				<block slot="left">
 					<view class="city">
 						<view>{{ city }}</view>
@@ -24,7 +29,11 @@
 				</block>
 				<view class="input-view">
 					<uni-icon type="search" size="22" color="#666666" />
-					<input confirm-type="search" class="input" type="text" placeholder="输入搜索关键词" @confirm="confirm">
+					<input confirm-type="search"
+									class="input"
+									type="text"
+									placeholder="输入搜索关键词"
+									@confirm="confirm">
 				</view>
 			</uni-nav-bar>
 		</view>
@@ -42,7 +51,7 @@
 		},
 		data() {
 			return {
-				city: '北京'
+				city: '北京市'
 			}
 		},
 		methods: {
