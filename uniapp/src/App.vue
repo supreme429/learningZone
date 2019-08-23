@@ -9,15 +9,30 @@
                 let letterArr = []
                 for(let item of arr) {
                     let result = Reg.test(item)
-                    console.log(item, result)
+                    // console.log(item, result)
                     if(result) {
                         numArr.push(parseInt(item))
                     } else {
                         letterArr.push(item)
                     }
-                    console.log(numArr.sort())
-                    console.log(letterArr)
                 }
+                console.log(numArr.sort())
+                console.log(letterArr)
+                let add = [1,2] + [3,4]
+                console.log(typeof add)
+
+                async function timeout(ms) {
+                    await new Promise((resolve) => {
+                        setTimeout(resolve, ms);
+                    });
+                }
+
+                async function asyncPrint(value, ms) {
+                    await timeout(ms)
+                    console.log(value);
+                }
+
+                asyncPrint('hello world', 1000);
             }
         },
         onLaunch: function() {
