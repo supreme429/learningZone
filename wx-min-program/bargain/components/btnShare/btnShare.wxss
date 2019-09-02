@@ -1,0 +1,11 @@
+/* components/btnShare/btnShare.wxss */
+.btn-share{
+  height: 88rpx;
+  background-color: #e62318;
+  color: #fff;
+  border: none;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  margin-top: 30rpx;
+}

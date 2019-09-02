@@ -1,0 +1,40 @@
+<view class='collect-mask' hidden='{{flag_visiblity}}' bindtap='toggleRemindPanel'></view>
+<view class='collect-container' hidden='{{flag_visiblity}}'>
+  <!-- / 商品收藏成功后，调用订阅组件，显示提示收藏成功 / -->
+  <view class='collect-success' hidden='{{flag_collect_success}}'>
+    <view class='icon'><icon type='success' size="60"></icon></view>
+    <view class='text'>收藏成功！</view>
+  </view>  
+
+  <view class='notice-txt' hidden='{{flag_visiblity && flag_noticeTxt}}'>如商品在30日内容降价，将通过短信通知您 </view>
+
+  <view class='step1' hidden='{{flag_step_getUserPhone}}'>    
+    <view class='remind-btn'>
+    <button wx:if="{{regionInfo.phoneNumber || phoneNumber}}" type='default' plain='true' bindtap='bindGetUserPhoneEvent'>立即订阅</button>
+      <button wx:else type='default' plain='true' open-type='getPhoneNumber' bindgetphonenumber='bindGetUserPhoneEvent'>立即订阅</button>
+    </view>
+  </view>
+
+  <view class='step2' hidden='{{flag_step_form}}'>
+    <view class='ul'>
+      <view class='li'>
+        <view class='box'>
+          <input type='number' placeholder='输入手机号码' value='{{phoneNumber}}' disabled='{{flag_phoneInputDisabled}}' bindinput='bindUserPhoneEvent' maxlength='11'></input>
+        </view>
+      </view>
+      <view class='li captcha'>
+        <view class='box'>
+          <input type='text' placeholder='输入图形验证码' value='{{imgCapcha}}' bindinput='bindCheckImgCaptchaEvent' maxlength='4'></input>
+        </view>
+        <view class=''><image src='{{captcha_img}}' bindtap='bindFlushImgCapcha'></image></view>
+      </view>
+      <view class='submit-btn' bindtap='sendMessage'>发送</view>
+    </view>
+    <view class='msg'>{{msgTxt}}</view>
+  </view>
+
+  <view class='step3' hidden='{{flag_step_success}}'>
+    <view class='icon'><icon type='success' size="60"></icon></view>
+    <view class='text'>订阅成功！</view>
+  </view>  
+</view>

@@ -1,0 +1,15 @@
+/* components/specification/specification.wxss */
+.specification .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 2.5;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.specification .item text:nth-child(1){
+  flex-shrink: 0;
+  width: 150rpx;
+  margin-right: 15rpx;
+}

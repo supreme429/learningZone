@@ -1,0 +1,5 @@
+<!--components/hotSearch/hotSearch.wxml-->
+<view class='hot-search' wx:if="{{ keywords.length > 0 }}">
+  <text>热门搜索：</text>
+  <navigator wx:for="{{ keywords }}" url="/pages/search/search?keyword={{ item }}">{{ item }}{{ index < keywords.length - 1 ? '，' : '' }}</navigator>
+</view>

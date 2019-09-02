@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/search-filter/search-filter",
+    "pages/logs/logs"
+  ],
+
+  "navigationBarTitleText": "筛选"
+}

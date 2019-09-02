@@ -1,0 +1,15 @@
+<template name="modalRollover">
+  <view class='modal' bindtap='toggleModalRollover'>
+    <view class='modalContent' catchtap="cancelToggle">
+      <view class='modalTitle'>
+        <view class='instro'>说明: 每次续期可续期三个月</view>
+        <view class='titleLabel'>续期原因 <text>(100字以内)</text></view>
+      </view>
+      <view class='textareaBox'>
+        <textarea fixed="true" value='{{note}}' bindinput='setNote' maxlength="100"></textarea>
+      </view>
+      <view class='errorTips'>{{errorTips}}</view>
+      <view class='btn-submit' bindtap='customerRenewal'>提交</view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,5 @@
+<!--components/gameContainer/gameContainer.wxml-->
+<view class='game-container' style="height:{{ gcheight }};">
+  <image mode='widthFix' id="game-bg" class="game-bg" style="height:{{ gcheight }};" src='{{ bg }}'></image>
+  <image mode='widthFix' class='game-style' wx:for="{{ locations }}" style='{{ item.styleStr }}' src="{{ item.imgUrl }}"></image>
+</view>

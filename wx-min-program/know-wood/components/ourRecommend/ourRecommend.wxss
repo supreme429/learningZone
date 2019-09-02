@@ -1,0 +1,87 @@
+/* components/ourRecommend/ourRecommend.wxss */
+@import "../../templates/title.wxss";
+
+/* 商品列表 */
+.goods-list .item{
+  width: 320rpx;
+  padding-bottom: 40rpx;
+  display: inline-block;
+}
+.goods-list .item:nth-child(2n){
+  margin-left: 42rpx;
+}
+.goods-list .goods-img{
+  width: 320rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+  background: #ccc;
+  margin-bottom: 20rpx;
+}
+.goods-list .info,
+.goods-list .title,
+.goods-list .price,
+.goods-list .level{
+  font-size: 0;
+}
+.goods-list .info .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1;
+  margin: 0;
+}
+.goods-list .info .title text{
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.goods-list .info .price{
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 24rpx;
+  color: #333;
+}
+.goods-list .info .label{
+  color: #999;
+  font-size: 26rpx;
+}
+.goods-list .price text{
+  color: #f57724;
+  font-size: 26rpx;
+}
+.goods-list .level text{
+  color: #666666;
+  font-size: 26rpx;
+}
+.goods-list .evaluation{
+  position: relative;
+  width: 140rpx;
+  height: 20rpx;
+  overflow: hidden;
+}
+.goods-list .evaluation image{
+  position: absolute;
+  top: 0;
+  width: 140rpx;
+  height: 20rpx;
+}
+.goods-list .evaluation .start-1{
+  top: -115rpx;
+}
+.goods-list .evaluation .start-2{
+  top: -88rpx;
+}
+.goods-list .evaluation .start-3{
+  top: -60rpx;
+}
+.goods-list .evaluation .start-4{
+  top: -30rpx;
+}
+.goods-list .evaluation .start-5{
+  top: 0;
+}

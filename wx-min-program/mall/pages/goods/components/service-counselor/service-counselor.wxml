@@ -1,0 +1,55 @@
+<view class='counselor-mask' hidden='{{flag_visiblity}}' bindtap='toggleDisplayStatus'></view>
+<view class='counselor-container' hidden='{{flag_visiblity}}'>
+  <view class='step1' hidden='{{flag_step_form}}'>  
+    <view class='leader'>
+      <view class='avatar'>
+        <view class='position'>
+          <view class='circle'>
+            <image src="{{data_selectedExpr.leader_avatar?imgHttp+data_selectedExpr.leader_avatar:'../../../../statics/goods/head.png'}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class='name'>店长 {{data_selectedExpr.leader_name}}</view>
+    </view>
+    <view class='signature'>欢迎您到门店亲身体验实物质感，我们还将为您提供家居设计，风水搭配等服务</view>    
+    <view class='content'>
+      <view class='h4'>请选择您想前往的体验馆</view>
+      <view class='ul'>
+        <view class='li'>
+          <picker class='box cur-expr' bindchange='bindSelectExprEvent' range='{{data_pickerList}}'>
+            <text>{{data_selectedExpr.txt}}</text>
+            <icon></icon>
+          </picker>
+        </view>
+        <!-- <view class='li' wx:if="{{(!regionInfo.phoneNumber || !phoneNumber) && !flag_phoneButton}}">
+          <view class='box phone-authorize'>
+            <button plain='true' open-type='getPhoneNumber' bindgetphonenumber='bindGetUserPhoneEvent'>点击授权手机号码</button>
+          </view>
+        </view> -->
+        <view class='li' wx:if="{{flag_phoneInput}}">
+          <view class='box'>
+            <input type='number' disabled='{{flag_phoneInputDisabled}}' placeholder='输入手机号码' value='{{phoneNumber}}' bindinput='getUserInputPhoneevent' maxlength='11'></input>
+          </view>
+        </view>
+        <view class='li' hidden='{{flag_imgCaptcha}}'>
+          <view class='captcha'>
+            <view class='box'>
+              <input type='text' placeholder='输入图形验证码' value='{{imgCapcha}}' bindinput='bindCheckImgCaptchaEvent' maxlength='4'></input>
+            </view>
+            <view class=''><image src='{{captcha_img}}' bindtap='bindGetImgCaptchaEvent'></image></view>
+          </view>
+        </view>
+      </view>
+      <view class='msg'>{{notice_msg}}</view>
+    </view>
+    <view class='btn'>
+      <button class='btn' plain='true' bindtap='bindOrderEvent' hidden='{{!flag_phoneButton}}'>免费预约家居顾问</button>
+      <button plain='true' hidden='{{flag_phoneButton}}' open-type='getPhoneNumber' bindgetphonenumber='bindGetUserPhoneEvent'>免费预约家居顾问</button>
+    </view>
+  </view>
+
+  <view class='step2' hidden='{{flag_step_success}}'>
+    <view class='icon'><icon type='success' size="60"></icon></view>
+    <view class='text'>预约成功！</view>
+  </view>
+</view>

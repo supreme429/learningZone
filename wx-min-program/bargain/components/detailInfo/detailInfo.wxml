@@ -1,0 +1,8 @@
+<!--components/detailInfo/detailInfo.wxml-->
+<view class='detailInfo' hidden='{{ !isShow }}'>
+  <view class='item' wx:for="{{ showContent }}">
+    <text>{{ item.name }}</text>
+    <text>{{ item.value }}</text>
+  </view>
+  <image mode='widthFix' wx:for="{{ imgs }}" src="{{item}}"></image>
+</view>

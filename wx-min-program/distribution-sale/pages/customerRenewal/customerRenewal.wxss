@@ -1,0 +1,187 @@
+/* pages/customerRenewal/customerRenewal.wxss */
+/* pages/customerData/customerData.wxss */
+.container{
+  position: relative;
+}
+.title{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fefefe;
+  font-size: 32rpx;
+  color: #cdcdcd;
+  padding: 0 45rpx;
+  display: flex;
+  justify-content: space-between
+}
+.title navigator{
+  font-size: 0;
+  display: flex;
+  align-items: center
+}
+.title navigator image{
+  width: 29rpx;
+  height: 29rpx;
+}
+.title navigator text{
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+.content{
+  padding: 0 45rpx;
+  font-size: 28rpx;
+  color: #333
+}
+.content .inputBox{
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee
+}
+.content .inputBox label{
+  color: #9c9c9c;
+  display: flex;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+.content .inputBox label text{
+  color: #ff4848;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
+}
+.content .inputBox input{
+  flex: 1;
+  height: 90rpx;
+  margin-left: 20rpx;
+  padding-right: 55rpx;
+  text-align: right;
+  color: #333;
+}
+.content .inputBox textarea{
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: 70rpx;
+  font-size: 28rpx; 
+  line-height: 40rpx;
+}
+.content .inputBox picker{
+  flex: 1;
+  height: 90rpx;
+  margin-left: 20rpx;
+  position: relative;
+  line-height: 90rpx;
+  text-align: right;
+  color: #333
+}
+.content .inputBox picker text{
+  padding-right: 55rpx;
+  display: block;
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box
+}
+.content .inputBox picker image{
+  width: 16rpx;
+  height: 28rpx;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.content .textareaBox{
+  align-items: flex-start;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  height: auto;
+  padding-bottom: 30rpx;
+}
+.content .textareaBox text{
+  max-height: 76rpx;
+  overflow-y: auto;
+  width: 456rpx;
+  text-align: right
+}
+.content .inputBox .address image{
+  width: 16rpx;
+  height: 28rpx;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.btn-rollover{
+  width: 100%;
+  height: 86rpx;
+  text-align: center;
+  line-height: 86rpx;
+  color: #fff;
+  background-color: #e62318;
+  margin-top: 42rpx;
+  font-size: 30rpx;
+}
+.expireImg{
+  position: absolute;
+  top: 118rpx;
+  right: 44rpx;
+}
+.expireImg image{
+  width: 194rpx;
+  height: 194rpx;
+}
+/* 续期理由弹框 */
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5)
+}
+.modal .modalTitle{
+  color: #9c9c9c
+}
+.modal .modalTitle .titleLabel{
+  color: #333
+}
+.modal .modalTitle .titleLabel text{
+  color: #9c9c9c
+}
+.modal .modalContent{
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28rpx;
+  padding: 35rpx 44rpx 50rpx 44rpx;
+  box-sizing: border-box
+}
+.modal .modalContent .textareaBox{
+  margin-top: 30rpx;
+}
+.modal .modalContent .textareaBox textarea{
+  height: 300rpx;
+  width: 660rpx;
+  border: 1px solid #a2a2a2;
+  border-radius: 6rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.modal .modalContent .btn-submit{
+  width: 660rpx;
+  height: 86rpx;
+  color: #fff;
+  background-color: #e62318;
+  line-height: 86rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 6rpx;
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
+.errorTips{
+  color: #e62318;
+  text-align: center
+}

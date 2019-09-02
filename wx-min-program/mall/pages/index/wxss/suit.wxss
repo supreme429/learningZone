@@ -1,0 +1,20 @@
+.suit .floor-title {
+  padding-bottom: 28rpx;
+}
+.suit .suit-tab {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 70rpx 35rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+.suit-tab view {
+  height: 50rpx;
+  padding: 0 4rpx;
+  border-bottom: 2rpx solid transparent;
+  line-height: 50rpx;
+}
+.suit-tab view.active {
+  color: #000;
+  border-color: #000;
+}

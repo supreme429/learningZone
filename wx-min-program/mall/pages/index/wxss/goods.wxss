@@ -1,0 +1,57 @@
+.goods-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 22rpx 35rpx;
+}
+.goods-list .goods {
+  width: 212rpx;
+  margin-right: 22rpx;
+  margin-bottom: 40rpx;
+}
+.goods-list .goods:nth-child(3n) {
+  margin-right: 0;
+}
+.goods .goods-img {
+  display: block;
+  width: 212rpx;
+  height: 212rpx;
+  margin-bottom: 18rpx;
+  background-color: #f2f2f2;
+}
+.goods .goods-img image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.goods .goods-tag {
+  padding: 0 10rpx;
+  font-size: 0;
+}
+.goods .goods-tag text {
+  display: inline-block;
+  height: 30rpx;
+  padding: 0 10rpx;
+  border-radius: 3rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  line-height: 30rpx;
+  font-size: 22rpx;
+  color: #fff;
+  background-color: #ff7a6a;
+}
+.goods .goods-title {
+  padding: 0 10rpx;
+  font-size: 28rpx;
+  color: #353535;
+}
+.goods .goods-title navigator {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.goods .goods-price {
+  padding: 0 10rpx;
+  font-size: 28rpx;
+  color: #c81c28;
+}

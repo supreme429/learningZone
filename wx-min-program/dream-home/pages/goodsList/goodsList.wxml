@@ -1,0 +1,59 @@
+<!--miniprogram/pages/goodsList/goodsList.wxml-->
+<view class='container'>
+  <view class='series-list border-top-10' wx:for="{{ series }}">
+  <!-- 商品盒子 start -->
+    <view 
+      class='goods-box' 
+      wx:for="{{ item.resStyleConfigVoList }}" 
+      wx:for-item="resItem" 
+      data-url="{{ resItem.goodsChaining }}" 
+      data-sn="{{ resItem.goodsSn }}"
+      bindtap="goMinaGoods"
+      wx:if="{{ resItem.shopPrice > 0 }}"
+    >
+      <image mode='aspectFit' src="{{ resItem.goodsThumb }}" class='goods-img'></image>
+      <view class='right'>
+        <view class='title-box'>
+          <text class='title'>{{ resItem.goodsName }}</text>
+          <text class="sub-title">{{ resItem.goodsDesc || '' }}</text>
+        </view>
+        <view class='price-box'>
+          <text class='price'>￥{{ resItem.shopPrice }}</text>
+          <text class='original-price' wx:if="{{ resItem.marketPrice > 0 }}">￥{{ resItem.marketPrice }}</text>
+        </view>
+      </view>
+      <image mode='widthFix' class='img-cart' src='/images/cart.png'></image>
+    </view>
+  <!-- 商品盒子 end -->
+    
+    <view class='series-ad' wx:if="{{ item.seriesPicUrl }}">
+      <image 
+        src="{{ item.seriesPicUrl }}" 
+        class='ad' 
+        data-url="{{ item.seriesLink }}" 
+        bindtap="goMinaGoodsSearch"
+      ></image>
+    </view>
+  </view>
+
+  <view class='store-info border-top-10'>
+    <view class='title'>美乐乐全国<text>{{ storeNum }}家门店</text>可看实物</view>
+    <view class='sub-title'>客服热线（9:00-22:00）</view>
+    <view class='input-box'>
+      <image class='icon-phone' src='/images/icon-phone.png'></image>
+      <input class='input-text' type='number' placeholder='请输入手机号' maxlength='11' data-field="phone" bindinput='inputValue'></input>
+    </view>
+    <button class="call" bindtap='saveUserInfo'>预约专属搭配顾问</button>
+  </view>
+  <!-- <image 
+    class='banner-ad' 
+    wx:for="{{ minaConfig.bannerConfigVoList }}" 
+    src='{{ item.bannerPicUrl }}' 
+    data-url="{{ item.bannerLink }}" 
+    bindtap="goWebView"
+  ></image> -->
+</view>
+<button open-type='contact' class='none staff-service'><image src='/images/staff-service.png'></image></button>
+<!-- 提示已提交过信息弹框 -->
+<modalTips bind:close="toggleModalTips"
+           wx:if="{{isShowModalTips}}"></modalTips>

@@ -1,0 +1,46 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail-container'>
+    <view wx:if="{{is_visitor}}" class='visitors'>您目前使用的是体验版业务，正式业务需后台绑定公众账号</view>
+    <view class='basic'>
+        <view class='title'>基础信息</view>
+        <view class='basic-info'>
+            <view class='number option blod'>
+                <text class='title'>单据号：{{orderDetail.req_no}}</text>
+                <text wx:if='{{orderDetail.status == 4}}' class="checking">已验货</text>
+                <view wx:elif='{{orderDetail.status == 2}}' class='checked'>
+                    <!-- <image src='../../images/common/no-check.png'></image> -->
+                    <text>未验货</text>
+                </view>
+            </view>
+            <view class='name option'>
+                <text class='title'>供应商名称</text>
+                <text>{{orderDetail.supplier_name}}</text>
+            </view>
+            <view class='state option'>
+                <text class='title'>验货环节</text>
+                <text>{{checkPoint[orderDetail.check_point]}}</text>
+            </view>
+            <view class='time option'>
+                <text class='title'>期望验货时间</text>
+                <text>{{orderDetail.EXPECTED_DATE}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='order-list' wx:if="{{orderDetail.goods_info.length > 0}}">
+        <view class='title'>商品型号列表</view>
+        <view class='list'>
+            <view bindtap='navigatorEditDetail' data-key="{{index}}" wx:for='{{orderDetail.goods_info}}' wx:key='{{item.goods_sn}}' class="order-info">
+                <view class='number'>{{item.goods_sn}}</view>
+                <view class='status'>
+                    <image wx:if="{{updateGoodsList[orderDetail.req_no][item.goods_sn]}}" class='state' src='../../images/common/no-check-1.png'></image>
+                    <image class='arrow' src='../../images/common/arrow.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='submit-btn' wx:if="{{orderDetail.status != 4}}">
+        <view class='btn'>
+            <button bindtap='submitOrderInfo'>提交</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+.hot-item-title .title{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+.hot-item-title .title .more{
+  font-size: 24rpx;
+  color: #999;
+}
+.hot-item-title .title .icon-title-arrow{
+  display: inline-block;
+  width: 18rpx;
+  height: 14rpx;
+  transform: rotate(-90deg);
+  margin-right: 10rpx;
+}
+.hot-item-title .title .icon-more-arrow{
+  display: inline-block;
+  width: 7rpx;
+  height: 15rpx;
+  margin-left: 10rpx;
+}

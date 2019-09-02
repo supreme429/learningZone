@@ -1,0 +1,49 @@
+<!--pages/search/search.wxml-->
+<view class='search-container'>
+    <view class='title'>请输入搜索条件</view>
+    <view class='search-content'>
+        <view class='option'>
+            <label>供应商名称</label>
+            <input placeholder='请输入供应商名称' type='text' data-name="supplierName" placeholder-style="text-align:right;color:#999;" value='{{searchData.supplierName}}' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='option'>
+            <label>单据号</label>
+            <input placeholder='请输入单据号' type='text' data-name="reqNo" placeholder-style="text-align:right;color:#999;" value='{{searchData.reqNo}}' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='option'>
+            <label>商品型号</label>
+            <input placeholder='请输入商品型号' type='text' data-name="goodsSn" placeholder-style="text-align:right;color:#999;" value='{{searchData.goodsSn}}' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='option'>
+            <label>验货环节</label>
+            <picker bindchange='bindChangeValue' data-name="checkPoint" value="{{index}}" range='{{checkPoint}}'>
+                <view class="picker">
+                    {{checkPoint[searchData.checkPoint]}}
+                    <image class='icon' src='../../images/common/arrow.png'></image>
+                </view>
+            </picker>
+        </view>
+        <view class='option'>
+            <label>期望验货日期</label>
+            <picker mode="date" value="{{searchData.expected_date}}" data-name="expected_date" bindchange='bindChangeValue'>
+                <view class="picker">
+                    {{searchData.expected_date}}
+                    <image class='icon' src='../../images/common/arrow.png'></image>
+                </view>
+            </picker>
+        </view>
+        <view class='option'>
+            <label>验货状态</label>
+            <picker bindchange='bindChangeValue' data-name="status" value='{{index}}' range='{{checkStatus}}'>
+                <view class='picker'>
+                    {{checkStatus[searchData.status]}}
+                    <image class='icon' src='../../images/common/arrow.png'></image>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class='submit-btn'>
+        <button class='clear-info' bindtap='clearSelctInput'>清除条件</button>
+        <button class='submit-info' bindtap='submitSelectInput'>搜索</button>
+    </view>
+</view>

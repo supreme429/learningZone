@@ -1,0 +1,16 @@
+<!--components/dialogBuyNow/dialogBuyNow.wxml-->
+<view class="dialog" wx:if="{{isShow}}">
+  <view class='dialog-body'>
+    <image mode="aspectFit" class='dialog-close' src='/images/icon-close.png' catchtap='close'></image>
+    <view class='dialog-content'>
+
+      <view class='tips' wx:if="{{ buyNowConfig.buyNowType === 2 }}">
+        <view>还差<text>{{ bargainInfo.distanceLowestPrice }}元</text>就能以最低价<text>{{ bargainInfo.lowestPrice }}元</text>购买，您确定不再努力一下吗？</view>
+      </view>
+      <view class='tips' wx:else>土豪我们做朋友吧！</view>
+      
+      <button open-type='share' data-name="dialogBuyNow" class="btn">分享好友，邀请帮砍</button>
+      <button class="btn btn-buy" bindtap='buy'>立即购买</button>
+    </view>
+  </view>
+</view>

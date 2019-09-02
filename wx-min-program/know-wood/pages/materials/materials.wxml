@@ -1,0 +1,10 @@
+<!--pages/materials/materials.wxml-->
+<import src="/templates/list.wxml"/>
+
+<scroll-view class='list-box' scroll-y enable-back-to-top scroll-with-animation bindscrolltolower="searchWoodWikiByClassifyTag">
+  <navigator wx:for="{{ list }}" url="/pages/wiki/wiki?woodId={{ item.wikiId }}">
+    <template is="wood-category-list" data="{{ ...item }}"></template>
+  </navigator>
+  <view class='hasLoadAll' wx:if="{{loading && list.length>3}}">正在加载中</view>
+  <view class='hasLoadAll' wx:if="{{totalElements == list.length && list.length>3}}">已经全部加载完</view>
+</scroll-view>

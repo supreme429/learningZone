@@ -1,0 +1,40 @@
+<!--pages/address/addressList.wxml-->
+<view class='address-list'>
+  <scroll-view 
+   scroll-x
+   scroll-left='{{item.left}}'
+   scroll-with-animation='{{true}}'
+   class='address-item' 
+   wx:for='{{addressList}}'
+   data-index='{{index}}'
+   bind:touchstart='addressTouchStart'
+   bind:touchend='addressTouchEnd'>
+    <view class='address-content'>
+      <view class='view-icon'>
+        <image src='{{item.default == 1 ? "../../../statics/address/address-active.png" : "../../../statics/address/address-default.png"}}' class='icon'></image>
+      </view>
+      <view class='address-info'>
+        <view class='name-phone'>
+          <text class='name'>{{item.consignee}}</text>
+          <text class='phone'> {{item.mobile}}</text>
+        </view>
+        <view class='detail'>{{item.province_name}}{{item.city_name}}{{item.region_name}}{{item.address}}</view>
+      </view>
+    </view>
+    <view class='address-handle'>
+      <view class='set-default' data-address-id='{{item.address_id}}' bind:tap='setDefault'>设为默认</view>
+      <view class='edit' data-address-id='{{item.address_id}}' bind:tap='editAddress'>编辑</view>
+      <view class='delete' data-address-id='{{item.address_id}}' bind:tap='deleteAddress'>删除</view>
+    </view>
+    <view class='address-choose' hidden='{{!isFromOrder}}' data-address-id='{{item.address_id}}' bind:tap='setDefault'>
+      选择
+    </view>
+  </scroll-view>
+</view>
+
+<view class='address-add'>
+  <navigator url='/pages/address/addEdit/addEdit{{isFromOrder ? "?types=FromOrder" : ""}}'>
+    <image src='../../../statics/address/add-icon.png' class='add-icon'></image>
+    <text>新增收货地址</text>
+  </navigator>
+</view>

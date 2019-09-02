@@ -1,0 +1,121 @@
+/* pages/customerData/customerData.wxss */
+.title{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fefefe;
+  font-size: 32rpx;
+  color: #cdcdcd;
+  padding: 0 45rpx;
+}
+.content{
+  padding: 0 45rpx;
+  font-size: 28rpx;
+}
+.content .inputBox{
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee
+}
+.content .inputBox.textareaBox{
+  border: none;
+}
+.content .inputBox label{
+  color: #9c9c9c;
+  display: flex;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+.content .inputBox label text{
+  color: #ff4848;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
+}
+.content .inputBox input{
+  flex: 1;
+  height: 90rpx;
+  margin-left: 20rpx;
+  padding-right: 55rpx;
+  text-align: right;
+  color: #333;
+}
+.content .inputBox input.disabled{
+  color: #9c9c9c
+}
+.content .inputBox textarea{
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 55rpx 0 28rpx;
+  font-size: 28rpx; 
+  line-height: 40rpx;
+  text-align: right;
+}
+.content .textareaBox{
+  align-items: flex-start;
+  padding-top: 30rpx;
+}
+.content .textareaBox label{
+  line-height: normal
+}
+.content .textareaBox textarea{
+  max-height: 76rpx;
+}
+.content .inputBox picker{
+  flex: 1;
+  height: 90rpx;
+  margin-left: 20rpx;
+  position: relative;
+  line-height: 90rpx;
+  text-align: right;
+  color: #333
+}
+.content .inputBox picker text{
+  padding-right: 55rpx;
+  display: block;
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box
+}
+.content .inputBox picker image{
+  width: 16rpx;
+  height: 28rpx;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.content .inputBox .address{
+  flex: 1;
+  height: 76rpx;
+  position: relative;
+  line-height: 76rpx;
+  text-align: right;
+  padding-right: 55rpx;
+}
+.content .inputBox .address image{
+  width: 16rpx;
+  height: 28rpx;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.errorTips{
+  color: #e62318;
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 15rpx;
+}
+.btnSubmitBox{
+  margin-top: 30rpx;
+}
+.btn-submit{
+  width: 100%;
+  height: 86rpx;
+  text-align: center;
+  line-height: 86rpx;
+  color: #fff;
+  background-color: #e62318;
+  border-radius: 8rpx;
+}

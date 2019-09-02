@@ -1,0 +1,32 @@
+<!--pages/category.wxml-->
+<view class="search-wrap">
+  <navigator url="/pages/search/search" class="search-btn" hover-stay-time='{{hoverStayTime}}'>
+    <icon class="search-icon" color="#aaa" size="14" type="search"></icon>
+    <text class="search-text">搜索商品</text>
+  </navigator>  
+</view>
+<view class="category-content">
+  <scroll-view scroll-y scroll-with-animation="true" class="category-nav">
+    <view wx:for="{{categoryNav}}" data-tab-key="{{item.key}}" class="nav-item {{item.active ? 'nav-active' : ''}}" bind:tap="handleCategoryNav">
+      <text>{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y='true' class="category-nav-content">
+    <block wx:for='{{categoryContentCurrent}}'>
+      <view class='nav-content-title'>
+        <text class='title-text'>{{item.title}}</text>
+      </view>
+
+      <view class='nav-content-list'>
+        <view wx:for='{{item.goodsList}}' class='list-item'>
+          <navigator url='/pages/search/search?keywords={{item.text}}' hover-stay-time='{{hoverStayTime}}'>
+            <image mode="aspectFit" src='https:{{item.src}}'></image>
+            <text>{{item.text}}</text>
+          </navigator>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- <view class='blank-view'></view>
+<footer types="{{types}}"></footer> -->

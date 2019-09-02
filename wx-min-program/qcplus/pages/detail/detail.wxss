@@ -1,0 +1,29 @@
+/* pages/detail/detail.wxss */
+page{background-color:#f0f0f0;}
+.detail-container{padding-bottom:150rpx;display:flex;flex-direction:column;align-items:center;justify-content: flex-start;}
+.detail-container .basic{margin-top:50rpx;}
+.detail-container .basic .title{font-weight: 700;}
+.detail-container .basic-info{margin-top:30rpx;width:670rpx;background-color:#fff;border-radius:28rpx;font-size:28rpx;}
+.detail-container .basic-info .option{padding:40rpx 30rpx;display:flex;flex-direction:row;justify-content:space-between;align-items:center;font-size:28rpx;line-height:1;color:#999;border-bottom:solid 1px #ddd;}
+.detail-container .basic-info .option .title{color:#333;}
+.detail-container .basic-info .number{font-size:30rpx;font-weight:700;}
+.detail-container .basic-info .number .title{font-size:30rpx;}
+.detail-container .basic-info .number .checking{color:#279cbd;}
+.detail-container .basic-info .number .checked{display:flex;flex-direction:row;justify-content:flex-end;align-items:center;color:#f25047;}
+.detail-container .basic-info .number .checked image{margin-right:8rpx;width:29rpx;height:28rpx;}
+
+
+
+.detail-container .order-list{margin-top:50rpx;}
+.detail-container .order-list .title{font-weight:700;}
+.detail-container .order-list .list{margin-top:30rpx;width:670rpx;background-color:#fff;border-radius:28rpx;font-size:28rpx;}
+.detail-container .order-list .list .order-info{padding:40rpx 30rpx;display:flex;flex-direction:row;justify-content:space-between;align-items:center;color:#999;border-bottom:solid 1px #ddd;}
+.detail-container .order-list .list .order-info .status{display:flex;align-items:center;}
+.detail-container .order-list .list .order-info .state{margin-right:23rpx;width:29rpx;height:28rpx;}
+.detail-container .order-list .list .order-info .arrow{width:12rpx;height:22rpx;}
+.detail-container .order-list .list .order-info .number{ word-break: break-all;text-overflow: ellipsis;display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/-webkit-line-clamp: 2; /** 显示的行数 **/overflow: hidden;  /** 隐藏超出的内容 **/}
+.detail-container .visitors{width:100%;height:67rpx;line-height:67rpx;background-color: #ffeaa3;color:#f25047;font-size:26rpx;text-align:center;}
+
+.detail-container .submit-btn{position:fixed;bottom:0;left:0;width:100%;height:130rpx;background-color:#fff;}
+.detail-container .btn{height:130rpx;display:flex;flex-direction: row;align-items: center;justify-content:center; }
+.detail-container .submit-btn button{padding:0;width:670rpx;height:80rpx;line-height:80rpx;border-radius:80rpx;background:linear-gradient(to right,#21bece,#0096cc);font-size:30rpx;color:#fff;}

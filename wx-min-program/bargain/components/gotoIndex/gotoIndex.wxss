@@ -1,0 +1,19 @@
+/* components/gotoIndex/gotoIndex.wxss */
+.container{
+  position: absolute;
+  top: 530rpx;
+  left: 23rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 18rpx;
+  font-size: 24rpx;
+  z-index: 1;
+}
+.container navigator{
+  font-size: 26rpx;
+  color: #fff
+}

@@ -1,0 +1,419 @@
+/* pages/wiki/wiki.wxss */
+.container{
+  padding: 45rpx 35rpx 0 35rpx
+}
+
+/* woodInfo样式start */
+.woodInfo .title{
+  color: #333;
+  text-align: center;
+  padding-bottom: 22rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+.woodInfo .icon-title-arrow{
+  position: absolute;
+  width: 18rpx;
+  height: 14rpx;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.woodInfo .title-txt{
+  position: relative;
+  font-size: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  width: auto;
+  font-weight: bold;
+}
+.woodInfo .woodImg image{
+  width: 100%;
+  height: 410rpx;
+  border-radius: 10rpx;
+  display: block;
+}
+/* woodInfo样式end */
+
+/* liangdianxinxi样式start */
+.liangdianxinxi{
+  margin-top: 25rpx;
+}
+.liangdianxinxi .xinxi-item{
+  display: flex;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #666
+}
+.liangdianxinxi .xinxi-item + .xinxi-item{
+  margin-top: 20rpx;
+}
+.liangdianxinxi .xinxi-item .xinxi-info{
+  margin-left: 20rpx;
+}
+/* liangdianxinxi样式end */
+
+/* 信息title start*/
+
+.xinxi_title{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  margin-top: 50rpx;
+}
+.xinxi_title .icon-title-arrow{
+  display: inline-block;
+  width: 18rpx;
+  height: 14rpx;
+  transform: rotate(-90deg);
+  margin-right: 10rpx;
+}
+
+.jibenxinxi .xinxi-item {
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+.jibenxinxi .xinxi-item .xinxi-name{
+  margin-right: 20rpx;
+}
+.jibenxinxi .xinxi-item text{
+  display: inline-block;
+}
+.jibenxinxi .xinxi-item image{
+  width: 100%;
+}
+.jibenxinxi .xinxi-item video{
+  width: 100%;
+}
+/* 信息title end*/
+
+/* 优缺点start */
+.youdianjiquedian .xinxi-item {
+  font-size: 28rpx;
+  color: #666;
+}
+.youdianjiquedian .xinxi-item .xinxi-info{
+  line-height: 50rpx
+}
+.youdianjiquedian .xinxi-item .xinxi-name{
+  display: block;
+  margin-right: 20rpx;
+}
+.youdianjiquedian .xinxi-item text{
+  display: inline-block;
+}
+/* 优缺点end */
+.xinxi-item image{
+  display: block;
+  margin-top: 20rpx;
+}
+/* 常见家居展示start */
+.woodGoodsInfo .wrap-swiper{
+  margin-top: 18rpx;
+}
+.woodGoodsInfo .wrap-swiper swiper-item{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 400rpx;
+  overflow: hidden;
+}
+.woodGoodsInfo .wrap-swiper swiper-item image{
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.woodGoodsInfo swiper-item .woodName{
+  position: absolute;
+  bottom: 0;
+  height: 52rpx;
+  width: 100%;
+  left: 0rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.woodGoodsInfo swiper-item .woodName image{
+  border-radius: 8rpx;
+}
+.woodGoodsInfo swiper-item .woodName text{
+  position: absolute;
+  left: 40rpx;
+  top: 15rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+.woodGoodsInfo .indicator-dots{
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.woodGoodsInfo .indicator-dots .dots{
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #e8e8e8;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+.woodGoodsInfo .indicator-dots .dots.active{
+  background-color: #e1c195
+}
+
+/* 常见家居展示end */
+/* 加工性start */
+.jiagongxingheyongtu .xinxi-item {
+  font-size: 28rpx;
+  color: #666;
+}
+.jiagongxingheyongtu .xinxi-item .xinxi-info{
+  line-height: 50rpx
+}
+.jiagongxingheyongtu .xinxi-item .xinxi-name{
+  margin-right: 20rpx;
+}
+.jiagongxingheyongtu .xinxi-item text{
+  display: inline-block;
+}
+.jiagongxingheyongtu .xinxi-item image{
+  width: 100%;
+}
+/* 加工性end */
+
+/* 使用历史start */
+.shiyonglishijieshao .pic_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shiyonglishijieshao .pic_list .pic_item{
+  font-size: 0;
+  margin-top: 40rpx;
+}
+.shiyonglishijieshao .pic_list .pic_item image{
+  width:320rpx;
+  height:240rpx;
+  border-radius: 8rpx;
+}
+
+/* 分布范围start */
+.desc{
+  font-size: 28rpx;
+  color: #666;
+  line-height: 45rpx;
+}
+/* 分布范围end */
+
+/* 形态特征start */
+.xingtai_img image{
+  width: 100%;
+}
+.mucaixingtaitezheng .xinxi-list{
+  font-size: 28rpx;
+  color: #666
+}
+.mucaixingtaitezheng .xinxi-list .xinxi-name{
+  margin-right: 20rpx;
+}
+.mucaixingtaitezheng .xinxi-list text{
+  display: inline-block;
+  line-height: 45rpx;
+}
+.mucaixingtaitezheng .pic_desc_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.mucaixingtaitezheng .pic_desc_list .pic_item{
+  width: 210rpx;
+  height: 210rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+.mucaixingtaitezheng .pic_desc_list .wood_img image{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 8rpx;
+}
+.mucaixingtaitezheng .pic_desc_list .wood_name{
+  position: absolute;
+  width: 100%;
+  height: 59rpx;
+  bottom: 0;
+  left: 0;
+}
+.mucaixingtaitezheng .pic_desc_list .wood_name .name_bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.mucaixingtaitezheng .pic_desc_list .wood_name .name{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  line-height: 59rpx;
+  /* display: flex; */
+  align-items: center;
+  font-size: 24rpx;
+  padding:0 15rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+/* 形态特征end */
+
+/* 差异对比start */
+
+.icon-vs{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+}
+.duibi_pic{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+.duibi_pic .pic_item{
+  width: 320rpx;
+  height: 240rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5rpx;
+}
+.duibi_pic .pic_item:nth-child(2n){
+  margin-left: 40rpx;
+}
+.duibi_pic .wood_img image{
+  width: 320rpx;
+  height: 240rpx;
+  border-radius: 5rpx;
+}
+.duibi_pic .wood_name{
+  position: absolute;
+  width: 100%;
+  height: 59rpx;
+  bottom: 0;
+  left: 0;
+}
+.duibi_pic .wood_name .name_bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.duibi_pic .wood_name .name{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+}
+
+/* 差异对比end */
+
+/* 相关木材start */
+.related_wood{
+  margin-top: 50rpx;
+}
+.wood_list{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start
+}
+.wood_list .wood_item{
+  width: 320rpx;
+  height: 240rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8rpx;
+  margin-bottom: 40rpx;
+}
+.wood_list .wood_item:nth-child(2n){
+  margin-left: 40rpx;
+}
+.wood_item .wood_img image{
+  width: 320rpx;
+  height: 240rpx;
+  border-radius: 8rpx;
+}
+.wood_item .wood_name{
+  position: absolute;
+  width: 100%;
+  height: 59rpx;
+  bottom: 0;
+  left: 0;
+}
+.wood_item .wood_name .name_bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.wood_item .wood_name .name{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+}
+.hot-item-title .title{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+.hot-item-title .title .refresh{
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+.hot-item-title .title .icon-title-arrow{
+  display: inline-block;
+  width: 18rpx;
+  height: 14rpx;
+  transform: rotate(-90deg);
+  margin-right: 10rpx;
+}
+.hot-item-title .title .icon-refresh{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}

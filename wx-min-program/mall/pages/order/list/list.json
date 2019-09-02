@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/order/list/list"
+  ],
+  
+  "usingComponents": {
+    "cancel-order": "../components/cancel-order/cancel-order"
+  }
+}

@@ -1,0 +1,9 @@
+<!--pages/noInternet/noInternet.wxml-->
+<view class='container'>
+  <image src='/images/img-no-network.png'></image>
+  <text class='desc'>世界上最遥远的距离，莫过于网路不给力</text>
+  <text class='tips'>下拉刷新试试</text>
+</view>
+
+<!-- 客服图标 -->
+  <customService></customService>

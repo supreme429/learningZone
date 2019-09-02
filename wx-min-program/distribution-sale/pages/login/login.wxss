@@ -1,0 +1,88 @@
+/* pages/login/login.wxss */
+.container{
+  padding: 0 65rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.logo{
+  width: 311rpx;
+  height: 100rpx;
+  margin-top: 130rpx;
+}
+/* 表单 start */
+.form{
+  margin-top: 168rpx;
+  width: 620rpx;
+  overflow: hidden;
+}
+.form-item{
+  position: relative;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bababa;
+}
+.input-text{
+  padding: 0 30rpx;
+  font-size: 32rpx;
+}
+.input-placeholder{
+  color: #bdbdbd;
+}
+.icon-phone{
+  width: 30rpx;
+  height: 38rpx;
+}
+.icon-sms{
+  width: 37rpx;
+  height: 29rpx;
+}
+.icon-shield{
+  width: 31rpx;
+  height: 38rpx;
+}
+.icon-refresh{
+  width: 37rpx;
+  height: 35rpx;
+  margin-left: 10rpx;
+}
+
+.cap-code-box{
+  width: 220rpx;
+  display: flex;
+  align-items: center;
+}
+.img-cap-code{
+  width: 160rpx;
+  height: 90rpx;
+}
+.btn-get-vcode,
+.btn-get-vcode::after{
+  font-size: 32rpx;
+  color: #777;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 200rpx;
+  text-align: right;
+}
+/* 表单 end */
+
+.btn-login{
+  width: 100%;
+  margin-top: 50rpx;
+  margin-bottom: 30rpx;
+  background: #e62318;
+  color: #fff;
+}
+
+.footer{
+  color: #aeaeae;
+  font-size: 24rpx;
+}
+.go-agreement{
+  display: inline;
+  color: #487eac;
+}

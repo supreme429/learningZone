@@ -1,0 +1,198 @@
+<!-- / tab标签 START / -->
+<view class="tab-holder" id='topTabBar'></view>
+<view class='tab-label'>
+  <view wx:for='{{data_tabs}}' wx:key='tab-item' data-order='{{index}}' data-type='{{item.type}}' class='item {{index == tab_order ? "light" : ""}}' bindtap='bindToggleModuleEvent'><text>{{item.name}}</text></view>
+</view>
+<!-- / tab标签 END / -->
+
+<scroll-view scroll-y scroll-into-view='{{flag_tabClickToScroll}}' id='pageScrollContainer' style='height:{{data_pageScrollerHeight}}px;overflow:hidden;' bindscroll='bindPageScrollEvent'>
+  <view id="goods">
+    <!-- / 相册 START / -->
+    <view class='gallery' wx:if='{{data_gallery}}'>
+      <view class='swiper-container'>
+        <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' circular='{{circular}}' bindchange='getSwiperIndex'>
+          <block wx:for='{{data_gallery.list}}'>
+            <swiper-item>
+              <image data-url="{{imagesUrl}}/{{item}}" bindtap='previewImage' src='{{imagesUrl}}/{{item}}'/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class='swiper-navigator'><text>{{swipterCurrentIndex}}</text>/<text>{{data_gallery.count}}</text></view>
+    </view>
+    <!-- / 相册 END / -->
+
+    <!-- / 获取门店信息 START / -->
+    <view class='store'>
+      <view class='txt'>{{data_nearestExprTips}}</view>
+      <view class="btn">
+        <button wx:if='{{flag_isAuthorizeUserInfo}}' type="default" bindtap='bindGetCurrentExprAddressEvent'>获取附近门店地址</button>
+        <button wx:else type="default" open-type='getUserInfo' bindgetuserinfo='bindGetCurrentExprAddressEvent'>获取附近门店地址</button>
+      </view>
+    </view>
+    <!-- / 获取门店信息 END / -->
+
+    <!-- / 商品信息摘要 START / -->
+    <view class='summary'>
+      <view class='data'>
+        <view class='col-1'>
+          <text class='yen'>￥</text><text class='effect-price'>{{data_goodsInfo.effect_price}}</text>
+          <text class='shop-price'>￥{{data_goodsInfo.shop_price}}</text>
+          <button wx:if='{{flag_isAuthorizeUserInfo}}' type='default' plain='true' class='notice' bindtap='bindPriceRemindEvent'>降价通知</button>
+          <button wx:else type='default' plain='true' class='notice'  open-type='getUserInfo' bindgetuserinfo='bindPriceRemindEvent'>降价通知</button>
+        </view>
+        <view class='saled'>已售{{data_goodsInfo.sold}}</view>
+      </view>
+      <view class='title'>{{data_goodsInfo.brand}} {{data_goodsInfo.style}} {{data_goodsInfo.title}}</view>
+      <view class='sub-title'>{{data_goodsInfo.goods_sub_title}}</view>
+    </view>
+    <!-- / 商品信息摘要 END / -->
+
+    <!-- / 商品规格 START / -->
+    <view class='goods-spec' bindtap='bindSpecPanelEvent'>
+      <view class='key'>已选：</view>
+      <view class='val'>{{data_goodsInfo.attr.current_attr ? data_goodsInfo.attr.current_attr : ''}} {{data_goodsInfo.attr.current_color ? data_goodsInfo.attr.current_color : ''}} {{data_goodsInfo.attr.current_material ? data_goodsInfo.attr.current_material : ''}} {{data_shoppingNumber}} {{data_goodsInfo.goods_unitname ? data_goodsInfo.goods_unitname : '件'}}</view>
+      <view class='arrow'><icon></icon></view>
+    </view>
+    <!-- / 商品规格 END / -->
+
+    <!-- / 预约服务 START / -->
+    <view class='order-service'>
+      <view class='order'>
+        <view class='cover'>
+        <image wx:if="{{data_exprMod.expr_img}}" src='{{imagesUrl}}/{{data_exprMod.expr_img}}'></image>
+        <image wx:else src='../../statics/goods/default-addr.jpg'></image>
+        </view>
+        <view class='cont'>
+          <view class='expr'>美乐乐{{data_exprMod.area?data_exprMod.area:'全国'}}<text class='num'>{{data_exprMod.num?data_exprMod.num:'300余'}}</text>家体验馆</view>
+          <view class='master'>
+            <!-- <image src='{{imagesUrl}}/{{data_exprMod.leader_img}}' class='avatar'></image> -->
+            <view class='ul'>
+              <view class='li'>·体验实物品质</view>
+              <view class='li'>·免费搭配设计</view>
+            </view>
+          </view>
+          <button wx:if='{{flag_isAuthorizeUserInfo}}' type='default' bindtap='bindOrderCounselorEvent'>预约高级顾问服务</button>
+          <button wx:else type='default' open-type='getUserInfo' bindgetuserinfo='bindOrderCounselorEvent'>预约高级顾问服务</button>
+        </view>
+      </view>
+      <view class='service' wx:if="{{data_goodsInfo.shop_id == 1}}">
+        <view class='item'><image class='icon' src='../../statics/goods/circle.png'></image><text>美乐乐自营旗舰店</text></view>
+        <view class='item' wx:if="{{data_goodsInfo.goods_category_level3_name != '瓷砖'}}"><image class='icon' src='../../statics/goods/circle.png'></image><text>30天退换</text></view>
+
+        <view class='item' wx:if="{{data_goodsInfo.show_type == '0'}}"><image class='icon' src='../../statics/goods/circle.png'></image><text>质保三年</text></view>
+
+        <view class='item'><image class='icon' src='../../statics/goods/circle.png'></image><text>贵就赔</text></view>
+      </view>
+      <view class='service' wx:else>
+        <view class='item'><image class='icon' src='../../statics/goods/circle.png'></image><text>正品保障</text></view>
+        <view class='item'><image class='icon' src='../../statics/goods/circle.png'></image><text>贵就赔</text></view>
+      </view>
+    </view>
+    <!-- / 预约服务 END / -->
+  </view>
+
+  <!-- / 评价 START / -->
+  <view id="comment" class='module'>
+    <navigator url='/pages/comment/comment?goodsId={{goodsId}}'>
+      <view class='comment' wx:if='{{data_goodsComment}}'>
+        <view class='dt'>
+          <view class='col start'><text class='title'>评价</text><view class='level'>好评<text>{{data_goodsComment.comments_percent.per_ch}}%</text></view></view>
+          <view class='col end'><text>共{{data_goodsComment.comments_count}}个评价</text></view>
+        </view>
+        <view class='dd'>
+          <view class='abstract'>
+            <view class='star'><view class='level' style="width:{{data_goodsComment.one_comment.level_per}};"></view></view>
+            <text>{{data_goodsComment.one_comment.h_username}}</text>
+            <text>{{data_goodsComment.one_comment.h_add_time}}</text>
+          </view>
+          <view class='content'>{{data_goodsComment.one_comment.h_content}}</view>
+          <view class='album'>
+            <view class='item' wx:for='{{data_goodsComment.one_comment.pic_url}}'><image src='https:{{item}}'></image></view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <!-- / 评价 END / -->
+
+  <!-- / 商品详情 START / -->
+  <view id='detail' class='module'>
+    <view class='goods-detail'>
+      <view class='tab-placeHolder' hidden='{{flag_goodsDetailTabHolder}}'></view>
+      <view class='tab {{flag_goodsDetailTabFixed ? "fixed" : ""}}'>
+        <view wx:for='{{data_goodsTab}}' wx:key='cont-item' data-goodsTab_order='{{index}}' data-goodsTab_type='{{item.type}}' class='item {{goodsTab_order == index ? "light": ""}}' bindtap='bindGoodsTabClickEvent'><label><text>{{item.name}}</text></label></view>
+      </view>
+
+      <view class='pic-container' hidden='{{flag_goodsTab_pic}}'>
+        <!--<view data-source='goods_lighting_ad' wx:if='{{data_goodsInfo.goods_lighting_ad}}'>
+          <image wx:for='{{data_goodsInfo.goods_lighting_ad}}' src='http://images.meilele.com/{{item.src}}' mode='widthFix'></image>
+        </view>-->
+        <view data-source='goods_recomment' wx:if='{{data_goodsInfo.goods_recomment}}'>
+          <image wx:for='{{data_goodsInfo.goods_recomment}}' src='{{imagesUrl}}/{{item.src}}' mode='widthFix'></image>
+        </view>
+        <view data-source='brand_ad' wx:if='{{data_goodsInfo.brand_ad}}'>
+          <image wx:for='{{data_goodsInfo.brand_ad}}' src='{{imagesUrl}}/{{item.src}}' mode='widthFix'></image>
+        </view>
+        <view data-source='pictures' wx:if='{{data_goodsInfo.pictures}}'>
+          <image wx:for='{{data_goodsInfo.pictures}}' src='{{imagesUrl}}/{{item.img_url}}' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='property-container' hidden='{{flag_goodsTab_prop}}'>
+        <view class='unit' wx:for='{{data_goodsProperty}}' wx:key='prop' wx:for-item='cat'>
+          <view class='item cat'>{{cat.name}}</view>
+          <view class='item' wx:for='{{cat.value}}' wx:for-item='item'>
+            <view class='key'>{{item.name}}</view>
+            <view class='val'>{{item.value}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- / 商品详情 END / -->
+</scroll-view>
+<!-- 右侧悬浮按钮 -->
+
+<view class="fast-link">
+  <view class="home" bindtap='bindJumpToHome'>
+    <image src='../../statics/search/home.png'></image>
+  </view>
+  <view class="totop {{flag_backtotop?'back-top':''}}" bindtap='bindBackToTop'>
+    <image src='../../statics/search/top.png'></image>
+  </view>
+</view>
+<!-- / fixed bar START / -->
+<view class='fixed-holder' id='bottomBar'></view>
+<view class='fixed-bar'>
+  <view class='ul'>
+    <view class='li collect {{flag_isCollected ? "collected" : ""}}' bindtap='bindGoodsCollectEvent'>
+      <image class='icon' src='{{flag_isCollected ? image_collect_ok : image_collect_no}}'></image>
+      <text>收藏</text>
+    </view>
+    <view class='li similar'>
+      <navigator url='/pages/search/search?filterUrl=/list-f{{data_goodsInfo.cat_id}}-s{{data_goodsInfo.style_id}}/'>更多相似</navigator>
+    </view>
+    <view class='li check'>
+        <button wx:if='{{flag_isAuthorizeUserInfo}}' type='default' plain='true' bindtap='bindGetCurrentExprAddressEvent'>到店查看实物</button>
+        <button wx:else type='default' plain='true' open-type='getUserInfo' bindgetuserinfo='bindGetCurrentExprAddressEvent'>到店查看实物</button>
+    </view>
+    <view class='li buy {{flag_hiddenShoppingBtn ? "hidden" : ""}}' bindtap='buyEvent'>立即购买</view>
+  </view>
+</view>
+<!-- / fixed bar END / -->
+
+<!-- / 获取体验馆地址 START / -->
+<expr-address id='exprAddressContainer' regionInfo='{{regionInfo}}'></expr-address>
+<!-- / 获取体验馆地址 END / -->
+
+<!-- / 选择商品规格 START / -->
+<goods-property id='goodsProperyContainer' goodsInfo='{{data_goodsInfo}}' num='{{data_shoppingNumber}}' bindshoppingNumber='shoppingNumber' bindbuyEvent='buyEvent'></goods-property>
+<!-- / 选择商品规格 END / -->
+
+<!-- / 预约服务顾问 START / -->
+<service-counselor id='serviceCounselorContainer' regionInfo='{{regionInfo}}'></service-counselor>
+<!-- / 预约服务顾问 END / -->
+
+<!-- / 收藏商品 START / -->
+<price-remind id='priceRemainContainer' goodsId='{{goodsId}}' effectPrice='{{data_goodsInfo.effect_price}}' shopPrice='{{data_goodsInfo.shop_price}}' regionInfo='{{regionInfo}}'></price-remind>
+<!-- / 收藏商品 END / -->

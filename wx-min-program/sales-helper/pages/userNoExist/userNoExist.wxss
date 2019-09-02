@@ -1,0 +1,14 @@
+/* pages/userNoExist/userNoExist.wxss */
+.container{
+  text-align: center;
+}
+.img{
+  width: 236rpx;
+  height: 160rpx;
+  margin-top: 380rpx;
+}
+.text{
+  font-size: 30rpx;
+  color: #999;
+  margin-top: 30rpx;
+}

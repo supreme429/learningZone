@@ -1,0 +1,5 @@
+<!--pages/history/history.wxml-->
+<import src="/templates/saleDetail.wxml"/>
+<view class='container'>
+  <template is="saleDetail" data="{{ ...saleDetailData }}"></template>
+</view>

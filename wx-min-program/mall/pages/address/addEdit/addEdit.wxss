@@ -1,0 +1,66 @@
+/* pages/address/addEdit/addEdit.wxss */
+page {
+  background-color: #efeff4;
+}
+
+.input-list {
+  padding-left: 35rpx;
+  border-top: 1rpx solid #e5e5e5; 
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.input-item {
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  color: #000;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.input-item:last-child {
+  border-bottom: none;
+}
+.input-item .area-id {
+  display: none;
+}
+.input-item text {
+  display: inline-block;
+  width: 170rpx;
+}
+.input-area {
+  flex: 1;
+  position: relative;
+  padding-right: 70rpx;
+}
+.clear-input {
+  position: absolute;
+  top: 50%;
+  right: 35rpx;
+  width: 28rpx;
+  height: 28rpx;
+  transform: translateY(-50%);
+}
+.area-select {
+  position: absolute;
+  top: 50%;
+  right: 35rpx;
+  width: 15rpx;
+  height: 25rpx;
+  transform: translateY(-50%);
+}
+.error-tip {
+  padding-left: 35rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #c81c28;
+}
+.submit-button {
+  width: 690rpx;
+  height: 88rpx;
+  margin-top: 60rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #c81c28;
+}

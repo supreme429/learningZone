@@ -1,0 +1,76 @@
+/**app.wxss**/
+
+/* wood-category-list start */
+.wood-category-list{
+  width: 100%;
+  height: 508rpx;
+  position: relative;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.wood-category-list .img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+.wood-category-list .content{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  font-size: 24rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #999;
+}
+.wood-category-list .title{
+  color: #333;
+  font-size: 30rpx;
+  line-height: 1.5;
+}
+.wood-category-list .title .wikiTitle{
+  width: auto;
+}
+.wood-category-list .title text{
+  color: #666;
+  font-size: 26rpx;
+}
+/* .wood-category-list .title .anotherName {
+  flex: 1;
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  padding-left: 80rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+}
+.wood-category-list .title .anotherName::before{
+  content: '(别称：';
+  position: absolute;
+  left: 0;
+}
+.wood-category-list .title .anotherName::after{
+  content: '）';
+  position: absolute;
+  right: 0;
+  top: 0;
+} */
+.wood-category-list .anotherName{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.wood-category-list .originPlace{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* wood-category-list end */

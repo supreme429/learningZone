@@ -1,0 +1,29 @@
+/* components/helpBargainText/helpBargainText.wxss */
+/* 帮砍样式start */
+.helpBargainContent{
+  text-align: center;
+  margin-top: 128rpx;
+}
+
+.helpBargainDetail{
+  font-size: 30rpx;
+  color: #333
+}
+.helpBargainDetail .price{
+  color: #e62318
+}
+.helpBargainContent .btnStartBargain{
+  margin-top: 90rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 28rpx;
+  border: none;
+  background-color: #e62318;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.helpBargainContent .helpFail{
+  background-color: #ccc
+}
+/* 帮砍样式end */
+

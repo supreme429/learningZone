@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "我的砍价",
+  "onReachBottomDistance": 5,
+  "usingComponents": {
+    "swiperByNum": "../../components/swiperByNum/swiperByNum",
+    "countTime": "../../components/countTime/countTime",
+    "moreBargainGoods": "../../components/moreBargainGoods/moreBargainGoods",
+    "friendsBargain": "../../components/friendsBargain/friendsBargain",
+    "loginGetUser": "../../components/loginGetUser/loginGetUser",
+    "detailInfo": "../../components/detailInfo/detailInfo",
+    "customService": "../../components/customService/customService",
+    "dialogBargainRes": "../../components/dialogBargainRes/dialogBargainRes",
+    "dialogBuyNow": "../../components/dialogBuyNow/dialogBuyNow",
+    "btnShare": "../../components/btnShare/btnShare",
+    "gotoIndex": "../../components/gotoIndex/gotoIndex",
+    "swiperNotice": "../../components/swiperNotice/swiperNotice"
+  }
+}

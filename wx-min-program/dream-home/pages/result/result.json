@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modalGetUserInfo": "../../components/modalGetUserInfo/modalGetUserInfo",
+    "modalShare": "../../components/modalShare/modalShare",
+    "modalTips": "../../components/modalTips/modalTips"
+  }
+}

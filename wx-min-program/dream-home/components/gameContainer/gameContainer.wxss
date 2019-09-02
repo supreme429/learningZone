@@ -1,0 +1,20 @@
+/* components/gameContainer/gameContainer.wxss */
+.game-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #eee;
+  z-index: 2;
+}
+.game-bg{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.game-style{
+  position: absolute;
+}

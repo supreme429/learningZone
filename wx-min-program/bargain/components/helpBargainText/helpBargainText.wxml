@@ -1,0 +1,7 @@
+<!--components/helpBargainText/helpBargainText.wxml-->
+<view class='helpBargainContent'>
+  <view class='helpBargainDetail'>
+    <rich-text nodes="{{copyWrite}}"></rich-text>
+  </view>
+  <view class='btnStartBargain' bindtap='btnEvent'>{{ btnText }}</view>
+</view>

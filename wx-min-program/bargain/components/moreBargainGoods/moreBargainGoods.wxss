@@ -1,0 +1,56 @@
+/* components/moreBargainGoods/moreBargainGoods.wxss */
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #333
+}
+.title navigator{
+  color: #666
+}
+.goodsList{
+  display: flex;
+  margin-top: 25rpx;
+}
+.goodsItem{
+  width: 208rpx;
+  font-size: 24rpx;
+}
+.goodsList .goodsItem + .goodsItem{
+  margin-left: 38rpx;
+}
+.goodsItem .goodsImg{
+  font-size: 0;
+}
+.goodsItem .goodsImg image{
+  width: 208rpx;
+  height: 206rpx;
+}
+.goodsItem .goodsInfo .goodsName{
+  margin-top: 15rpx;
+  width: 208rpx;
+  height: 55rpx;
+  line-height: 28rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  color: #333
+}
+.goodsItem .goodsInfo .lowerPrice{
+  color: #e62318;
+  height: 24rpx;
+  line-height: 24rpx;
+  margin-top: 18rpx;
+}
+.goodsItem .goodsInfo .goodsPrice{
+  font-size: 22rpx;
+  color: #999;
+  text-decoration: line-through;
+  height: 22rpx;
+  line-height: 22rpx;
+  margin-top: 10rpx;
+}

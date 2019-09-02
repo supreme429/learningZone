@@ -1,0 +1,23 @@
+/* pages/scanCodeReceiving/index/index.wxss */
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;  
+}
+
+.icon-scan-code{
+  width: 199rpx;
+  height: 171rpx;
+  margin-bottom: 58rpx;
+}
+
+.container text{
+  color: #333;
+  font-size: 32rpx;
+}

@@ -1,0 +1,86 @@
+/* pages/login/loginMobile.wxss */
+page {
+  background-color: #efeff4;
+}
+.mll-logo {
+  padding: 90rpx 0 50rpx;
+  text-align: center;
+}
+.mll-logo image {
+  width: 352rpx;
+  height: 131rpx;
+}
+
+.form-input {
+  padding-left: 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  background-color: #fff;
+}
+.input-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #e7e7e7;
+  line-height: 32rpx;
+  font-size: 32rpx;
+}
+.input-item:last-child {
+  border-bottom: none;
+}
+.input-item .input-tip {
+  display: block;
+  width: 138rpx;
+  color: #000;
+}
+.placeholder-class {
+  color: #b2b2b2;
+}
+.input-item .get-captcha {
+  position: absolute;
+  /* top: 50%; */
+  right: 30rpx;
+  min-width: 188rpx;
+  height: 60rpx;
+  /* box-sizing: border-box; */
+  /* padding: 0 10rpx; */
+  border: 1rpx solid #c81c28;
+  border-radius: 6rpx;
+  line-height: 58rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #dc3642;
+  background-color: #fff;
+}
+.input-item .get-captcha.disabled {
+  color: #b2b2b2;
+  border-color: #e7e7e7;
+}
+
+.login-tip {
+  padding: 16rpx 30rpx;
+  line-height: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #9b9b9b;
+}
+.login-tip navigator {
+  display: inline;
+  color: #6a7fa6;
+}
+
+.submit-wrap {
+  padding: 0 30rpx;
+  margin-top: 15rpx;
+}
+.submit-wrap button {
+  height: 88rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #c81c28;
+}
+.img-verify{
+  width: 188rpx;
+  height: 60rpx;
+}

@@ -1,0 +1,4 @@
+<!--components/customService/customService.wxml-->
+<view class='icon-service' bindtap='callService'>
+  <image src='/images/icon-service.png'></image>
+</view>

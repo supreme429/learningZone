@@ -1,0 +1,79 @@
+/**index.wxss**/
+.container{
+  text-align: center;
+}
+.logo{
+  width: 246rpx;
+  height: 325rpx;
+  margin: 135rpx 0 250rpx 0;
+}
+.login-panel{
+  width: 540rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+}
+.login-txt{
+  height: 88rpx;
+  text-align: left;
+  background: #f8f8f8;
+  border: 0;
+  padding-left: 20rpx;
+}
+.login-btn{
+  font-size: 30rpx;
+  border-radius: 0;
+  color: #fff;
+  background: #e82915;
+  margin-top: 30rpx;
+}
+.login-btn::after{
+  border: 0;
+}
+.open-fingerprint{
+  position: relative;
+  margin-top: 60rpx;
+  color: #e82915;
+}
+.open-fingerprint::before,
+.open-fingerprint::after{
+  content: " ";
+  position: absolute;
+  top: 24rpx;
+  left: 135rpx;
+  width: 26rpx;
+  height: 1rpx;
+  background: #dddddd;
+}
+.open-fingerprint::after{
+  left: 380rpx;
+}
+
+.icon-fingerprint{
+  width: 178rpx;
+  height: 188rpx;
+  margin-top: 230rpx;
+}
+.check-tips{
+  color: #cccccc;
+  margin-top: 40rpx;
+}
+.fingerprint-login .open-fingerprint{
+  margin-top: 500rpx;
+}
+.captcha-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.captcha-box input,
+.captcha-box image{
+  width: 260rpx;
+  height: 88rpx;
+}
+.captcha-box input{
+  height: 88rpx;
+  text-align: left;
+  background: #f8f8f8;
+  border: 0;
+  padding-left: 20rpx;
+}

@@ -1,0 +1,13 @@
+/* pages/edit-detail/edit-detail.wxss */
+.edit-container{margin-top:60rpx;padding:0 40rpx;}
+.edit-container .title{margin-bottom:50rpx;font-size:40rpx;color:#333;font-weight: 700;}
+.edit-container .title text{font-size:30rpx;}
+.edit-container .edit-info .option{display:flex;justify-content:space-between;align-items: center; height:100rpx;line-height:100rpx;color:#333;font-size:30rpx;border-bottom:solid 1px #ddd;}
+.edit-container .edit-info .option .icon{width:12rpx;height:22rpx;}
+.edit-container .edit-info .option input{width:450rpx;text-align:right;color:#999;}
+.edit-container .edit-info .option .picker{color:#999;}
+
+.edit-container .edit-info .remark{margin-top:30rpx;width:100%;display:flex;justify-content: space-between;font-size:30rpx;color:#333;border-bottom:solid 1px #ddd;}
+.edit-container .edit-info .remark label{display:block;width:100rpx;}
+.edit-container .edit-info .remark textarea{width: 650rpx;height:215rpx;}
+.submit-btn{margin-top:60rpx;height:80rpx;line-height:80rpx;font-size:30rpx;color:#fff;border-radius:80rpx;background:linear-gradient(to right,#21bece,#0096cc);}

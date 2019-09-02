@@ -1,0 +1,37 @@
+<!--pages/scanCodeReceiving/exceptionDetail/exceptionDetail.wxml-->
+<view class='container'>
+  <view class='header'>
+    <image src='{{goodsUrl}}' class='header_left'></image>
+    <view class='header_right'>
+      <view class='right_title'>{{goodsName}}</view>
+      <view class='right_common'>X{{goodsTotalNum}}</view>
+      <view>
+        <text class='right_common'>问题商品数量 {{goodsNum}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='middle'>
+    <view class='middle_title'>问题描述</view>
+    <view class='middle_desc'>
+      <block wx:for="{{problemList}}" wx:for-item="problemItem">
+        <label class='desc-select'>{{problemItem.reason_name}}</label>
+      </block>
+    </view>
+    <view class='item_desc'>{{ problemDesc }}</view>
+    <block wx:for="{{problemPicUrl}}" wx:for-item="urlItem">
+      <image class='middle_img' src="{{urlItem}}" data-src='{{urlItem}}' bindtap='showBigPic'></image>
+    </block>
+    <!-- <view class='middle_deal'>
+      <label class='deal_text'>该问题是否需要售后处理</label>
+      <button class='deal_button'>{{needAfterSale ==1 ? '是' : '否' }}</button>
+    </view> -->
+  </view>
+  <view class='footer'>{{afterSaleExplain}}</view>
+</view>
+<view wx:if="{{errorShow}}" class='errorcontent'>{{errorTip}}</view>
+<view class='big-back' wx:if="{{bigSrc.showBigImg == true}}">
+  <view class='big-img-info'>
+    <image class='big-img-desc' mode='aspectFit' data-src='{{bigSrc.tempBigSrc}}' bindtap='showBigPic' src="{{bigSrc.tempBigSrc}}"></image>
+  </view>
+</view>

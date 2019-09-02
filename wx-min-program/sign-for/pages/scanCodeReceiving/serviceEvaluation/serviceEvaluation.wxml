@@ -1,0 +1,31 @@
+<!--pages/scanCodeReceiving/serviceEvaluation/serviceEvaluation.wxml-->
+<import src="../components/modal.wxml" />
+<view class='container'>
+  <view>
+    <view class='serviceTitle'>服务评价</view>
+    <view class='startEvaList'>
+      <view class='startEvaItem' wx:for-index="evaItemIndex" wx:for="{{evaDataList}}">
+        <view class='startNum'>
+          <text class='serviceItemTitle'>{{item.serviceItem}}</text>
+          <view class='startIcon'>
+            <image src='../../../assets/images/start-red.png' wx:for="{{evaFormData.evaluateList[evaItemIndex].serviceStar}}" data-index='{{index}}' data-evaItemIndex='{{evaItemIndex}}' bindtap='cancelStart'></image>
+            <image src='../../../assets/images/start-gray.png' wx:for="{{5-evaFormData.evaluateList[evaItemIndex].serviceStar}}" data-index='{{index+evaFormData.evaluateList[evaItemIndex].serviceStar}}' data-evaItemIndex='{{evaItemIndex}}' bindtap='selectStart'></image>
+          </view>
+        </view>
+        <view class='serviceSonList' wx:if="{{evaFormData.evaluateList[evaItemIndex].serviceStar==1 || evaFormData.evaluateList[evaItemIndex].serviceStar==2}}">
+          <view class='serviceSonItem {{serviceSonItem.select ? "hasSelect": ""}}' wx:for="{{item.serviceList}}" wx:for-item="serviceSonItem" data-evaItemIndex='{{evaItemIndex}}' data-index='{{index}}' bindtap='selectSonService'>
+            {{serviceSonItem.serviceSonItem}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 反馈意见 -->
+    <view class='feedbackBox'>
+      <textarea value="{{evaFormData.feedback}}" placeholder="填写反馈意见" maxlength='500' bindinput="setFeedBack"></textarea>
+      <view class='countBox'>{{count}}/500</view>
+    </view>
+    <!-- 按钮 -->
+    <view class='btnBox {{toggle.isChecked? "" : "disable"}}' bindtap='commitEva'>提交</view>
+  </view>
+</view>

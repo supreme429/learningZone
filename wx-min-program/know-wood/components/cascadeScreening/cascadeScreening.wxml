@@ -1,0 +1,45 @@
+<!--components/cascadeScreening/cascadeScreening.wxml-->
+<view class='container {{toggleTagClass}}'>
+  <view class='cade {{hasSaved? "hasSaved":""}}'>
+    <view class='cade-item {{currentFirstId == item.firstId? "active": ""}}'
+          data-firstindex = "{{index}}" 
+          data-firstid="{{item.firstId}}"
+          data-firstname="{{item.firstName}}"
+          bindtap='showModalTags' 
+          wx:for="{{firstLevelList}}"
+          wx:key="first-level-{{index}}">
+      <view class='word-icon'>
+        <text class='word'>{{item.firstName}}</text>
+        <image src='/images/icon-arrow-select.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='modal-allTags {{toggleTagClass}}' bindtap='close'>
+    <view class='tag-content' id='tag-content' style='height: {{secondTagHeight}}px' catchtap="cancelBubble">
+      <view class='tags' id='secondTag'>
+        <view class='tag-item {{currentSecondId == item.secondId? "active": ""}}'
+              id='s{{item.secondId}}s'
+              data-secondindex="{{index}}" 
+              data-secondid='{{item.secondId}}'
+              data-secondname='{{item.secondName}}' 
+              bindtap='chooseSecondTag' 
+              wx:for="{{secondLevelList}}"
+              wx:key="second-level-{{index}}">{{item.secondName}}</view>
+      </view>
+      <view class='thirdTags {{hasSaved?"show":toggleThirdTTag}}' id='thirdTag' style='top: {{thirdTagTop}}px'>
+        <view class='tag-item {{item.threeId == currentThreeId?"active":""}}' 
+              data-threeindex="{{index}}" 
+              data-threeid='{{item.threeId}}'
+              data-threename="{{item.threeName}}"
+              bindtap='chooseThirdTag'
+              wx:for="{{threeLevelList}}"
+              wx:key="three-level-{{index}}">{{item.threeName}}</view>
+        <view class='trigle' wx:if="{{threeLevelList && threeLevelList.length>0}}" style='left: {{trigleLeft}}px'></view>
+      </view>
+      <view class='foot'>
+        <button class='btn-save {{currentSecondId === ""? "cancel": ""}}' bindtap='save'>确定</button>
+        <button class='btn-more' bindtap='gotoMore'>更多</button>
+      </view>
+    </view>
+  </view>
+</view>

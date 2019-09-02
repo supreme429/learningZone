@@ -1,0 +1,32 @@
+<!--pages/location/location.wxml-->
+<view class='container'>
+  <view class='location-address'>
+    <view>
+      <image class='icon-positioning3' src='/images/icon-positioning3.png'></image>
+      <text wx:if="{{ !scopeUserLocation }}">无法获取地理位置</text>
+      <text wx:if="{{ scopeUserLocation }}">{{ activitiesAddress.province }} {{ activitiesAddress.city }} {{ activitiesAddress.district }}</text>
+    </view>
+    <view class='reset-location' >
+      <image class='icon-positioning4' src='/images/icon-positioning4.png'></image>
+      <block wx:if="{{ !scopeUserLocation }}">
+        <button class='btn-reset' open-type='openSetting'>重新定位</button>
+      </block>
+      <block wx:else>
+        <button class='btn-reset' bindtap="getAddress">重新定位</button>
+      </block>
+    </view>
+  </view>
+  <text class='h2' wx:if="{{ outServiceArea }}">该商品销售服务涵盖以下省市区，请选择以下可销售地区确定您的实际收货地区</text>
+  <text class='h2 warn' wx:if="{{ !outServiceArea }}">您目前定位地区暂不在该商品销售服务范围内，请在以下该商品可销售地区确定您的实际收货地区</text>
+  <view class="select-area">
+    <text class='label'>选择地区</text>
+    <text class='selecter' bindtap='toggleActivitiesAddress'>{{ textSelectAddress }}</text>
+  </view>
+  <form bindsubmit='confirmAddress' report-submit='true' >
+    <button form-type='submit' class='btn-confirm {{ isAllow ? "" : "disabled" }}'>确定</button>
+  </form>
+</view>
+<activitiesAddress wx:if="{{ showActivitiesAddress }}" bindtoggle="toggleActivitiesAddress" bindsave="saveActivitiesAddress"></activitiesAddress>
+
+<!-- 客服图标 -->
+  <customService></customService>

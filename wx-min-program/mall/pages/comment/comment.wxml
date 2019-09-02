@@ -1,0 +1,25 @@
+<!--pages/comment/comment.wxml-->
+<view class='comment-tab'>
+  <view wx:for='{{tabList}}' data-slash='{{item.slash}}' bind:tap='tabTap' class='tab-item {{item.activeClass}}'>
+    {{item.name}}
+    <text>{{item.count}}</text>
+  </view>
+</view>
+
+<view class='comment-list'>
+  <view wx:for='{{commentCurrentData}}' class='list-item' wx:key="{{index}}">
+    <view class='comment-title'>
+      <view class='level'>
+        <view style='width:{{item.comment_rank / 5 * 100}}%;'></view>
+      </view>
+      <view class='user-name'>{{item.user_name}}</view>
+      <view class='add-time'>{{item.add_time}}</view>
+    </view>
+
+    <view class='comment-content'>{{item.content}}</view>
+
+    <scroll-view scroll-x wx:if='{{item.pic_list}}' class='comment-img'>
+      <image bindtap='previewImage' data-index="{{index}}" wx:for='{{item.pic_list}}' wx:for-item="itemUrl" wx:for-index="indexUrl" mode="aspectFit" data-url="https:{{itemUrl.img}}" src='https:{{itemUrl.url}}'></image>
+    </scroll-view>
+  </view>
+</view>

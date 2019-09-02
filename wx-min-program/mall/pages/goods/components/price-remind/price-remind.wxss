@@ -1,0 +1,121 @@
+/*==================================================
+ * project: meilele mall min-program 
+ * author: leihao
+ * createTime: 2018/09/11
+ * file: goods-collect.wxss
+ * description: 商品收藏订阅
+ ==================================================*/
+
+.collect-mask{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.collect-container {
+  width: 80%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1000;
+  top: 20%;
+  left: 10%;
+  border-radius: 10rpx;
+}
+
+/* 文字提示 */
+.collect-container .notice-txt {
+  padding: 50rpx 50rpx 0 50rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+}
+
+/* step1：文字提示、获取手机号码按钮 */
+.collect-container .step1 {
+  padding-top: 50rpx;
+}
+.collect-container .step1 .remind-btn {
+  border-top: solid 1px #ddd;
+}
+.collect-container .step1 .remind-btn button {
+  width: 100%;
+  height: 100rpx;
+  font-size: 36rpx;
+  color: #00c200;
+  margin: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* step2：填写手机号码和图形验证码 */
+.collect-container .step2 {
+  padding:50rpx 50rpx 20rpx 50rpx;
+}
+.collect-container .step2 .ul {
+
+}
+.collect-container .step2 .ul .li {
+  margin-top: 30rpx;
+}
+.collect-container .step2 .ul .li:first-child {
+  margin-top: 0;
+}
+.collect-container .step2 .ul .box {
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #666;
+  border: solid 1px #ddd;
+  height: 50rpx;
+  padding: 15rpx 30rpx;
+}
+.collect-container .step2 .ul input {
+  width: 90%;
+  font-size: 28rpx;
+}
+.collect-container .step2 .ul .captcha {
+  display: flex;
+}
+.collect-container .step2 .ul image {
+  width: 180rpx;
+  height: 82rpx;
+}
+.collect-container .step2 .msg {
+  color: #c81c28;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+/* step3：结果提示 */
+.collect-container .step3 {
+  padding: 50rpx;
+}
+
+/* 收藏成功提示 */
+.collect-container .collect-success {
+  padding: 50rpx 50rpx 0;
+}
+
+.collect-container .collect-success .icon,
+.collect-container .step3 .icon {
+  display: flex;
+  justify-content: center;
+}
+.collect-container .collect-success .text,
+.collect-container .step3 .text {
+  font-size: 36rpx;
+  color: #000;
+  margin-top: 25rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.submit-btn{
+  text-align:center;
+  font-size:36rpx;
+  color:#00c200;
+  margin-top: 20rpx;
+}

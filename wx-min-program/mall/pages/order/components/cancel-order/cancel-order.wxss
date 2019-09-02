@@ -1,0 +1,110 @@
+/*==================================================
+ * project: meilele mall min-program 
+ * author: leihao
+ * createTime: 2018/09/11
+ * file: serice-counselor.wxss
+ * description: 预约服务顾问
+ ==================================================*/
+
+.cancelOrder-mask{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.cancelOrder-container {
+  width: 80%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1000;
+  top: 10%;
+  left: 10%;
+  border-radius: 10rpx;
+}
+
+/* step1:form */
+.cancelOrder-container .step1 {
+
+}
+.cancelOrder-container .step1 .h3 {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 1px #ddd;
+  padding: 20rpx 0;
+}
+.cancelOrder-container .step1 .content {
+  padding: 35rpx;
+}
+.cancelOrder-container .step1 label {
+  padding: 5px 10px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  font-size: 26rpx;
+}
+.cancelOrder-container .step1 label::after {
+  content: " ";
+  position: absolute;
+  left: 30rpx;
+  right: 0;
+  height: 1px;
+  bottom: 0;
+  border-bottom: 1rpx solid #ddd;
+  color: #ddd;
+}
+.cancelOrder-container .step1 label radio {
+  transform: scale(0.7);
+}
+.cancelOrder-container .step1 .custom-reason {
+  margin-top: 10rpx;
+  padding: 10px 15px;
+}
+.cancelOrder-container .step1 .custom-reason input {
+  border: solid 1px #ddd;
+  padding: 5rpx 10rpx;
+  font-size: 26rpx;
+  color: #666;
+  border-radius: 5rpx;
+}
+.cancelOrder-container .step1 .submit {
+  display: flex;
+}
+.cancelOrder-container .step1 .submit .btn {
+  flex: 1;
+  border-top: solid 1px #ddd;
+  font-size: 32rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.cancelOrder-container .step1 .submit .c {
+  color: #999;
+  border-right: solid 1px #ddd;
+}
+.cancelOrder-container .step1 .submit .s {
+  color: #c81c28;
+}
+
+
+/* step2:反馈提示 */
+.cancelOrder-container .step2 {
+  padding: 50rpx;
+}
+.cancelOrder-container .step2 .icon {
+  display: flex;
+  justify-content: center;
+}
+.cancelOrder-container .step2 .text {
+  font-size: 36rpx;
+  color: #000;
+  margin-top: 25rpx;
+  font-weight: bold;
+  text-align: center;
+}

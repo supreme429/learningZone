@@ -1,0 +1,16 @@
+/* pages/more/more.wxss */
+.noMore{
+  margin-top: 365rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.noMore .icon-function{
+  width: 231rpx;
+  height: 173rpx;
+}
+.noMore text{
+  margin-top: 35rpx;
+  font-size: 30rpx;
+  color: #999
+}

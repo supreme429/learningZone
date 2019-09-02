@@ -1,0 +1,44 @@
+<!--pages/edit-detail/edit-detail.wxml-->
+<view class='edit-container'>
+    <view class='title'>商品型号：
+        <text>{{goodsData.goods_sn}}</text>
+    </view>
+    <view class='edit-info'>
+        <view class='option'>
+            <label>待验货数量</label>
+            <span wx:if="{{check_point != 1}}" style="color:#999">{{goodsData.REQ_NUM}}</span>
+            <input wx:else placeholder='请输入已验货数量' value='{{goodsData.REQ_NUM}}' type='number' data-name="REQ_NUM" placeholder-style='text-align:right;color:#999;' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='option'>
+            <label>验货日期</label>
+            <span wx:if="{{status == 4}}" style="color:#999">{{goodsData.CHECK_DATE}}</span>
+            <picker wx:else mode="date" value="{{goodsData.CHECK_DATE}}" data-name="CHECK_DATE" bindchange='bindChangeValue'>
+                <view class='picker'>
+                    {{goodsData.CHECK_DATE}}
+                    <image class='icon' src='../../images/common/arrow.png'></image>
+                </view>
+            </picker>
+        </view>
+        <view class='option'>
+            <label>已验货数量</label>
+            <span wx:if="{{status == 4}}" style="color:#999">{{goodsData.CHECK_NUM}}</span>
+            <input wx:else placeholder='请输入已验货数量' value='{{goodsData.CHECK_NUM}}' type='number' data-name="CHECK_NUM" placeholder-style='text-align:right;color:#999;' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='option'>
+            <label>验货合格数量</label>
+            <span wx:if="{{status == 4}}" style="color:#999">{{goodsData.PASS_NUM}}</span>
+            <input wx:else placeholder='请输入验货合格数量' value="{{goodsData.PASS_NUM}}" type='number' data-name="PASS_NUM" placeholder-style='text-align:right;color:#999;' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='option'>
+            <label>验货不合格数量</label>
+            <span wx:if="{{status == 4}}" style="color:#999">{{goodsData.FAIL_NUM}}</span>
+            <input wx:else placeholder='请输入验货不合格数量' value="{{goodsData.FAIL_NUM}}" type='number' data-name="FAIL_NUM" placeholder-style='text-align:right;color:#999;' bindinput='bindChangeValue'></input>
+        </view>
+        <view class='remark'>
+            <label>备注：</label>
+            <span wx:if="{{status == 4}}" style="display:inline-block;color:#999;width: 650rpx;height:215rpx;">{{goodsData.NOTE}}</span>
+            <textarea wx:else data-name="NOTE" bindinput='bindChangeValue' value='{{goodsData.NOTE}}'></textarea>
+        </view>
+    </view>
+    <button class='submit-btn' bindtap='submitEditDetail' wx:if="{{status != 4}}">保存</button>
+</view>

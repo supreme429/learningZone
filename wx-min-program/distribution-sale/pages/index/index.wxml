@@ -1,0 +1,23 @@
+
+<view class="container">
+  <view class='head'>
+    <image src='/images/img-input-data.png'></image>
+  </view>
+  <navigator class='goTo' url='/pages/customerData/customerData'>提交客户资料</navigator>
+  <view class='incomeInfo'>
+    <view class='date'>本月</view>
+    <view class='incomeContent'>
+      <view class='incomeItem'>
+        <label>销售额</label>
+        <text class='colorRed'>￥0.00</text>
+      </view>
+      <view class='incomeItem'>
+        <label>预支收入</label>
+        <text>￥0.00</text>
+      </view>
+    </view>
+  </view>
+  <view class='customer'>
+    <view class='noCustomer'>你暂无成单客户~</view>
+  </view>
+</view>

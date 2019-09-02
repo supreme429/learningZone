@@ -1,0 +1,82 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class='container'>
+  <image class='img-title' src="/images/title-bargain-success.jpg" mode="widthFix"></image>
+  <view class='address-box' bindtap='goConsigneeAddress'>
+    <view class='content'>
+      <view class='icon'>
+        <image class='icon-positioning' src='/images/icon-positioning.png'></image>
+      </view>
+      <view class='info'>
+        <!-- <block wx:if="{{ addressInfo != null }}"> -->
+          <view class='contact'>
+            <text>{{ addressInfo.userName }}</text>
+            <text>{{ addressInfo.userPhone }}</text>
+          </view>
+          <text>{{ addressInfo.province }}{{ addressInfo.city }}{{ addressInfo.district }}{{ addressInfo.address }}</text>
+        <!-- </block> -->
+        <!-- <block wx:if="{{ addressInfo == null }}">
+          <view class='no-contact'>无法发货！请您及时完善收货信息</view>
+        </block> -->
+      </view>
+    </view>
+    <image class='border-address' mode="widthFix" src="/images/border-address.jpg"></image>
+  </view>
+  <view class='outside'>
+    <view class='goods-box'>
+      <image mode='aspectFill' class='g-img' src="{{ goodsPicUrl }}"></image>
+      <view class='info'>
+        <view class='g-title'>{{ goodsSkuName }}</view>
+        <view class='g-label'>{{ goodsSubtitle }}</view>
+        <view class='g-label'>
+          <text>{{ goodsSkuName }}</text>
+          <text class='g-number'>数量：1</text>
+        </view>
+        <view class='price-box'>
+          <view wx:for="{{ orderPriceField }}" class="{{ item.cls }}">{{ item.title }}<text class="rmb">￥</text>{{ item.price }}</view>
+          <!-- <text>一口价：￥{{ buyNowPrice }}</text>
+          <text class="min-price">最低价：￥{{ lowestPrice }}</text>
+          <text class='original-price'>起砍价：￥{{ originalPrice }}</text> -->
+        </view>
+      </view>
+    </view>
+    <!-- first 首个flow-time拥有类名 grey 未完成状态 -->
+    <view class='order-tracking'>
+      <text class='title'>订单追踪</text>
+      <view class='flow-time {{ index == 0 ? "frist" : "" }} {{ false ? "grey" : "" }}' wx:for="{{ orderStepInfo }}">
+        <text class="num">{{ index + 1 }}</text>
+        <text>{{ item.orderStep }}</text>
+        <text>{{ item.stepTime }}</text>
+        <block wx:if="{{ item.orderStep == '已发货' }}">
+          <text class='right btn' bindtap='goLogisticsLog'>查看物流</text>
+        </block>
+        <block wx:elif="{{ item.orderStep == '已签收' && status == 6 }}">
+          <text class='right btn-question' bindtap='showQuestion'>已收到货，有问题？</text>
+        </block>
+        <block wx:elif="{{ item.orderStep == '已签收' && status == 7 }}">
+          <text class='right btn' bindtap='callPhone'>申请售后</text>
+        </block>
+      </view>
+    </view>
+    <view class='order-info-box'>
+      <view class='item' wx:for="{{orderInfoField}}">
+        <text>{{item.title}}</text>
+        <text class='{{ item.cls }}'>{{item.value}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='more-box' wx:if="{{ status > 6 }}">
+    <moreBargainGoods></moreBargainGoods>    
+  </view>
+</view>
+<view class='fixed-footer' wx:if="{{ status < 7 }}">
+  <navigator open-type='redirect' url='/pages/index/index'>
+    <image src='/images/icon-knife.png'></image>
+    <text>去砍价</text>
+  </navigator>
+  <form bindsubmit='btnEvent' report-submit="true" class='form-box'>
+    <button form-type='submit'>{{ buttonText }}</button>
+  </form>
+</view>
+
+<!-- 客服图标 -->
+  <customService></customService>

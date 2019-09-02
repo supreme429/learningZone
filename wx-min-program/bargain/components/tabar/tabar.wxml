@@ -1,0 +1,7 @@
+<!--components/tabar/tabar.wxml-->
+<view class="tabar">
+  <view class="item {{ tabIndex == index ? 'active' : '' }}" wx:for="{{ tabs }}" data-index="{{ index }}" bindtap='goUrl'>
+    <image src='{{ tabIndex == index ? item.iconActive : item.icon }}'></image>
+    <text>{{ item.title }}</text>
+  </view>
+</view>

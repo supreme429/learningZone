@@ -1,0 +1,72 @@
+/* pages/comment/comment.wxss */
+.comment-tab {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.comment-tab .tab-item {
+  display: inline-block;
+  padding: 35rpx 4rpx 27rpx;
+  border-bottom: 4rpx solid transparent;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: #888;
+}
+.comment-tab .tab-item.active {
+  border-color: #353535;
+  /* font-family: PingFangSC-Medium; */
+  color: #353535;
+} 
+.comment-tab .tab-item text {
+  display: block;
+  margin-top: 10rpx;
+  line-height: 24rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.comment-list {
+  padding: 0 35rpx 35rpx;
+}
+.comment-list .list-item {
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #ddd;
+}
+.list-item .comment-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35rpx;
+  font-size: 26rpx;
+  color: #b2b2b2;
+}
+.list-item .user-name, .list-item .add-time {
+  height: 26rpx;
+  line-height: 32rpx;
+}
+.list-item .level {
+  width: 177rpx;
+  height: 27rpx;
+}
+.list-item .level view {
+  height: 27rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAbCAMAAADMMLbsAAAAclBMVEUAAAD/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUH/VUGG1F6vAAAAJXRSTlMA+PvhnDYH0XxSHBUN8diwkmlhJxgJ6+a+q6GKdHBHA8i6gVkk3kXdVQAAAMZJREFUOMuF0tcWgjAQRdGEDgqKNEGK7f7/LypFFxkm5LyyF2kj1g1+IMxdEB+MyLOBm1F1AGRkQMcS3xyDemLMynbRIcZUvavOWHJ1v+mDk41flu+kbkH2vAZY01C5SV3SW13lVadSZUmfNfQVIptDjSBl5RadBkFzJUX3QmwLLRUl/ACRg14EW6KqgFdkYw6Lcqg9WOUSlbAqxFy8nFWyqsVY1R6zZna5bgKrbrrJtyN1k1jDTr3/u54lek5FL085cki+fwCENTEQ/+x+lgAAAABJRU5ErkJggg==) repeat-x;
+  background-size: 37rpx 27rpx;
+}
+.list-item .comment-content {
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+.list-item .comment-img {
+  margin-top: 23rpx;
+  white-space: nowrap;
+  font-size: 0;
+}
+.list-item .comment-img image {
+  width: 206rpx;
+  height: 136rpx;
+  margin-right: 22rpx;
+  margin-top: 22rpx;
+}

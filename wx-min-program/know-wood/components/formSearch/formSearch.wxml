@@ -1,0 +1,14 @@
+<!--components/formSearch/formSearch.wxml-->
+<view class='container'>
+  <view class='input-box'>
+    <view class='icon-search'>
+      <image src='/images/icon-search-form.png'></image>
+    </view>
+    <input placeholder='{{searchWord}}' placeholder-style='color: #cccccc;' value="{{keyword}}" bindinput="setKeyWord">
+      <cover-view class='icon-delete'>
+        <cover-image class="img" bindtap='deleteKeyWord' src='/images/icon-delete.png' wx:if="{{keyword}}"></cover-image>
+      </cover-view>
+    </input>
+  </view>
+  <button class='btn-search {{keyword!=""?"":"noTab"}}' bindtap='search'>搜索</button>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/scanCodeReceiving/components/userInfo/userInfo.wxml-->
+<view class='userInfoBox' wx:if="{{app.globalData.wxPhone}}">
+  <view class='userInfoContent'>
+    <view class='head-icon'>
+      <image src='{{headUrl}}'></image>
+    </view>
+    <view class='userInfoDetail'>
+      <view class='nickName'>{{name}}</view>
+      <view class='memberType'>{{rank}}</view>
+    </view>
+  </view>
+</view>

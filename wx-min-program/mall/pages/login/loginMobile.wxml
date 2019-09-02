@@ -1,0 +1,31 @@
+<!--pages/login/loginMobile.wxml-->
+<view class='mll-logo'>
+  <image src='../../statics/login/login-mll-logo.png'></image>
+</view>
+
+<form bindsubmit="formSubmit">
+  <view class='form-input'>
+    <view class='input-item'>
+      <text class='input-tip'>手机号</text>
+      <input name='phonenumber' type='number' maxlength='11' placeholder='请输入手机号' bindinput='getPhone' placeholder-class='placeholder-class'></input>
+    </view>
+    <view class='input-item' wx:if="{{imgCodeStatus}}">
+      <text class='input-tip'>校验码</text>
+      <input name='imgcode' bindinput='getImgCode' type='text' maxlength='11' placeholder='请输入验证码' placeholder-class='placeholder-class'></input>
+      <image class='img-verify' bindtap='refreshCode' src='{{imgurl}}'></image>
+    </view>
+    <view class='input-item'>
+      <text class='input-tip'>验证码</text>
+      <input name='verifycode' type='number' maxlength='11' placeholder='请输入短信验证码' placeholder-class='placeholder-class'></input>
+      <view class='get-captcha {{ getCaptchaDisabled ? "disabled" : "" }}' bind:tap='getMsgCaptcha'>{{ getCaptchaText }}</view>
+    </view>
+  </view>
+
+  <view class='login-tip'>
+    若您输入的手机号未注册，将会进入注册流程，注册即视为您同意<navigator url='' hover-stay-time='{{hoverStayTime}}'>《美乐乐用户注册协议》</navigator>
+  </view>
+
+  <view class='submit-wrap'>
+    <button form-type='submit'>手机号登录</button>
+  </view>
+</form>

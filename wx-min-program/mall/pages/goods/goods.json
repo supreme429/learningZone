@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/goods/goods"
+  ],
+
+  "usingComponents": {
+    "expr-address": "./components/expr-address/expr-address",
+    "goods-property": "./components/goods-property/goods-property",
+    "service-counselor": "./components/service-counselor/service-counselor",
+    "price-remind": "./components/price-remind/price-remind"
+  },
+
+  "navigationBarTitleText": "商品详情",
+
+  "onReachBottomDistance": 200
+}

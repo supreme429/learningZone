@@ -1,0 +1,24 @@
+.area .floor-title {
+  padding-bottom: 32rpx;
+}
+.area .area-tab {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 24rpx;
+}
+.area-tab view {
+  width: 32rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  margin-right: 12rpx;
+  background-color: #dbdbdb;
+}
+.area-tab view:last-child {
+  margin-right: 0;
+}
+.area-tab view.active {
+  height: 7rpx;
+  border-radius: 4rpx;
+  background-color: #c81c28;
+}

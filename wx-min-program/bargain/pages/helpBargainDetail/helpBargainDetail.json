@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "我来帮砍",
+  "disableScroll": false,
+  "usingComponents": {
+    "swiperByNum": "../../components/swiperByNum/swiperByNum",
+    "countTime": "../../components/countTime/countTime",
+    "moreBargainGoods": "../../components/moreBargainGoods/moreBargainGoods",
+    "friendsBargain": "../../components/friendsBargain/friendsBargain",
+    "loginGetUser": "../../components/loginGetUser/loginGetUser",
+    "detailInfo": "../../components/detailInfo/detailInfo",
+    "dialogMoveBargain": "../../components/dialogMoveBargain/dialogMoveBargain",
+    "gotoIndex": "../../components/gotoIndex/gotoIndex",
+    "helpBargainText": "../../components/helpBargainText/helpBargainText",
+    "swiperNotice": "../../components/swiperNotice/swiperNotice"
+  }
+}

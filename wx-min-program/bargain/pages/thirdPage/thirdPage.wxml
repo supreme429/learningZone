@@ -1,0 +1,4 @@
+<!--pages/thirdPage/thirdPage.wxml-->
+<web-view src="{{url}}"></web-view>
+<!-- 客服图标 -->
+  <customService></customService>

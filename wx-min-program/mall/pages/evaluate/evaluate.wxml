@@ -1,0 +1,57 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view class='flex-first tab'>
+  <view wx:for="{{tabArr}}" data-index="{{index}}" bindtap='switchTab' wx:key="{{index}}" class="{{item.active?'active':''}}">{{item.val}}</view>
+</view>
+<!-- <view class='blank'></view> -->
+<view class='order' wx:for="{{tabArr[currentStatus].arr}}" wx:key="{{index}}">
+  <view class='goods-list'>
+    <view class='flex-between order-info'>
+      <view>订单编号：{{item.order_sn}}</view>
+      <view>购买时间：{{item.buy_time}}</view>
+    </view>
+    <view class='flex-between goods-info'>
+      <view class='name'>
+        <text>[</text>{{item.goods_brand}}<text>]</text>
+       {{item.goods_style}} {{item.goods_name}}
+      </view>
+      <image bindtap='previewGoods' data-url="{{'https:'+item.original_goods_img}}" src="{{'https:'+item.goods_img}}"></image>
+    </view>
+  </view>
+  <!-- 未评价start -->
+  <view class='evaluate-box' wx:if="{{currentStatus == 0}}">
+    <view class='star'>
+      <image wx:for="{{item.star_arr}}" wx:for-item="itemStar" data-index="{{index}}" data-i="{{indexStar}}" wx:for-index="indexStar" wx:key="{{indexStar}}" bindtap='setGrade' src="../../statics/evaluate/{{itemStar?'start.png':'unchecked-start.png'}}"></image>
+    </view>
+    <textarea data-index="{{index}}" value='{{item.content}}' bindinput='getEvaluteText' maxlength="500" auto-height="true" placeholder='请在此填写评价，5-500字'></textarea>
+    <view class='flex-first select-img-box'>
+      <view class='upload-img-box' wx:for="{{item.imgUrl_list}}" wx:for-item="itemImg" wx:for-index="indexImg" wx:key="{{indexImg}}">
+        <image class='upload-img' src='https:{{itemImg}}'></image>
+        <view data-index="{{index}}" data-i="{{indexImg}}" bindtap='deleteImg'>×</view>
+      </view>
+      <view class='flex-first img-btn' data-index="{{index}}" bindtap='upLoadImg'>
+        <image src='../../statics/evaluate/select-img.png'></image>
+        <text>{{item.imgUrl_list.length}}/5</text>
+      </view>
+    </view>
+    <button class='submit-btn' data-index="{{index}}" bindtap='issueEvaluate'>发布</button>
+  </view>
+  <!-- 未评价end -->
+  <!-- 已评价start -->
+  <view class='unevaluate-box' wx:else>
+    <view class='star'>
+      <image wx:for="{{item.star_arr}}" wx:for-item="itemStar" wx:for-index="indexStar" wx:key="{{indexStar}}" src="../../statics/evaluate/{{itemStar?'start.png':'unchecked-start.png'}}"></image>
+    </view>
+    <view class='content'>
+     {{item.content}}
+    </view>
+    <view class='flex-first evaluate-img' wx:if="{{item.img_list.length>0}}">
+      <image bindtap='previewImage' wx:for="{{item.img_list}}" wx:for-item="imgItem" data-index="{{index}}" wx:for-index="imgIndex"  data-url="https:{{imgItem}}" data-current="{{imgIndex}}" src='https:{{imgItem}}'></image>
+    </view>
+  </view>
+
+  <!-- 已评价end -->
+</view>
+<button class='refresh' wx:if="{{!login_status}}" bindtap='refreshData'>
+  点击刷新
+</button>
+

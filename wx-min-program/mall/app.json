@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/comment/comment",
+    "pages/index/index",
+    "pages/order/list/list",
+    "pages/order/detail/detail",
+    "pages/address/list/list",
+    "pages/address/addEdit/addEdit",
+    "pages/mine/mine",
+    "pages/favorite/favorite",
+    
+    "pages/goods/goods",
+    "pages/login/loginMobile",
+    "pages/login/login",
+    "pages/category/category",
+    "pages/search/search",
+    "pages/search-filter/search-filter",
+    "pages/logs/logs",
+    "pages/use-coupon/use-coupon",
+    "pages/select-shops/select-shops",
+    "pages/confirm-order/confirm-order",
+    "pages/evaluate/evaluate"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "美乐乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#c81c28",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "statics/tabBar/index.png",
+        "selectedIconPath": "statics/tabBar/index_active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "statics/tabBar/category.png",
+        "selectedIconPath": "statics/tabBar/category_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "statics/tabBar/mine.png",
+        "selectedIconPath": "statics/tabBar/mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

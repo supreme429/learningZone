@@ -1,0 +1,118 @@
+/* pages/goodsDetail/goodsDetail.wxss */
+page{
+  background: #f5f5f5;
+}
+
+.container{
+  position: relative
+}
+/* 商品详情 start */
+.goods-info{
+  position: relative;
+  box-sizing: border-box;
+  padding: 30rpx 24rpx;
+  background: #fff;
+}
+
+.goods-info text{
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.5;
+}
+
+.goods-info .goods-title{
+  font-size: 30rpx;
+  color: #333;
+}
+
+.goods-info button.btn-share,
+.goods-info button.btn-share:after{
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.goods-info button.btn-share{
+  position: absolute;
+  right: 24rpx;
+  bottom: 0;
+}
+
+.goods-info button.btn-share image{
+  width: 48rpx;
+  height: 36rpx;
+}
+/* 商品详情 end */
+.h2{
+  font-size: 28rpx;
+  color: #333;
+}
+/* 商品规格 start  */
+.goods-specification{
+  padding: 20rpx 24rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.goods-specification .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 30rpx 0;
+}
+.goods-specification .info {
+  display: flex;
+  flex-direction: column;
+}
+.goods-specification .info text{
+  display: inline-block;
+  color: #999;
+  font-size: 22rpx;
+  margin-right: 30rpx;
+}
+.goods-specification .info .title{
+  width: 500rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.goods-specification .info .price{
+  color: #e62318;
+  font-size: 26rpx;
+}
+.goods-specification .info .original-price{
+  color: #999;
+  font-size: 22rpx;
+  text-decoration: line-through;
+}
+.goods-specification button{
+  background: red;
+  color: #fff;
+  height: 58rpx;
+  font-size: 24rpx;
+  margin: 0;
+}
+.goods-specification .footer{
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.goods-specification .footer image{
+  width: 28rpx;
+  height: 15rpx;
+}
+.goods-specification .flip{
+  transform: rotate(180deg)
+}
+/* 商品规格 end  */
+.tabs{
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+
+.tabs .tab-title button{
+  display: inline;
+  background: none;
+}

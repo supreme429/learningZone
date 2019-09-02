@@ -1,0 +1,13 @@
+<!-- 精选风格 -->
+<template name='style'>
+  <view class='floor style'>
+    <view class='floor-title'>
+      <text>{{floor.title}}</text>
+    </view>
+    <view class='style-img'>
+      <navigator wx:for='{{floor.list}}' wx:key="{{index}}" url='{{item.url}}' hover-stay-time='{{hoverStayTime}}'>
+        <image mode="aspectFit" lazy-load="true" src='https:{{item.src}}'></image>
+      </navigator>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,175 @@
+<!--pages/bargainList/bargainList.wxml-->
+<import src="/components/templates.wxml" />
+<view class='container'>
+  <scroll-view scroll-y="true" bindscrolltolower="getMyBargainRecord" style='height: {{systemInfo.windowHeight}}px'>
+    <view class='goodsList'>
+      <view class='goodsItem wrapGoodsDetail {{item.status == 8 || item.status == 9? "positonAbs": ""}}'
+            wx:for="{{goodsList}}"
+            wx:key="*{{this}}"
+            data-id="{{item.id}}" 
+            style='{{item.status == 8 || item.status == 9? "height:"+(goodsItemHeight[item.id]+"px"): ""}}'>
+        <view class='item-content {{item.status == 8 || item.status == 9? "positonItemContent": ""}}'
+              data-id='{{item.id}}' 
+              bindtouchstart="touchS" 
+              bindtouchmove="{{item.status == 8 || item.status == 9? 'touchM' : ''}}" 
+              bindtouchend="{{item.status == 8 || item.status == 9? 'touchE' : ''}}" 
+              style="transform:translateX({{-translateX[item.id]}}rpx)">
+          <view class='goods-img'>
+            <image src='{{item.goodsPicUrl}}' mode="aspectFill"></image>
+            <view class='bargainResultModal' wx:if="{{item.status==8||item.status==9}}">{{item.status==8?'砍价失败':'已取消'}}</view>
+          </view>
+          <view class='goods-detail'>
+            <!-- 商品名称与副标题start -->
+            <view class='goodsIndro'>
+              <view class='goodsName'>{{item.goodsName}}</view>
+              <view class='goodsRecommend'>
+                <text class='recoment'>{{item.goodsSubtitle}}</text>
+                <block wx:if="{{item.status!=8}}">
+                  <text class='bargainState' wx:if="{{item.status < 4}}">{{ item.currentPrice }}元购买，待付款</text>
+                  <text class='bargainState' wx:else>{{statusLang[item.status]}}</text>
+                </block>
+              </view>
+            </view>
+            <!-- 商品名称与副标题end -->
+
+            <!-- 砍价倒计时start -->
+            <view class='countTimeBox' wx:if="{{item.status == 4 && item.countTimeStamp}}">
+              <countTime bindcallback="changeBargainState" 
+                        index="{{index}}" 
+                        timeStamp="{{item.countTimeStamp}}" 
+                        stopCountTime="{{stopCountTime}}"
+                        countType='s' 
+                        layoutType="hasBox" ></countTime>
+              <text>后结束</text>
+            </view>
+            <!-- 砍价倒计时end -->
+
+            <view class='bargainDetail'>
+
+              <!-- 只有砍价中的情况下会显示start -->
+              <view class='bargainPrice' wx:if="{{item.status == 4}}">
+                <text>离砍到最低价￥{{item.lowestPrice}}</text>
+                <text class='colorRed'>还差{{item.distanceLowest}}元</text>
+              </view>
+              <view class='bargainHandel' wx:if="{{item.status == 4}}">
+                <form class='goBargain goBuy' 
+                      data-brUuid='{{item.brUuid}}'
+                      data-cutAmount='{{item.cutAmount}}'
+                      data-buyNowPrice='{{item.buyNowPrice}}'
+                      data-startBargainPrice='{{item.startBargainPrice}}'
+                      data-lowestPrice='{{item.lowestPrice}}'
+                      data-buyResultPrice='{{item.buyResultPrice}}'
+                      data-index='{{index}}' 
+                      data-url="/pages/bargainDetail/bargainDetail?goodsSn={{item.goodsSn}}&goodsSkuSn={{item.goodsSkuSn}}&scene=3&brUuid={{item.brUuid}}"
+                      bindsubmit='tabGetNewestBuyPrice' 
+                      report-submit>
+                  <button plain="true" form-type='submit'>
+                    <view class='resultPrice'>￥{{item.buyResultPrice}}购买</view>
+                    <view class='oldPrice'>原价￥{{item.originalPrice}}</view>
+                  </button>
+                </form>
+                <!-- <navigator url='/pages/bargainDetail/bargainDetail?goodsSn={{item.goodsSn}}&goodsSkuSn={{item.goodsSkuSn}}&scene=3' class='goBargain goBuy'>
+                  <text class='resultPrice'>￥{{item.buyResultPrice}}购买</text>
+                  <text class='oldPrice'>原价￥{{item.originalPrice}}</text>
+                </navigator> -->
+                <form class='goBargain' 
+                      data-url="/pages/bargainDetail/bargainDetail?goodsSn={{item.goodsSn}}&goodsSkuSn={{item.goodsSkuSn}}&brUuid={{item.brUuid}}"
+                      bindsubmit='gotoNavigate' 
+                      report-submit>
+                  <button plain="true" form-type='submit'>继续砍价</button>
+                </form>
+              </view>
+              <!-- 只有砍价中的情况下会显示end -->
+
+              <view class='bargainHandel flexEnd {{item.status<4||item.status==7||item.status==5||item.status==9?"flexStart":""}}' 
+                    wx:if="{{item.status != 4 || item.status == 6 }}">
+                <view class='bargainPrice'>
+                  <view wx:if="{{item.status != 6}}">
+                    <text class='lowerPrice colorRed'>￥{{item.lowestPrice}}</text>
+                    <text class='oldPrice'>原价￥{{item.originalPrice}}元</text>
+                  </view>
+
+                  <!-- 支付倒计时start -->
+                  <view class='payTimeCount' wx:if="{{item.status < 4}}">
+                    <text>支付剩余时间</text>
+                    <countTime bindcallback="changeBargainState" 
+                              wx:if="{{item.countTimeStamp}}" 
+                              index="{{index}}" 
+                              timeStamp="{{item.countTimeStamp}}" 
+                              stopCountTime="{{stopCountTime}}"
+                              layoutType="noBox"></countTime>
+                  </view>
+                  <!-- 支付倒计时end -->
+
+                  <!-- 砍价失败红字提示start -->
+                  <view class='colorRed bargainFail' wx:if="{{item.status == 8}}">{{statusLang[item.status]}}</view>
+                  <!-- 砍价失败红字提示end -->
+                </view>
+
+                <!-- 支付按钮start -->
+                <form class='goBargain wd190' 
+                      wx:if="{{item.status == 1||item.status == 2||item.status == 3}}"
+                      data-url= "/pages/bargainDetail/bargainDetail?goodsSn={{item.goodsSn}}&goodsSkuSn={{item.goodsSkuSn}}&brUuid={{item.brUuid}}"
+                      bindsubmit='gotoNavigate' 
+                      report-submit>
+                  <button plain="true" form-type='submit'>去支付</button>
+                </form>
+                <!-- 支付按钮end -->
+
+                <!-- 重砍一个或查看订单按钮start status：5、7显示查看订单按钮，8、9显示重砍一个按钮-->
+                <form class='goBargain wd190' 
+                      wx:if="{{item.status == 5||item.status == 7||item.status==8||item.status == 9}}"
+                      data-goodsSn='{{item.goodsSn}}'
+                      data-goodsSkuSn='{{item.goodsSkuSn}}'
+                      data-ingBrUuid='{{item.ingBrUuid}}'
+                      data-bargainAgain='{{item.bargainAgain}}'
+                      data-status='{{item.status}}'
+                      data-url= "{{item.status == 8||item.status == 9?'/pages/goodsDetail/goodsDetail?goodsSn='+item.goodsSn:'/pages/orderDetail/orderDetail?brUuid='+item.brUuid}}"
+                      bindsubmit='gotoNavigate' 
+                      report-submit>
+                  <button plain="true" form-type='submit'>{{item.status == 8||item.status == 9?"重砍一个":"查看订单"}}</button>
+                </form>
+              </view>
+
+              <!-- 已支付已发货的情况start -->
+              <view class='bargainHandel flexColum' wx:if="{{item.status == 6}}">
+                <view class='bargainPrice'>
+                  <view>
+                    <text class='lowerPrice colorRed'>￥{{item.lowestPrice}}</text>
+                    <text class='oldPrice'>原价￥{{item.originalPrice}}元</text>
+                  </view>
+                </view>
+                <view class='hasReceiveHandle'>
+                  <navigator url='/pages/logisticsLog/logisticsLog?orderNo={{item.bargainOrderNo}}' class='goBargain goBuy'>查看物流</navigator>
+                  <navigator url='/pages/orderDetail/orderDetail?brUuid={{item.brUuid}}' class='goBargain'>查看订单</navigator>
+                </view>
+              </view>
+              <!-- 已支付已发货的情况end -->
+
+            </view>
+          </view>
+        </view>
+
+        <!-- 左滑删除按钮start 失败或取消情况下才会出现-->
+        <view wx:if="{{item.status == 8||item.status == 9}}" 
+              data-index='{{index}}' 
+              bindtap='delBargainRecord' 
+              style='transform:translateX({{translateDelX[item.id]}}rpx)'
+              class='btn-del'>删除</view>
+        <!-- 左滑删除按钮end -->
+
+      </view>
+    </view>
+  </scroll-view>
+</view>
+  <tabar tabIndex="{{1}}"></tabar>
+
+  <!-- 首次分享弹框 -->
+  <modalBargainMoreOne bindtoggleModal="toggleModal" wx:if='{{isShowModalBargainMoreOne}}'></modalBargainMoreOne>
+
+  <!-- 客服图标 -->
+  <customService></customService>
+ <!-- 分享自砍或自砍两刀 -->
+  <block wx:if="{{ dialogBargainRes.isShow }}">
+    <dialogBargainRes scene="{{ dialogBargainRes.scene }}" price="{{ dialogBargainRes.price }}" isShow="{{ dialogBargainRes.isShow }}"></dialogBargainRes>
+  </block>

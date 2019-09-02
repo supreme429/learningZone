@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "提交客户资料",
+  "usingComponents": {
+    "address": "../../components/address/address"
+  }
+}

@@ -1,0 +1,24 @@
+<!--components/dialogClassify/dialogClassify.wxml-->
+<!-- 分类弹框组件 -->
+<view class='container {{dialogStatus}}' bindtap='close'>
+  <view class='content' catchtap='cancelBuble'>
+    <view class='title'>分类</view>
+    <view class='wrap-firstClassify wrap-classify' wx:if="{{curStep>1}}">
+      <view class='title'>一级分类</view>
+      <view data-step='2' bindtap='selectTitleClassify' class='classifyName'>{{curFirstClassifyName}}</view>
+    </view>
+    <view class='wrap-secondClassify wrap-classify' wx:if="{{curStep>2}}">
+      <view class='title'>二级分类</view>
+      <view data-step='3' bindtap='selectTitleClassify' class='classifyName'>{{curSecClassifyName}}</view>
+    </view>
+    <view class='title secTitle' wx:if="{{curStep>1&&classifyList.length>0}}">{{curStep == 2? "二级分类": "三级分类"}}</view>
+    <view class='classifyList'>
+      <view class='classifyName {{curClassifyId===item.classifyId?"active":""}}' data-item="{{item}}" bindtap='selectClassify' wx:for="{{classifyList}}">{{item.classifyName}}</view>
+    </view>
+    <view class='foot'>
+      <view class='btn btn-close' bindtap='close' wx:if="{{curStep<2}}">取消</view>
+      <view class='btn btn-close' bindtap='returnUpStep' wx:else>返回上一级</view>
+      <view class='btn confirm {{curClassifyId===""?"btn-close": "btn-save"}}' bindtap='save'>确定</view>
+    </view>
+  </view>
+</view>

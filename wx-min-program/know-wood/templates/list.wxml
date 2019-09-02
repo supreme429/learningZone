@@ -1,0 +1,42 @@
+<!-- 木材分类图文模板 -->
+<template name="wood-category-list">
+  <view class='wood-category-list'>
+    <image class="img" mode='widthFix' src="{{wikiPicUrl}}"></image>
+    <view class='content'>
+      <view class='title'> 
+        <text class='wikiTitle'>{{wikiTitle}}</text>
+        <!-- <text class='anotherName'>{{anotherName}}</text> -->
+      </view>
+      <view class='anotherName'>别称：<text>{{anotherName}}</text></view>
+      <view class='originPlace'>产地：<text>{{originPlace}}</text></view>
+      <view>市场价：<text>{{price}}</text></view>
+      <view>小编推荐：<text>{{editorEvaluate}}</text></view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 木材分类图文模板 富文本 -->
+<template name="wood-category-list-rich">
+  <view class='wood-category-list'>
+    <image class="img" mode='widthFix' src="{{wikiPicUrl}}"></image>
+    <view class='content'>
+      <view class='title'><rich-text nodes="{{wikiTitle}}"></rich-text></view>
+      <view><rich-text nodes="{{anotherName}}"></rich-text></view>
+      <view class='originPlace'>产地：<text>{{originPlace}}</text></view>
+      <view>市场价：<text>{{price}}</text></view>
+      <view><rich-text nodes="{{editorEvaluate}}"></rich-text></view>
+    </view>
+  </view>
+</template>
+
+
+<template name="article-category-list">
+  <view class='class-item'>
+    <image class='articlePicUrl' src='{{articlePicUrl}}'></image>
+    <view class='class-content'>
+      <text>{{articleTitle}}</text>
+      <view class='line'></view>
+    </view>
+  </view>
+</template>

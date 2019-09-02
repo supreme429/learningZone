@@ -1,0 +1,17 @@
+<!--components/modalTips/modalTips.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='title'>
+      温馨提示
+      <image src='/images/icon-close.png' bindtap='close'></image>
+    </view>
+    <view class='infoBox'>
+      <view class='info'>您的资料已经提交成功，</view>
+      <view class='info'>无需重新填写，感谢您的参与</view>
+    </view>
+    <view class='btnBox'>
+      <button bindtap='close'>我知道了</button>
+    </view>
+  </view>
+</view>
+

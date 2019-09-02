@@ -1,0 +1,23 @@
+.floor-content .floor-img {
+  display: block;
+  position: relative;
+  width: 680rpx;
+  height: 446rpx;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+}
+.floor-content .floor-img image {
+  display: block;
+  width: 680rpx;
+  height: 446rpx;
+}
+.floor-img .floor-img-icon {
+  position: absolute;
+  left: 40rpx;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-width: 22rpx;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}

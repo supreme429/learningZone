@@ -1,0 +1,25 @@
+
+<view class='filter'>
+  <view class='content'>
+    <scroll-view scroll-y>
+      <view class='padding'>
+        <block wx:for='{{data_filter}}' wx:for-item='cat' wx:for-index='catIndex'>
+          <view class='dl {{cat.is_expand ? "expand" : ""}}'>
+            <view class='dt' bindtap='bindToggleMoreOptions' data-cat_order="{{catIndex}}">
+              <text>{{cat.name}}</text>
+              <view class="selected">{{cat.selected_str}}</view>
+              <view><icon wx:if='{{cat.list.length > 6}}'></icon></view>
+            </view>
+            <view class='dd'>
+              <text wx:for='{{cat.list}}' wx:for-item='opt' wx:for-index='optIndex' data-url='{{opt.url}}' data-name="{{opt.replaceName}}" data-cat_order="{{catIndex}}" data-cat_name='{{cat.name}}' data-opt_order='{{optIndex}}' class='{{opt.is_hidden ? "hidden" : "" }} {{opt.is_selected ? "selected": ""}}' bindtap='bindOptionSelected'>{{opt.replaceName}}</text>
+            </view>
+          </view>
+          </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='toolbar'>
+    <view class='reset' bindtap='bindReset'>重置</view>
+    <view class='sure' bindtap='bindSure'>确定</view>
+  </view>
+</view>

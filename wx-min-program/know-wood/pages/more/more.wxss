@@ -1,0 +1,42 @@
+/* pages/more/more.wxss */
+.container{
+  padding: 0 35rpx;
+}
+.container  .firstList:first-child{
+  margin-top: 40rpx;
+}
+.container  .firstList+.firstList{
+  margin-top: 60rpx;
+}
+.container .firstName{
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+  align-items: center
+}
+.container .firstName image{
+  width: 18rpx;
+  height: 14rpx;
+  transform: rotate(-90deg);
+  margin-right: 10rpx;
+}
+.secondName{
+  font-size: 26rpx;
+  color: #666;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 200rpx;
+  text-align: center;
+  background-color: #e8e8e8;
+  border-radius: 8rpx;
+  margin-right: 40rpx;
+  margin-top: 40rpx;
+}
+.container .secondList .secondName:nth-child(3n){
+  margin-right: 0;
+}
+.container .secondList{
+  display: flex;
+  flex-wrap: wrap;
+  
+}

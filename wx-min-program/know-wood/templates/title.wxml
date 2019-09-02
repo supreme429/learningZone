@@ -1,0 +1,8 @@
+<template name="hotItemTitle">
+  <view class='hot-item-title'>
+    <view class='title'>
+      <view><image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{ title }}</view>
+      <view class='more' bindtap="goMore">更多<image class='icon-more-arrow' src='/images/icon-more-arrow.png'></image></view>
+    </view>
+  </view>
+</template>

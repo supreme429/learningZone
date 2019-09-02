@@ -1,0 +1,122 @@
+/* pages/certificationProcess/certificationProcess.wxss */
+.container{
+  padding: 30rpx 44rpx;
+}
+.container .process{
+  font-size: 25rpx;
+}
+.container .process .processItem .title{
+  color: #555;
+  font-weight: bold
+}
+.container .process .processItem .processItemInfo{
+  color: #666;
+  padding-left: 20rpx;
+}
+.container .process .processItem .processItemInfo .infoItem{
+  margin-top: 15rpx;
+}
+.processItem + .processItem {
+  margin-top: 30rpx;
+}
+.infoItem .link{
+  border: 1px solid #c3c3c3;
+  padding: 5rpx 10rpx;
+  border-radius: 4rpx;
+}
+
+.infoBox{
+  font-size: 25rpx;
+}
+.infoBox label{
+  color: #9c9c9c;
+  display: flex;
+  align-items: center
+}
+.infoBox label .mustPoint{
+  color: #ff5353;
+  margin-top: 6rpx;
+  margin-left: 20rpx;
+}
+.infoBox{
+  margin-top: 25rpx;
+  position: relative
+}
+.infoBox input{
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box;
+  border: 1px solid #a2a2a2;
+  border-radius: 6rpx;
+  position: relative;
+  padding: 0 30rpx;
+  margin-top: 5rpx;
+}
+.input-placeholder{
+  color: #dfdfdf
+}
+.capCode{
+  position: absolute;
+  bottom: 2rpx;
+  right: 90rpx;
+  font-size: 0;
+}
+.capCode image{
+  width: 160rpx;
+  height: 86rpx;
+}
+.refresh{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+  width: 88rpx;
+  height: 88rpx;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99
+}
+.refresh image{
+  display: block;
+  width: 37rpx;
+  height: 35rpx;
+}
+.infoBox .code{
+  width: 140rpx;
+  padding-right: 30rpx;
+  position: absolute;
+  right: 0rpx;
+  color: #a5a5a5;
+  bottom: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  z-index: 99;
+  text-align: center
+}
+.infoBox textarea{
+  height: 160rpx;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #a2a2a2;
+  border-radius: 6rpx;
+  padding: 20rpx;
+  margin-top: 5rpx;
+}
+.errorTips{
+  color: #e62318;
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 15rpx;
+}
+.btn-submit{
+  width: 100%;
+  height: 86rpx;
+  text-align: center;
+  line-height: 86rpx;
+  color: #fff;
+  background-color: #e62318;
+  border-radius: 8rpx;
+  margin-top: 80rpx;
+  font-size: 30rpx;
+}

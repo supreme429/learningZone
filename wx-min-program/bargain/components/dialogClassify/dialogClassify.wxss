@@ -1,0 +1,110 @@
+/* components/dialogClassify/dialogClassify.wxss */
+.container{
+  position: fixed;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.outer{
+  width: 100%
+}
+.inner{
+  width: 0
+}
+.content{
+  height: 100%;
+  width: 590rpx;
+  background-color: #fff;
+  float: right;
+  display: flex;
+  flex-direction: column
+}
+.content .title{
+  height: 70rpx;
+  line-break: 70rpx;
+  font-size: 26rpx;
+  color: #333;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+.content .wrap-classify{
+  padding: 40rpx 0 30rpx 20rpx;
+  border-bottom: 1px solid #e8e8e8
+}
+.content .wrap-classify .title{
+  margin-bottom: 30rpx;
+  padding-left: 0;
+  padding-top: 0;
+  height: auto;
+  background-color: #fff
+}
+.content .secTitle{
+  background-color: #fff
+}
+.content .wrap-classify .classifyName{
+  background-color: #ffe1e3;
+  color: #e62318;
+}
+.classifyName{
+  height: 70rpx;
+  width: 170rpx;
+  padding: 0 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+.classifyName.active{
+  background-color: #ffe1e3;
+  color: #e62318;
+}
+.classifyList{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20rpx;
+  flex: 1;
+  overflow: auto;
+  align-content: flex-start;
+  margin-top: 20rpx;
+}
+.classifyList .classifyName{
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.content .foot{
+  display: flex;
+  justify-content: flex-end;
+  padding: 40rpx 20rpx 30rpx 0;
+  border-top: 1px solid #e8e8e8;
+}
+.content .foot .btn{
+  width: 222rpx;
+  height: 88rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 88rpx;
+}
+.content .foot .btn.btn-close{
+  background-color: #f2f2f2;
+  border-radius: 44rpx 0 0 44rpx;
+  color: #333
+}
+.content .foot .btn.btn-save{
+  background-color: #e62318;
+  border-radius: 0 44rpx 44rpx 0;
+  color: #fff
+}
+.content .foot .confirm.btn.btn-close{
+  border-radius: 0 44rpx 44rpx 0;
+  background: #ccc
+}

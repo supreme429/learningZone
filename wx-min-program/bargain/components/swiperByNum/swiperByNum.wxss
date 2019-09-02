@@ -1,0 +1,105 @@
+/* components/swiperByNum/swiperByNum.wxss */
+/* 轮播图 start */
+.swiper-box,
+.swiper-box swiper,
+.swiper-box image{
+  width: 100%;
+  height: 600rpx;
+}
+.swiper-box{
+  position: relative;
+}
+.swiper-page,
+.swiper-rule{
+  position: absolute;
+  bottom: 20rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 18rpx;
+  font-size: 24rpx;
+}
+.swiper-page{
+  left: 24rpx;
+}
+.swiper-rule{
+  right: 24rpx;
+}
+.indicatorDots{
+  position: absolute;
+  bottom: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.indicatorDots view{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin-right: 10rpx;
+  border: 1rpx solid #000;
+  opacity: 0.3;
+}
+.indicatorDots view.active{
+  background: #fff;
+  opacity: 0.8;
+  animation: animateIndicatorDots 0.5s linear 0s forwards
+}
+@keyframes animateIndicatorDots{
+  0%{
+    width: 10rpx;
+  }
+  100%{
+    width: 20rpx
+  }
+}
+/* 轮播图 end */
+
+/* 活动规则弹窗 start */
+.dialog-rule{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.dialog-rule .dialog-body{
+  width: 580rpx;
+  height: 645rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.dialog-body .title{
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  display: block;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.dialog-body .content{
+  font-size: 28rpx;
+  color: #333;
+  padding: 0 30rpx;
+  height: 510rpx;
+  box-sizing: border-box;
+}
+
+.dialog-rule .btn-close{
+  background: none;
+  border: 0;
+  margin-top: 100rpx;
+  width: 78rpx;
+  height: 78rpx;
+}
+/* 活动规则弹窗 end */

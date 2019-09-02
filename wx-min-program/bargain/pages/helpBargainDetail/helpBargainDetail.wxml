@@ -1,0 +1,74 @@
+<!--pages/bargainDetail/bargainDetail.wxml-->
+<!-- hidden='{{ !goodsInfo.goodsName }}' -->
+<view class='container' >
+  <scroll-view scroll-y='true' style='height: {{ sHeight }}' scroll-top="{{scrollTop}}" bindscroll="noCounter" bindscrolltolower="getHelpBargainRecord">
+    <view class='banner'>
+      <swiperByNum bindtoggle="toggleDialogRule" richText="{{goodsInfo.goodsRule}}" imgs="{{goodsInfo.goodsPicUrls}}">
+        <view slot="goIndex"><gotoIndex></gotoIndex></view>
+      </swiperByNum>
+    </view>
+    <swiperNotice goodsSn="{{ goodsSn }}"></swiperNotice>
+    <view class='content'>
+      <!-- <view class='countTimeBox' wx:if="{{ bargainInfo.countTimeNum > 0 && bargainInfo.status == 4 }}">
+        <text>还剩</text>       
+        <countTime bindcallback='goToBargainList' isSetData="{{isSetData}}" timeStamp="{{bargainInfo.countTimeNum}}" countType='ms' layoutType="hasBox" ></countTime>
+        <text>结束</text>
+      </view> -->
+      <!-- <view wx:if="bargainInfo.status != 4" class='countTimeBox'>砍价已结束</view> -->
+
+      <view class='goodsInfo'>
+        <view class='goodsName'>{{goodsInfo.goodsName}}</view>
+        <view class='infoItem'>{{goodsInfo.goodsSubtitle}}</view>
+        <view class='infoItem'>
+          <text class='bargainJoinNum'>{{goodsInfo.bargainJoinNum}}人正在参与砍价</text>
+          <text>规格: {{bargainInfo.goodsSkuName}}</text>
+        </view>
+        <view class='infoItem'>
+          <text class='lowerPrice'>￥{{bargainInfo.lowestPrice}}</text>
+          <text class='goodsPrice'>原价￥{{bargainInfo.originalPrice}}</text>
+          <text class='carriagePrice'>运费: ￥0</text>
+          <text class='goodsNum'>数量: X1</text>
+        </view>
+        
+      </view>
+
+      <!-- 帮砍了多少钱start -->
+      <block wx:if="{{ helpRes && role }}">
+        <helpBargainText helpRes="{{ helpRes }}" role="{{ role }}" bindbargain="tabCheckGargainStatus"></helpBargainText>
+      </block>
+      <!-- 帮砍了多少钱end -->
+
+      <!-- 更多商品 -->
+      <view class='moreBargainGoodsBox'>
+        <moreBargainGoods></moreBargainGoods>
+      </view>
+
+      <!-- 好友砍价与商品详情 -->
+      <view class='tabContainer'>
+        <view class='tabBox'>
+          <form  class='tabItem {{ tabActive == 1 ? "active":""}}'  bindsubmit='toggleTab' data-tab='1' report-submit>
+            <button plain="true" form-type='submit'>好友砍价</button>
+          </form>
+          <form  class='tabItem {{ tabActive == 2 ? "active":""}}'  bindsubmit='toggleTab' data-tab='2' report-submit>
+            <button plain="true" form-type='submit'>商品详情</button>
+          </form>
+        </view>
+        <view class='tabContent'>
+          <friendsBargain friendsBargainList="{{friendsBargainList}}" 
+                          goodsSn="{{goodsSn}}" 
+                          goodsSkuSn="{{goodsSkuSn}}" 
+                          bindgetHelpBargainRecord="getHelpBargainRecord"
+                          isShow="{{tabActive==1}}"></friendsBargain>
+          <detailInfo isShow="{{tabActive==2}}" content="{{ goodsInfo.goodsDetails }}" imgs="{{ goodsInfo.pictureList }}"></detailInfo>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 登录 -->
+  <loginGetUser bind:close="toggleModalLoginShow" bind:callback="helpBargain" wx:if="{{ modalLoginShow }}"></loginGetUser>
+
+  <!-- 滑动帮砍弹框 -->
+  <dialogMoveBargain helpRes="{{helpRes}}" 
+                      bind:helpBargain="helpBargain"
+                      wx:if="{{isShowDialogMoveHelpBargain}}"></dialogMoveBargain>

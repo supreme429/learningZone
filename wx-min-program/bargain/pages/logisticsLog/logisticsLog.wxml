@@ -1,0 +1,24 @@
+<!--pages/logisticsLog/logisticsLog.wxml-->
+<view class='container'>
+  <view class='logistics'>
+  <!-- first last-->
+    <!-- <view class='item ' >
+      <text class='sign'>已签收，感谢使用，期待再次为您服务。广东省深圳市望海</text>
+      <text>2018-06-14 10:35</text>
+      <image class='icon-sign' src='/images/icon-sign.png'></image>
+    </view> -->
+    <view class='item {{ index == 0 ? "first" : "" }} {{ index == list.length - 1 ? "last" : "" }}' wx:for="{{ list }}">
+      <text>{{ item.logisticsTime }}</text>
+      <text>{{ item.logisticsLog }}</text>
+    </view>
+    <!--<view class='item '>
+      <text>已揽件</text>
+      <text>广东省广州市海珠区冰江中大公司  已收入</text>
+      <text>2018-06-14 10:35</text>
+      <image class='icon-truck-loading' src='/images/icon-truck-loading.png'></image>
+    </view> -->
+  </view>
+</view>
+
+<!-- 客服图标 -->
+  <customService></customService>

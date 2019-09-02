@@ -1,0 +1,546 @@
+/* pages/bargainDetail/bargainDetail.wxss */
+.container{
+  padding-bottom: 100rpx;
+}
+.container.noPb{
+  padding-bottom: 0
+}
+.container>scroll-view{
+  height: 1280rpx;
+}
+.content{
+  padding: 30rpx 24rpx 0 24rpx;
+}
+.countTimeBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 78rpx;
+  border-radius: 39rpx;
+  background-color: #ffe1e3;
+  font-size: 28rpx;
+  color: #333
+}
+.countTimeBox text{
+  margin: 0 20rpx;
+}
+/* 商品信息样式start */
+.goodsInfo{
+  margin-top: 25rpx;
+  position: relative
+}
+.goodsInfo .goodsName{
+  margin-top: 28rpx;
+  font-size: 30rpx;
+  width: 100%;
+  max-height: 68rpx;
+  line-height: 35rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.goodsInfo .infoItem{
+  /* display: flex; */
+  /* align-items: flex-start; */
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 16rpx;
+}
+.goodsInfo .infoItem .bargainJoinNum{
+  white-space: nowrap
+}
+.goodsInfo .infoItem text+text{
+  margin-left: 30rpx;
+}
+.goodsInfo .lowestPrice{
+  color: #e62318;
+  font-size: 32rpx;
+}
+.goodsInfo .bargainInfo{
+  font-size: 22rpx;
+  color: #999
+}
+.goodsInfo .bargainInfo .startBargainPrice{
+  text-decoration: line-through;
+  margin-right: 25rpx;
+}
+.goodsInfo .infoItem text.goodsPrice{
+  text-decoration: line-through;
+}
+.goodsInfo .icon-bargainSuccess{
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  right: 0rpx;
+  top: -5rpx;
+}
+/* 商品信息样式end */
+
+.bargainResult{
+  margin-top: 75rpx;
+}
+.progressBox{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 85rpx;
+}
+.tips-price{
+  display: flex;
+  justify-content: space-between;
+}
+.tips-price .tip{
+  font-size: 0;
+  border: 1px solid #e62318;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding: 0 9rpx;
+  position: relative;
+}
+.tips-price .tip.originalPrice{
+  border-radius: 16rpx 16rpx 16rpx 0
+}
+.tips-price .originalPrice::before{
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -10rpx;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid #e62318;
+  border-right: 10rpx solid transparent;
+}
+.tips-price .originalPrice::after{
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -6rpx;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 8rpx solid #fff;
+  border-right: 8rpx solid transparent;
+}
+.tips-price .tip.lowestPrice{
+  border-radius: 16rpx 16rpx 0 16rpx;
+}
+.tips-price .lowestPrice::before{
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -10rpx;
+  right: -1px;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid #e62318;
+  border-left: 10rpx solid transparent;
+}
+.tips-price .lowestPrice::after{
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -6rpx;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 8rpx solid #fff;
+  border-left: 8rpx solid transparent;
+}
+.tips-price .tip image{
+  width: 28rpx;
+  height: 28rpx;
+}
+.tips-price .tip text{
+  font-size: 20rpx;
+  color: #e62318;
+}
+.tips-price .tip{
+  display: flex;
+  align-items: center;
+}
+.priceProgress{
+  width: 100%;
+  height: 24rpx;
+  background-color: #ffc4c1;
+  border-radius: 15rpx;
+  display: flex;
+  position: relative;
+}
+.priceProgress .wrap-bargainProgress{
+  flex: 1;
+  position: relative;
+}
+.staticPriceProgress{
+  background-color: #e62318;
+  height: 24rpx;
+  width: 146rpx;
+  border-radius: 12rpx 0 0 12rpx;
+  position: relative;
+}
+.staticPriceProgress .line-buyNowPrice{
+  right: -4rpx;
+  width: 9rpx;
+  height: 88rpx;
+  top: -5rpx;
+  position: absolute;
+}
+.staticPriceProgress .dealPriceNum{
+  position: absolute;
+  right: 0;
+
+}
+.priceItem{
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  font-size: 22rpx;
+}
+.bargainProgress{
+  height: 24rpx;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  font-size: 0;
+  border-radius: 0 12rpx 12rpx 0;
+  box-sizing:border-box;
+  background: #e62318;
+}
+.wrap-bargainProgress .icon-markPrice{
+  position: absolute;
+  width: 9rpx;
+  height: 49rpx;
+  top: -5rpx;
+  transform: translateX(-50%);
+}
+.wrap-bargainProgress .markPrice{
+  position: absolute;
+  top: 40rpx;
+  transform: translateX(-50%);
+  display: flex;
+  white-space: nowrap
+}
+.wrap-bargainProgress .markPrice.markerAlignLeft{
+  transform: translateX(-100%);
+}
+.wrap-bargainProgress .markPrice text{
+  color: #333
+}
+.bargainProgress image{
+  width: 100%;
+  height: 14rpx;
+  border-radius: 7rpx;
+}
+.knife{
+  font-size: 0;
+  position: absolute;
+  top: -6rpx;
+  transform: translateX(-50%)
+}
+.knife image{
+  width: 30rpx;
+  height: 54rpx;
+}
+.hasBargainNum{
+  background-color: #e62318;
+  font-size: 20rpx;
+  position: absolute;
+  padding: 5rpx 22rpx;
+  top: -48rpx;
+  color: #fff;
+  transform: translate(-50%);
+  display: flex;
+  white-space: nowrap;
+  border-radius: 35rpx;
+}
+.hasBargainNum.alignLeft{
+  transform: translate(-100%);
+}
+view.hasBargainNum::after{
+  content: '';
+  display:block;
+  width: 0;
+  height: 0;
+  border-left: 7rpx solid transparent;
+  border-right: 7rpx solid transparent;
+  border-top: 7rpx solid #e62318;
+  bottom: -6rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.dealPriceNum{
+  position: absolute;
+  bottom: -88rpx;
+  transform: translate(50%);
+  display:flex;
+  white-space:nowrap;
+  align-items:flex-end;
+}
+.dealPriceNum.dealAlignLeft{
+  transform: translateX(0);
+}
+.dealPriceNum.dealAlignRight{
+  transform: translateX(100%);
+}
+.dealPriceNum text{
+  color: #333
+}
+.moneyMark{
+  font-size: 16rpx;
+}
+.tipBar{
+  display: flex;
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 66rpx;
+}
+.tipBar .tipBarItem{
+  display: flex;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.tipBar .tipBarIcon{
+  height: 18rpx;
+  width: 40rpx;
+  border-radius: 9rpx;
+  margin-right: 10rpx;
+}
+.tipBarBeginPrice .tipBarIcon{
+  background-color: #ff6057
+}
+.tipBarBargainPrice .tipBarIcon{
+  background-color: #e384ff
+}
+.btnBox{
+  margin-top: 124rpx;
+}
+.btnShareBarMoreOne{
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 28rpx;
+  border: none;
+  background-color: #e62318;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.helpInfo{
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 108rpx;
+}
+.helpInfo text{
+  color: #e62318
+}
+
+.moreBargainGoodsBox{
+  margin-top: 75rpx;
+}
+.prompt-box{
+  margin-top: 38rpx;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 25rpx;
+}
+.prompt-box .title{
+  font-size: 20rpx;
+  color: #333
+}
+.prompt-box .prompt-tip{
+  font-size:18rpx;
+  color: #999 
+}
+
+/* 支付样式start */
+.payContent{
+  display: flex;
+  font-size: 24rpx;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  align-items: center;
+  margin-top: 80rpx;
+}
+.payContent .payDetail{
+  display: flex;
+  flex-direction: column;
+}
+.payContent .payDetail .payPrice{
+  height: 24rpx;
+  line-height: 24rpx;
+  color: #e62318
+}
+.payContent .payDetail .orderNo{
+  line-height: 24rpx;
+  margin: 16rpx 0rpx 0 0;
+}
+.payContent .payDetail .payCountTime{
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.payContent .payDetail .payCountTime text{
+  margin-right: 10rpx;
+}
+.payContent .btnPay{
+  width: 250rpx;
+  height: 122rpx;
+  line-height: 122rpx;
+  background-color: #e62318;
+  color: #fff;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+.btnPay button{
+  height: 100%;
+  line-height: 122rpx;
+  color: #fff;
+  border: none
+}
+
+/* 支付样式end */
+
+/* 帮砍样式start */
+.helpBargainContent{
+  text-align: center;
+  margin-top: 128rpx;
+}
+.helpBargainContent .helpBargainDetail{
+  font-size: 34rpx;
+  color: #333
+}
+.helpBargainContent .helpBargainDetail text{
+  color: #e62318
+}
+.helpBargainContent .btnStartBargain{
+  margin-top: 90rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 28rpx;
+  border: none;
+  background-color: #e62318;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.helpBargainContent .helpFail{
+  background-color: #ccc
+}
+/* 帮砍样式end */
+
+/* 好友砍价与好友详情 */
+.tabContainer .tabBox{
+  display: flex
+}
+.tabContainer .tabBox .tabItem{
+  flex: 1;
+  text-align: center;
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #e8e8e8;
+}
+.tabContainer .tabBox .tabItem.active{
+  color: #e62318;
+  border-bottom-color: #e62318
+}
+.tabContainer .tabBox .tabItem button{
+  border: none;
+  background-color: #fff;
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 28rpx;
+}
+.tabContainer .tabContent{
+  min-height: 350rpx;
+}
+
+/* 底部栏 */
+.foot{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.foot>view{
+  height: 100rpx;
+  box-sizing: border-box
+}
+.foot .btn-buy{
+  width: 250rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  color: #e62318
+}
+.foot .btn-share{
+  width: 100%;
+  border: none;
+  background-color: #e62318;
+  border-radius: 0;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.foot .btn-share.btn-disabled{
+  background-color: #ccc;
+  color: #fff
+}
+
+
+/* 分享多砍一刀弹框样式start */
+.modalContainer{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0
+}
+.modalContainer .modalContent{
+  padding: 100rpx 40rpx 50rpx 40rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 580rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  text-align: center;
+  color: #333;
+  border-radius: 10rpx;
+}
+.modalContainer .modalContent .headImg{
+  font-size: 0
+}
+.modalContainer .modalContent .headImg image{
+  width: 312rpx;
+  height: 307rpx;
+}
+.modalContainer .modalContent .modalInfo{
+  margin-top: 66rpx;
+  text-align: left
+}
+.modalContainer .modalContent .btn-share{
+  height: 88rpx;
+  background-color: #e62318;
+  color: #fff;
+  border: none;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  margin-top: 30rpx;
+}
+/* 分享多砍一刀弹框样式end */

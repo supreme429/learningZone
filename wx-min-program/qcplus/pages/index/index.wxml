@@ -1,0 +1,45 @@
+<!--index.wxml-->
+
+<block wx:if="{{networkType}}">
+    <view class="list-container">
+        <view wx:if="{{is_visitor}}" class='visitors'>您目前使用的是体验版业务，正式业务需后台绑定公众账号</view>
+        <view style='height:130rpx;'>
+            <view class="{{fixed ? 'search top' : 'search'}}">
+                <navigator class="search-box" url="/pages/search/search">
+                    <!-- <image class="icon" src='../../images/common/search-icon.png'></image> -->
+                    <icon class='icon' type="search" size='28rpx' color="#ddd"></icon>
+                    <text class='title'>搜索</text>
+                </navigator>
+            </view>
+        </view>
+        <view class='order-list'>
+            <view bindtap="navigatorDetail" data-key="{{item.req_no}}" wx:for="{{checkList}}" class='content' wx:key="{{item.req_no}}">
+                <view class='number option'>
+                    <text class='title'>单据号：{{item.req_no}}</text>
+                    <view style="display:flex;">
+                        <image wx:if="{{updateGoodsList[item.req_no]}}" class='edit-icon' src='../../images/common/no-check.png'></image>
+                        <text wx:if='{{item.status == 4}}' class="checking">已验货</text>
+                        <view wx:elif='{{item.status == 2}}' class='checked'>未验货</view>
+                    </view>
+                    
+                </view>
+                <view class='name option'>
+                    <text class='title'>供应商名称</text>
+                    <text>{{item.supplier_name}}</text>
+                </view>
+                <view class='state option'>
+                    <text class='title'>验货环节</text>
+                    <text>{{checkPoint[item.check_point]}}</text>
+                </view>
+                <view class='time option'>
+                    <text class='title'>期望验货时间</text>
+                    <text>{{item.EXPECTED_DATE}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view wx:else class="networkType">
+    <view>糟糕，出错了</view>
+    <view>下拉来获取最新数据</view>
+</view>

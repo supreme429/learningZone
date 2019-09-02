@@ -1,0 +1,6 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "gameContainer": "../../components/gameContainer/gameContainer"
+  }
+}

@@ -1,0 +1,3 @@
+<view class='user-info'>
+  <button class='wx-login' open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录<image class="icon-wx" src='/images/icon-wx.png'></image></button>
+</view>

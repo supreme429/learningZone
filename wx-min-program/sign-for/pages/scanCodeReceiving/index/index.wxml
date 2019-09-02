@@ -1,0 +1,6 @@
+<!--pages/scanCodeReceiving/index/index.wxml-->
+<view class="container">
+  <image class="icon-scan-code" src="/assets/images/icon-scan.png" bindtap="openScan"></image>
+  <text>请扫描送货单上二维码</text>
+  <text>查看当前待收商品</text>
+</view>

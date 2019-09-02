@@ -1,0 +1,197 @@
+/* pages/bargainList/bargainList.wxss */
+page{
+  height: 100%
+}
+.container{
+  box-sizing: border-box;
+  height: 100%;
+}
+scroll-view{
+  padding-bottom: 100rpx;
+  box-sizing: border-box
+}
+.goodsList .wrapGoodsDetail{
+  padding-top: 0;
+  padding-bottom: 0
+}
+.goodsItem.positonAbs{
+  height: 255rpx
+}
+.goodsList .wrapGoodsDetail .item-content{
+  display: flex;
+  width: 100%;
+  padding-top: 23rpx;
+  padding-bottom: 23rpx;
+  transition: all 0.1s ease-in-out; 
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.positonAbs .item-content{
+  position: absolute; 
+  left: 0;
+  top: 0;
+}
+.goodsList .goodsItem .goods-detail .goodsIndro .goodsName{
+  width: 100%;
+}
+.goodsList .btn-del{
+  position: absolute;
+  height: 100%;
+  width: 250rpx;
+  background-color: #ff6057;
+  color: #fff;
+  font-size: 38rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: -24rpx;
+  transition: all 0.1s ease-in-out; 
+}
+.bargainResultModal{
+  width: 208rpx;
+  height: 208rpx;
+  border-radius: 4rpx;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+}
+
+.goodsRecommend{
+  display: flex;
+  justify-content: space-between;
+  width: 428rpx!important
+}
+.goodsRecommend text.recoment{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.goodsRecommend .bargainState{
+  color: #e62318
+}
+.bargainDetail .bargainPrice{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #666
+}
+.bargainPrice>view{
+  display: flex;
+  flex-wrap: wrap
+}
+.bargainDetail .bargainPrice .colorRed{
+  color: #e62318;
+  margin-left: 18rpx;
+}
+.bargainDetail .bargainPrice .lowerPrice{
+  margin-left: 0;
+  margin-right: 10rpx;
+}
+.bargainDetail .bargainPrice .oldPrice{
+  text-decoration: line-through
+}
+.countTimeBox{
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.countTimeBox>text{
+  font-size: 26rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+.bargainHandel{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between
+}
+.bargainHandel .goBargain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 223rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+}
+.bargainHandel .goBargain.goBuy{
+  border: 1px solid #d5d5d5;
+  background: #fff;
+}
+.bargainHandel .goBuy button{
+  display: flex;
+  flex-direction: column;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  padding: 0
+}
+.bargainHandel .goBuy button>view{
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.bargainHandel .goBuy .resultPrice{
+  font-size: 24rpx;
+  color: #e62318
+}
+.bargainHandel .goBuy .oldPrice{
+  font-size: 20rpx;
+  color: #666;
+  text-decoration: line-through;
+}
+.bargainHandel .goBargain{
+  background-color: #e62318;
+  color: #fff
+}
+.bargainHandel .wd190{
+  width: 190rpx;
+}
+.bargainHandel .goBargain button{
+  font-size: 26rpx;
+  border: none;
+  color: #fff
+}
+.bargainHandel.flexEnd{
+  align-items: flex-end
+}
+.bargainHandel.flexStart{
+  align-items: center
+}
+.bargainHandel.flexStart .bargainPrice{
+  margin-top: 0
+}
+.payTimeCount{
+  display: flex;
+  font-size: 24rpx;
+  align-items: flex-end;
+  margin-top: 10rpx;
+}
+.payTimeCount>text{
+  margin-right: 5rpx;
+  line-height: 24rpx;
+}
+.bargainDetail .bargainPrice .bargainFail{
+  margin-top: 5rpx;
+  margin-left: 0
+}
+
+.flexColum{
+  flex-direction: column;
+  margin-top: 0
+}
+.hasReceiveHandle{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between
+}
+.hasReceiveHandle .goBuy{
+  color: #333
+}

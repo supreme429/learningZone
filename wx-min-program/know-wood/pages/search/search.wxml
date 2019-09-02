@@ -1,0 +1,57 @@
+<!--pages/search/search.wxml-->
+<import src="/templates/list.wxml"/>
+<view class='container'>
+  <formSearch bind:setKeyword="setKeyword"
+              searchWord="{{searchWord}}"
+              keyword="{{keyword}}"
+              bind:deleteKeyWord="deleteKeyWord" 
+              bind:search="search"
+              wx:if="{{!labelId}}"></formSearch>
+  <view class='hotSearch' wx:if="{{!searched}}">
+    <view class='title'>热门搜索</view>
+    <view class='keyWordsBox'>
+      <view data-str="{{item}}" bindtap='clickQuickSearch' class='words-item' wx:for="{{keywords}}">{{item}}</view>
+    </view>
+  </view>
+  <view class='history-record' wx:if="{{!searched && historyRecords.length>0}}">
+    <view class='title-box'>
+      <view class='title'>历史记录</view>
+      <view class='title-handle' bindtap='removeHistoryRecord'>清除历史记录</view>
+    </view>
+    <view class='record-list'>
+      <view data-str='{{item}}' bindtap='clickQuickSearch' class='record-item' wx:if="{{index<10}}" wx:for="{{historyRecords}}">{{item}}</view>
+    </view>
+  </view>
+  <!-- 搜索结果 -->
+  <view class='searchResult' wx:if="{{searched}}">
+    <view class='searchNumBox'>
+      "{{labelName||keyword}}"共搜索到<text> {{woodClassNum+articleNum}}</text> 个相关结果
+    </view>
+    <view class='tabBox'>
+      <view data-type="1" class='tab-item {{currentTabType==1?"active":""}}' bindtap='changeTabType'>木材分类 ({{woodClassNum}})</view>
+      <view data-type="2" class='tab-item {{currentTabType==2?"active":""}}' bindtap='changeTabType'>文章 ({{articleNum}})</view>
+    </view>
+    <view class='resultList' id='resultList'>
+      <scroll-view class='woodBox' scroll-y="true" hidden="{{!(!showNoContent && currentTabType==1)}}" style='height:{{srollViewHeight}}px' bindscrolltolower="{{labelId?'searchWoodByTag' : 'searchWoodByKey'}}">
+        <navigator url='/pages/wiki/wiki?woodId={{item.wikiId}}' wx:for="{{ woodWikiList }}">
+          <template is="wood-category-list-rich" data="{{...item}}"></template>
+        </navigator>
+        <view class='hasLoadAll' wx:if="{{loading && woodWikiList.length>2}}">正在加载中</view>
+        <view class='hasLoadAll' wx:if="{{woodClassNum == woodWikiList.length && woodWikiList.length>2}}">已经全部加载完</view>
+      </scroll-view>
+      <scroll-view hidden="{{!(!showNoContent && currentTabType==2)}}" scroll-y="true" class='classList' style='height:{{srollViewHeight}}px' bindscrolltolower="{{labelId?'searchArticleByTag' : 'searchArticleByKey'}}">
+        <view class='wrap-article'>
+          <navigator wx:for="{{ articleList }}">
+            <template is="article-category-list" data="{{...item}}"></template>
+          </navigator>
+          <view class='hasLoadAll' wx:if="{{loading && articleList.length>6}}">正在加载中</view>
+          <view class='hasLoadAll' wx:if="{{articleNum == articleList.length && articleList.length>6}}">已经全部加载完</view>
+        </view>
+      </scroll-view>
+      <view class='noContent' wx:if="{{showNoContent}}">
+        <image class='icon-noContent' src='/images/icon-noContent.png'></image>
+        <text>抱歉，没有找到相关结果</text>
+      </view>
+    </view>
+  </view>
+</view>

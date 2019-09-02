@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/location/location",
+    "pages/goodsDetail/goodsDetail",
+    "pages/bargainList/bargainList",
+    "pages/bargainDetail/bargainDetail",
+    "pages/orderDetail/orderDetail",
+    "pages/logisticsLog/logisticsLog",
+    "pages/noInternet/noInternet",
+    "pages/consigneeAddress/consigneeAddress",
+    "pages/thirdPage/thirdPage",
+    "pages/helpBargainDetail/helpBargainDetail",
+    "components/dialogMoveBargain/dialogMoveBargain"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "大砍家",
+    "navigationBarTextStyle": "black"
+  }
+}

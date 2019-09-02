@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "countTime": "../../components/countTime/countTime",
+    "tabar": "../../components/tabar/tabar",
+    "modalBargainMoreOne": "../../components/modalBargainMoreOne/modalBargainMoreOne",
+    "customService": "../../components/customService/customService",
+    "dialogBargainRes": "../../components/dialogBargainRes/dialogBargainRes"
+  }
+}

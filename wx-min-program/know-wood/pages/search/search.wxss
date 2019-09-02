@@ -1,0 +1,187 @@
+/* pages/search/search.wxss */
+.container{
+
+}
+.hotSearch{
+  margin-top: 28rpx;
+  padding-left: 55rpx;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 10rpx;
+}
+.hotSearch .title{
+  font-size: 26rpx;
+  color: #ccc
+}
+.hotSearch .keyWordsBox{
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.hotSearch .keyWordsBox .words-item{
+  height: 70rpx;
+  width: 200rpx;
+  text-align: center;
+  line-height: 70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #e8e8e8;
+  color: #666;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+  margin-bottom: 30rpx;
+}
+.hotSearch .keyWordsBox .words-item + .words-item{
+  margin-left: 30rpx;
+}
+.hotSearch .keyWordsBox .words-item:nth-child(3n+1){
+  margin-left: 0;
+}
+.history-record{
+  margin-top: 30rpx;
+}
+.history-record .title-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35rpx 0 55rpx;
+  font-size: 26rpx;
+}
+.history-record .title-box .title{
+  color: #ccc
+}
+.history-record .title-box .title-handle{
+  color: #f57724
+}
+.record-list{
+  padding-left: 55rpx;
+}
+.record-list .record-item{
+  font-size: 26rpx;
+  color: #333;
+  margin-top: 60rpx;
+}
+
+.searchNumBox{
+  margin-top: 30rpx;
+  padding-left: 55rpx;
+  padding-bottom: 30rpx;
+  font-size: 26rpx;
+  color: #ccc;
+  border-bottom: 1px solid #e8e8e8
+}
+.searchNumBox text{
+  color: #333
+}
+.tabBox{
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 138rpx 0 100rpx;
+  border-bottom: 1px solid #e8e8e8;
+  box-sizing: border-box;
+}
+.tabBox .tab-item{
+  font-size: 26rpx;
+  color: #333;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+}
+.tabBox .tab-item.active{
+  color: #f57724;
+  border-bottom: 4rpx solid #f57724;
+}
+
+.resultList{
+  margin-top: 20rpx;
+  padding: 0 35rpx;
+}
+
+/* 木材列表模板样式 */
+.wood-category-list .content .title{
+  display: flex;
+}
+.wood-category-list .content .title rich-text + rich-text{
+  color: #666666;
+  margin-left: 20rpx;
+}
+rich-text{
+  display: inline;
+}
+rich-text .colorRed{
+  color: #f57724
+}
+.originPlace{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.classList{
+  margin-top: 21rpx;
+  box-sizing: border-box;
+}
+.classList .wrap-article{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.classList .class-item{
+  width: 320rpx;
+  height: 160rpx;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+  color: #fff;
+  position: relative;
+}
+.classList .wrap-article navigator:nth-child(2n) .class-item{
+  margin-left: 40rpx;
+}
+.classList .class-item .articlePicUrl{
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.classList .class-item .class-content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8rpx;
+}
+.classList .class-item .class-content text{
+  text-align: center;
+}
+.hasLoadAll{
+  font-size: 22rpx;
+  color: #d7d7d7;
+  text-align: center;
+  padding: 25rpx;
+  width: 100%;
+}
+
+.noContent{
+  margin-top: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.noContent text{
+  color: #d7d7d7;
+  font-size: 26rpx;
+}
+.icon-noContent{
+  width: 228rpx;
+  height: 232rpx;
+  margin-bottom: 30rpx;
+}

@@ -1,0 +1,79 @@
+<import src="/templates/list.wxml"/>
+
+<scroll-view class='container' scroll-y="true" enable-back-to-top scroll-with-animation scroll-top="{{ scrollTop }}"  bindscrolltolower="searchWoodWikiByClassifyTag" bindscroll="scrollEv" >
+  <official-account wx:if="{{ isShowFocusPlus }}"></official-account>
+  <view wx:if="{{ showView }}">
+    <!-- 顶部【热搜+搜索】 start -->
+    <view class='header'>
+      <image class="header-img" src="/images/header-img.jpg"></image>
+      <view class='hot-search-box'>
+        <hotSearch></hotSearch>
+      </view>
+      <view class='form-search' bindtap='goPageSearch'>
+        <input type='text' disabled placeholder-class='input-placeholder' placeholder='输入“{{searchWord}}”试试'></input>
+        <image class='icon-search' src='/images/icon-search.png'></image>
+      </view>
+    </view>
+    <!-- 顶部【热搜+搜索】 end -->
+
+    <!-- 热门木材 -->
+    <view class='hot-wood'>
+      <modalSwiper></modalSwiper>
+    </view>
+
+    <!-- 热关 start -->
+    <view class='hot-focus' >
+      <view class='title'>
+        <text>热门关注</text>
+        <image class="icon-title-arrow" src='/images/icon-title-arrow.png'></image>
+      </view>
+      <view class="hot-content-box" wx:for="{{ hotData }}" wx:key="hot-{{index}}">
+        <view class='sub-title'>{{ item.materialTitle }}</view>
+        <!-- icon-list -->
+        <view class='icon-list'>
+          <image mode='widthFix' src="{{ item.materialPicUrl }}"></image>
+        </view>
+        <!-- 小编推荐 -->
+        <view class='our-recommend-box'>
+            <ourRecommend list="{{ item.editorRecommend }}" recid="{{item.editorRecId}}" rectype="{{ item.editorRecIdType }}" reclevel="{{ item.editorRecIdLevel }}"></ourRecommend>
+        </view>
+        <!-- 相关家具推荐 -->
+        <view class='furniture-recommend'>
+          <furnitureRecommend list="{{ item.furnitureRecommend }}"></furnitureRecommend>
+        </view>
+        <!-- 广告轮播 -->
+        <view class='ad-swiper-box'>
+          <swiper circular="true" indicator-dots indicator-color="rgba(255, 255, 255, 1)" indicator-active-color="#e1c195" autoplay>
+            <block wx:for="{{ item.bannerRecommend }}" wx:for-item="bannerItem" wx:key="banner-{{index}}">
+              <swiper-item>
+                <image lazy-load="true"  src="{{ bannerItem.bannerPicUrl }}" class="slide-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </view>
+    </view>
+    <!-- 热关 end -->
+    <!-- 木材小课堂 start -->
+    <view class="wood-class">
+      <woodClass></woodClass>
+    </view>
+    <!-- 木材小课堂 end -->
+    <!-- 筛选列表 start -->
+    <view class='filter-list' id='filter-list' style='height: {{filterListHeight}}'>
+      <cascadeScreening bind:save="saveFilter" bind:setFilterListHeight="setFilterListHeight" bind:close='closeModalFilter' id="cascadeScreening"></cascadeScreening>
+      <view class='filter-box'>
+        <text>{{filterResultTxt}} 共搜索到{{wikiTotalElements}}个相关结果</text>
+        <button bindtap='resetFilter'>重置</button>
+      </view>
+      <view class='list-box'>
+        <navigator url='/pages/wiki/wiki?woodId={{item.wikiId}}' wx:for="{{ wikiList }}" wx:key="wiki-{{index}}">
+          <template is="wood-category-list" data="{{...item}}"></template>
+        </navigator>
+        <text class="loading-end" wx:if="{{wikiList.length>0}}">{{ wikiPage < wikiTotalPages ? '加载中' : '已全部加载完' }}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 筛选列表 end -->
+  <image class='return-top' src='/images/return-top.png' bindtap='returnTop' hidden='{{ !returnTopShow }}'></image>
+</scroll-view>

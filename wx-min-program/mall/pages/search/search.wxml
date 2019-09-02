@@ -1,0 +1,106 @@
+<!-- /search form START/ -->
+<view class='search-form'>
+    <view class='layout'>
+      <view class='col-input'>
+        <view class='input-box'>
+          <image src='../../images/common/search-icon.png'></image>
+          <input type='text' placeholder='搜索商品' class='{{flag_searchIcon ? "icon-search" : ""}}' confirm-type='search' value='{{searchKeyWords}}' bindinput='changeInput' bindfocus='inputFoucsEvent' />
+        </view>
+        <view class='cancel' bindtap='clearInputValue' hidden='{{flag_searchIcon}}'>
+          <image src='../../images/common/clear.png'></image>
+        </view>
+      </view>
+      <view class='col-btn {{flag_searchBtn ? "hide" : ""}}' bindtap='bindSearchBtnEvent'>搜索</view>
+    </view>
+</view>
+<!-- /search form END/ -->
+
+<!-- /默认搜索 START/ -->
+<view class='search-default-container' hidden='{{flag_defaultSearchPage}}'>
+  <view class='list' hidden='{{flag_defaultSearchPanel}}'>
+    <view class='dl' wx:if='{{data_historySearch}}'>
+      <view class='dt'>
+        <text>历史搜索</text>
+        <image bindtap='clearSearchHistory' src='../../statics/search/del.png'></image>
+      </view>
+      <view class='dd'><text wx:for='{{data_historySearch}}' bindtap='bindKeyWordsEvent' data-keywords='{{item}}'>{{item}}</text></view>
+    </view>
+    <view class='dl' wx:if='{{data_hotSearch}}'>
+      <view class='dt'><text>热门搜索</text></view>
+      <view class='dd'><text wx:for='{{data_hotSearch}}' bindtap='bindKeyWordsEvent' data-keywords='{{item}}'>{{item}}</text></view>
+    </view>
+  </view>
+
+  <view class='suggest' wx:if='{{data_searchSuggest}}' hidden='{{flag_searchSuggestPanel}}'>
+    <scroll-view scroll-y>
+      <view class='res'>
+        <view class='res-item' wx:for='{{data_searchSuggest}}' bindtap='bindKeyWordsEvent' data-keywords='{{item.keywords}}'>
+          <view wx:if='{{item.isCategory}}'>在<text>{{item.name}}</text>分类中搜索</view>
+          <view wx:else>{{item.name}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- /默认搜索 END/ -->
+
+<!-- /搜索结果展示 START/ -->
+<view class='search-reslult-container' hidden='{{flag_searchResultPage}}'>
+  <view class='operator-panel'>
+    <view class='layout'>
+      <view class='opt sort' bindtap='bindToggleSortPanel'>
+        <text class="{{flag_defaultSort}}">{{currentSortText}}</text>
+        <image wx:if="{{flag_defaultSort == 'down light'}}" src='../../statics/search/arrow_down_light.png'></image>
+        <image wx:elif="{{flag_defaultSort == 'up light'}}" src='../../statics/search/arrow_up_light.png'></image>
+        <image wx:elif="{{flag_defaultSort == 'down'}}" src='../../statics/search/arrow_down.png'></image>
+        <image wx:if="{{flag_defaultSort == 'up'}}" src='../../statics/search/arrow_up.png'></image>
+      </view>
+      <view class='opt sale'><text bindtap='bindSaleSortEvent' data-url='{{saleUrl}}' class="{{flag_saleSort}}">销量</text></view>
+      <view class='opt price'>
+        <text bindtap='bindPriceSortEvent' data-url='{{priceUrl}}' class="{{flag_priceSort}}">价格</text>
+        <image src='../../statics/search/double_arrow{{flag_priceSort}}.png'></image>
+      </view>
+      <view class='opt filter' bindtap='redirectToFilterPage'>
+        <text>筛选</text>
+        <image src='../../statics/search/filter.png'></image>
+      </view>
+    </view>        
+  </view>
+  <view class='result'>
+    <view class='list' wx:if='{{data_searchResult.length > 0}}'>
+        <navigator wx:for='{{data_searchResult}}' url='/pages/goods/goods?goods_id={{item.id}}' class='item'>
+            <view class='item-in'>
+                <image src='https:{{item.thumb}}' />
+                <text class='price'>￥{{item.effect_price}}</text>
+                <text class='name'>{{item.showTitle}}</text>
+                <text class='num'>已售{{item.sold_num}}</text>
+            </view>
+        </navigator>
+    </view>
+    <view class='nodata' wx:elif="{{search_status && data_searchResult.length ==0}}">抱歉，没有找到符合条件的商品！</view>
+  </view>
+</view>
+
+<!-- 排序方式 -->
+<view class='sort-panel' hidden='{{flag_toggleSortPanel}}'>
+  <view class='mask' bindtap='toggleSortPanel' data-isOpen='false'></view>
+  <view class='content'>
+    <view class='opt' wx:for='{{data_allSort}}' wx:key="{{index}}" data-url='{{item.url}}' data-name='{{item.name}}' data-sort_order='{{index}}' bindtap='bindDropdownOptionEvent'>
+      <icon class='circle' type='{{index == sort_order ? "success" : "circle"}}' size='23'></icon>
+      <text>{{item.name}}</text>
+      <icon class='ok' type='{{index == sort_order ? "success_no_circle" : ""}}' size='23'></icon>
+    </view>
+  </view>
+</view>
+
+<!-- 右侧悬浮按钮 -->
+<view class="fast-link">
+  <view class="home" bindtap='bindJumpToHome' hidden='{{flag_searchResultPage}}'>
+    <image src='../../statics/search/home.png'></image>
+  </view>
+  <view class="totop {{flag_backtotop?'back-top':''}}" bindtap='bindBackToTop'>
+    <image src='../../statics/search/top.png'></image>
+  </view>
+</view>
+
+<!-- /搜索结果展示 END/ -->

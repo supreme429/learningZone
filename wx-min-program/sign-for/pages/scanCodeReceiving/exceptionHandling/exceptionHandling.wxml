@@ -1,0 +1,65 @@
+<!--pages/scanCodeReceiving/exceptionHandling/exceptionHandling.wxml-->
+<view class='container'>
+  <view class='header'>
+    <image src='{{goodsUrl}}' class='header_left'></image>
+    <view class='header_right'>
+      <view class='right_title'>{{goodsName}}</view>
+      <view class='right_common'>X{{goodsTotalNum}}</view>
+      <view>
+        <text class='right_common'>问题商品数量</text>
+        <view class='right_num'>
+          <button wx:if="{{goodsNum<=0}}" class='num_button num_none' bindtap='delNum'>-</button>
+          <button wx:else class='num_button' bindtap='delNum'>-</button>
+
+          <input type='number' class='num_input' bindblur='changeNum' value='{{goodsNum}}' selection-start='-1' selection-end='-1' maxlength='4' />
+          <button class='num_button' bindtap='addNum'>+</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='middle'>
+    <view class='middle_title'>问题描述</view>
+    <view class='middle_desc'>
+      <block wx:for="{{allProblemList}}" wx:for-index="idx" wx:for-item="problemItem">
+        <label class='common_select {{ problemItem.isSelected ? "desc-select" : "desc-noselect"}}' data-id="{{problemItem.id}}" data-reason="{{problemItem.reason_name}}" data-idx="{{ idx }}" bindtap='changeProblem'>{{problemItem.reason_name}}</label>
+      </block>
+    </view>
+    <view class='middle_other'>
+      <textarea hidden='{{bigSrc.showBigImg}}' class='middle_textarea' maxlength='500' placeholder='其他问题' placeholder-class='textarea_placeHolder' cursor-spacing='80' bindinput='getTextAreaLength' value="{{problemDesc}}"></textarea>
+      <view class='textarea_num'>
+        <label>{{textAreaLength}}</label>
+        <label>/500</label>
+      </view>
+    </view>
+    <view class='middle_img'>
+      <view class='middle_img_text' bindtap='getCamara' wx:if="{{problemPicUrl.length < 8}}">
+        <image class='photo_icon' src='/assets/images/photo-icon.png'></image>
+        <view class='img-desc'>问题图片</view>
+      </view>
+
+      <block wx:if="{{problemPicUrl.length>0}}" wx:for='{{problemPicUrl}}' wx:for-index="idx" wx:for-item="picItem">
+        <view class='middle_add_img'>
+          <image class='img_item' src='{{picItem}}' data-src='{{picItem}}' bindtap='showBigPic' mode="aspectFill"></image>
+          <image class='del_icon' data-index="{{idx}}" data-src="{{picItem}}" src='/assets/images/del-icon.png' bindtap='delProblemPic'></image>
+        </view>
+      </block>
+      <!-- <view class='middle_deal'>
+        <label class='deal_text'>该问题是否需要售后处理</label>
+        <block wx:if="{{needAfterSale==1}}">
+          <button class='deal_button selected_button' data-index="1" bindtap='isNeedAfterSale'>是</button>
+          <button class='deal_button' data-index="0" bindtap='isNeedAfterSale'>否</button>
+        </block>
+        <block wx:else>
+          <button class='deal_button' data-index="1" bindtap='isNeedAfterSale'>是</button>
+          <button class='deal_button selected_button' data-index="0" bindtap='isNeedAfterSale'>否</button>
+        </block>
+      </view> -->
+    </view>
+  </view>
+  <button class='footer' bindtap='abnormalSign'>提交</button>
+</view>
+<view class='big-back' wx:if="{{bigSrc.showBigImg == true}}">
+  <view class='big-img-info'>
+    <image class='big-img-desc' mode='aspectFit' data-src='{{bigSrc.tempBigSrc}}' bindtap='showBigPic' src="{{bigSrc.tempBigSrc}}"></image>
+  </view>
+</view>

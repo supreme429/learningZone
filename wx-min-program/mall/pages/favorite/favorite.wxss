@@ -1,0 +1,170 @@
+/* pages/favorite/favorite.wxss */
+.favorite-title-wrap {
+  position: relative;
+}
+.favorite-title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #ddd;
+}
+.favorite-title text {
+  display: block;
+  padding: 35rpx 0 35rpx 35rpx;
+  line-height: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #353535;
+}
+
+.favorite-title .filter-icon {
+  width: 18rpx;
+  height: 33rpx;
+  padding: 35rpx;
+  transition: all .3s ease-out;
+}
+.favorite-title .filter-icon.active {
+  transform: rotate(90deg);
+}
+.favorite-title-wrap .filter-content-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 103rpx;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 1;
+}
+.favorite-title-wrap .filter-content {
+  position: absolute;
+  top: 103rpx;
+  left: 0;
+  width: 100%;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  z-index: 2;
+}
+.filter-content .filter-item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #ddd;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #353535;
+}
+.filter-content .filter-item:last-child {
+  border-bottom: none;
+}
+.filter-item .filter-name {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.filter-item .filter-name .icon {
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 20rpx;
+}
+.filter-item .success-no-circle {
+  width: 26rpx;
+  height: 19rpx;
+}
+
+.goods-list {
+  
+}
+.goods {
+  display: flex;
+  width: 100%;
+  height: 246rpx;
+  border-bottom: 1rpx solid #ddd;
+  white-space: nowrap;
+}
+.goods .goods-handle {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 212rpx;
+  height: 100%;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #fff;
+  vertical-align: top;
+  z-index: 1;
+}
+.goods .goods-handle .delete {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 212rpx;
+  height: 100%;
+  background-color: #c81c28;
+}
+.goods .goods-detail {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 35rpx;
+  box-sizing: border-box;
+}
+.goods .goods-img {
+  width: 266rpx;
+  height: 176rpx;
+  margin-right: 23rpx;
+}
+.goods .goods-img image {
+  display: block;
+  width: 266rpx;
+  height: 176rpx;
+}
+
+.goods .goods-info {
+  position: relative;
+  flex: 1;
+}
+.goods-info .goods-title {
+  height: 64rpx;
+  line-height: 34rpx;
+  white-space: normal;
+  font-size: 28rpx;
+  color: #353535;
+  overflow: hidden;
+}
+.goods-info .goods-price {
+  margin-top: 24rpx;
+}
+.goods-info .goods-price text {
+  display: block;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: #c81c28;
+}
+.goods-info .goods-sale {
+  margin-top: 37rpx;
+}
+.goods-info .goods-sale text {
+  display: block;
+  line-height: 26rpx;
+  font-size: 26rpx;
+  color: #b2b2b2;
+}
+.goods-info .goods-similar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 54rpx;
+  padding: 0 40rpx;
+  border: 1rpx solid #ff5541;
+  border-radius: 100rpx;
+  line-height: 54rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ff5541;
+}

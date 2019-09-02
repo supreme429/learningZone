@@ -1,0 +1,25 @@
+/**index.wxss**/
+page{height:100%;background-color:#f0f0f0;}
+.list-container{padding-bottom:50rpx;display:flex;flex-direction:column;align-items:center;justify-content: flex-start;}
+.list-container .search{padding-top:30rpx;display:flex;flex-direction:row;justify-content:center;align-items:center; background-color:#f0f0f0;}
+.list-container .search.top{position:fixed;top:0;left:0;padding-bottom:30rpx;width:100%;}
+.list-container .search-box{display:flex;flex-direction:row;justify-content:center;align-items:center; width:670rpx;height:70rpx;background-color:#fff;border-radius: 28rpx;}
+
+.list-container .search-box .icon{margin-right:13rpx;width:28rpx;height:28rpx;}
+.list-container .search-box .title{font-size:28rpx;color:#aaa;}
+
+.list-container .visitors{width:100%;height:67rpx;line-height:67rpx;background-color: #ffeaa3;color:#f25047;font-size:26rpx;text-align:center;}
+
+/* 单据列表 */
+.list-container .order-list .content{margin-top:30rpx;width:670rpx;background-color:#fff;border-radius:28rpx;font-size:28rpx;}
+.list-container .order-list .content .option{padding:40rpx 30rpx;display:flex;flex-direction:row;justify-content:space-between;align-items:center;font-size:28rpx;line-height:1;color:#999;border-bottom:solid 1px #ddd;}
+.list-container .order-list .content .option .title{color:#333;}
+.list-container .order-list .content .number{font-size:30rpx;font-weight:700;}
+.list-container .order-list .content .number .title{font-size:30rpx;}
+.list-container .order-list .content .number image{margin-right:8rpx;width:29rpx;height:28rpx;}
+.list-container .order-list .content .number .checking{color:#279cbd;}
+.list-container .order-list .content .number .checked{display:flex;flex-direction:row;justify-content:flex-end;align-items:center;color:#f25047;}
+.list-container .order-list .content .option icon{margin-right:5rpx;}
+
+
+.networkType{width:100%;height:100%;display:flex;flex-direction: column;justify-content:center;align-items: center; align-content:center;font-size:28rpx;}

@@ -1,0 +1,29 @@
+/* components/getUserInfo/getUserInfo.wxss */
+.user-info{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.wx-login{
+  position: relative;
+  margin-top: 900rpx;
+  width: 540rpx;
+  height: 88rpx;
+  background: #09bb07;
+  border-radius: 0;
+  color: #fff;
+  font-size: 30rpx;
+}
+.wx-login::after{
+  border: 0;
+}
+.icon-wx{
+  position: absolute;
+  top: 13rpx;
+  right: 15rpx;
+  width: 76rpx;
+  height: 63rpx;
+}

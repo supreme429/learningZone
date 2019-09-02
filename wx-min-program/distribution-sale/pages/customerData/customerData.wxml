@@ -1,0 +1,69 @@
+<!--pages/customerData/customerData.wxml-->
+<view class='container'>
+  <view class='title'>客户信息</view>
+  <view class='content'>
+    <view class='inputBox'>
+      <label>客户姓名
+        <text>*</text> </label>
+      <input data-key='name' value='{{formData.name}}' bindinput="changeData"></input>
+    </view>
+    <view class='inputBox'>
+      <label>性别
+        <text>*</text> </label>
+      <picker data-key='sex' value="{{formData.sex-1}}" range="{{sexRange}}" bindchange="changeData">
+        <image src='/images/icon-arrow.png'></image>
+        <text>{{sexRange[formData.sex-1]}}</text>
+      </picker>
+    </view>
+    <view class='inputBox'>
+      <label>手机号码
+        <text>*</text> </label>
+      <input class='{{!!id? "disabled": ""}}' type='number' data-key='phone' disabled="{{!!id}}" maxlength='11' value='{{formData.phone}}' bindinput="changeData"></input>
+    </view>
+    <view class='inputBox'>
+      <label>地区<text>*</text> </label>
+      <view class='address' bindtap='toggleAddress'>
+        {{formData.provinceName}} {{formData.cityName}} {{formData.districtName}}
+        <image src='/images/icon-arrow.png'></image>
+      </view>
+    </view>
+    <view class='inputBox'>
+      <label>小区
+        <text>*</text> </label>
+      <input data-key='neighborhood' value='{{formData.neighborhood}}' bindinput="changeData"></input>
+    </view>
+    <view class='inputBox'>
+      <label>装修进度
+        <text>*</text> </label>
+      <picker data-key='process' range-key='value' value='' range='{{processArr}}' bindchange="changeData">
+        <image src='/images/icon-arrow.png'></image>
+        <text>{{formData.process}}</text>
+      </picker>
+    </view>
+    <view class='inputBox'>
+      <label>装修风格
+        <text>*</text> </label>
+      <picker data-key='style' range-key='value' value='' range='{{styleArr}}' bindchange="changeData">
+        <image src='/images/icon-arrow.png'></image>
+        <text>{{formData.style}}</text>
+      </picker>
+    </view>
+    <view class='inputBox'>
+      <label>美乐乐联系
+        <text>*</text> </label>
+      <picker data-key='contact' value="{{formData.contact}}" range="{{mllContact}}" bindchange="changeData">
+        <image src='/images/icon-arrow.png'></image>
+        <text>{{mllContact[formData.contact]}}</text>
+      </picker>
+    </view>
+    <view class='inputBox textareaBox' wx:if="{{isShowTextarea}}">
+      <label>备注信息</label>
+      <textarea data-key='note' value='{{formData.note}}' bindinput="changeData"></textarea> 
+    </view>
+    <view class='btnSubmitBox'>
+      <view class='errorTips'>{{errorTips}}</view>
+      <view class='btn-submit' bindtap='submitFormData'>提交</view>
+    </view>
+  </view>
+</view>
+<address bind:toggleAddress="toggleAddress" bind:saveAddress="saveAddress" wx:if="{{toggle.isShowSelectAddress}}"></address>

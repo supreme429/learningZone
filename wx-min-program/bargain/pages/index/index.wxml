@@ -1,0 +1,164 @@
+<!--index.wxml-->
+<view class='container'>
+  <scroll-view scroll-y="true" style='height: {{systemInfo.windowHeight}}px'
+               bindscrolltolower="{{searchType==1?'getGoodsListNextPage':(searchType==2?'getReadyGoods':'')}}">
+    <view class='banner'>
+      <swiper indicator-dots="{{bannerConfig.indicatorDots}}" autoplay="{{bannerConfig.autoplay}}" interval="{{bannerConfig.interval}}" duration="{{bannerConfig.duration}}" bindchange="changeSwiper">
+        <block wx:for="{{bannerConfig.bannerList}}">
+          <swiper-item>
+            <image src="{{item.linkPicUrl}}" 
+                  class="slide-image"
+                  data-bargainStatus='{{item.bargainStatus}}' 
+                  data-linkType='{{item.linkType}}'
+                  data-linkUrl='{{item.linkUrl}}' 
+                  data-goodsSn='{{item.linkGoodsSn}}'
+                  data-goodsSkuSn='{{item.linkGoodsSkuSn}}'
+                  data-brUuid='{{item.brUuid}}'
+                  data-stock='{{item.stock}}'
+                  data-goodsStatus='{{item.goodsStatus}}'
+                  bindtap='gotoThirdPage'/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='indicatorDots'>
+        <view class='{{index == bannerConfig.index? "active":""}}' wx:for="{{bannerConfig.bannerList.length}}"></view>
+      </view>
+    </view>
+
+    <!-- 分类导航 -->
+    <view class='classify-tab'>
+      <view data-searchType='1' bindtap='changeSearchType' class='classify-item {{searchType==1?"active":""}}'>全部</view>
+      <view data-searchType='2' bindtap='changeSearchType' class='classify-item {{searchType==2?"active":""}}'>热门预售</view>
+      <view class='classify-item detail-classify {{searchType==3?"active":""}}' bindtap='toggleDialogClassify'>
+        <text>{{classifyConfig.curClassifyName}}</text>
+        <image class='icon-classify' src='/images/icon-classify.png' wx:if="{{searchType!=3}}"></image>
+        <image class='icon-classify' src='/images/icon-classify-active.png' wx:else></image>
+      </view>
+    </view>
+
+    <!-- 全部及分类渲染列表 -->
+    <view class='goodsList' wx:if="{{searchType!=2}}">
+      <view class='goodsItem' wx:for="{{goodsList}}">
+        <view class='wrapGoodsDetail' 
+              data-bargainStatus='{{item.bargainStatus}}' 
+              data-goodsSn='{{item.goodsSn}}' 
+              data-goodsSkuSn='{{item.goodsSkuSn}}'
+              data-brUuid='{{item.brUuid}}'
+              bindtap='{{item.stock>0 ? "goToGoodsDetail":""}}'>
+          <view class='goods-img'>
+            <image src='{{item.goodsPicUrl}}' mode="aspectFill"></image>
+            <view wx:if="{{item.stock==0}}" class='modal-noStock'>已抢光</view>
+          </view>
+          <view class='goods-detail'>
+            <view class='goodsIndro'>
+              <view class='goodsName'>{{item.goodsName}}</view>
+              <view class='goodsRecommend'>{{item.goodsSubtitle}}</view>
+            </view>
+            <view class='bargainDetal'>
+              <view>
+                <view class='joinPersonNum'>{{item.joinBargainNum}}人正在参与砍价</view>
+                <view class='goodsPrice'>原价 {{item.originalPrice}} 元</view>
+              </view>
+              <view class='bargainResult {{!item.stock? "out": ""}}'>
+                <text wx:if="{{item.stock>0}}">{{item.lowestPrice}}元得</text>
+                <text wx:if="{{item.stock==0}}">已抢光</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='icon-share'>
+          <button plain='true' 
+                  data-goodsSn='{{item.goodsSn}}'
+                  data-brUuid='{{item.brUuid}}'
+                  data-goodsSkuSn='{{item.goodsSkuSn}}'
+                  data-goodsName='{{item.goodsName}}' 
+                  data-goodsPicUrl='{{item.goodsPicUrl}}'
+                  data-goodsSharePicUrl='{{item.goodsSharePicUrl}}'
+                  open-type='{{item.bargainStatus == 1||!loginState||item.stock==0? "" : "share"}}' 
+                  bindtap='{{item.bargainStatus==1?"cantShare" :(!loginState? "toggleModalLoginShow":"")}}'>
+            <image src='/images/share-icon.png'></image>
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 热门预售渲染列表 -->
+    <view class='goodsList' wx:if="{{searchType ==2}}">
+      <view class='goodsItem readyGoods' wx:for="{{goodsList}}">
+        <view class='wrapGoodsDetail' 
+              data-bargainStatus='{{item.bargainStatus}}' 
+              data-goodsSn='{{item.goodsSn}}' 
+              data-goodsSkuSn='{{item.goodsSkuSn}}'
+              data-brUuid='{{item.brUuid}}'>
+          <view class='goods-img'>
+            <image src='{{item.goodsPicUrl}}'></image>
+          </view>
+          <view class='goods-detail'>
+            <view class='goodsIndro'>
+              <view class='goodsName'>{{item.goodsName}}</view>
+              <view class='goodsRecommend'>{{item.goodsSubtitle}}</view>
+              <view class='priceDetail'>
+                <view class='lowestPrice'>最低价{{item.lowestPrice}}元</view>
+                <view class='goodsPrice'>原价 {{item.originalPrice}} 元</view>
+              </view>
+            </view>
+            <view class='bargainDetal'>
+              <view>{{item.followNum}}人关注</view>
+
+
+              <form class='noFollow'                       
+                    bindsubmit='setRemind'
+                    data-goodsSn='{{item.goodsSn}}' 
+                    data-index='{{index}}'
+                    wx:if="{{item.followStatus==='0'}}" 
+                    report-submit>
+                <button plain="true" form-type='submit'>开售提醒</button>
+              </form>
+
+              <form class='hasFollow'                       
+                    bindsubmit='cancelRemind'
+                    data-goodsSn='{{item.goodsSn}}' 
+                    data-index='{{index}}'
+                    wx:else
+                    report-submit>
+                <button plain="true" form-type='submit'>取消关注</button>
+              </form>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 没有商品显示模块start -->
+    <view class='noGoods' wx:if="{{showNoGoodsModule}}">
+      <image class='icon-noGoods' src="/images/icon-noGoods.png"></image>
+      <view class='txt-noGoods'>
+        暂无商品信息, 试试查看<text data-searchType='1' bindtap='changeSearchType'>全部商品</text>
+      </view>
+    </view>
+    <!-- 没有商品显示模块end -->
+
+  </scroll-view>
+
+  <!-- 登录 -->
+  <loginGetUser bind:close="toggleModalLoginShow" bind:callback="changeLoginState" wx:if="{{ modalLoginShow }}"></loginGetUser>
+
+  <!-- 首次分享弹框 -->
+  <modalBargainMoreOne bind:toggleModal="toggleModal" wx:if='{{isShowModalBargainMoreOne}}'></modalBargainMoreOne>
+
+  <!-- 客服图标 -->
+  <customService></customService>
+
+  <tabar tabIndex="{{0}}"></tabar>
+</view>
+ <!-- 分享自砍或自砍两刀 -->
+  <block wx:if="{{ dialogBargainRes.isShow }}">
+    <dialogBargainRes scene="{{ dialogBargainRes.scene }}" price="{{ dialogBargainRes.price }}" isShow="{{ dialogBargainRes.isShow }}"></dialogBargainRes>
+  </block>
+
+  <!-- 分类弹框 -->
+  <dialogClassify id="dialogClassify"
+                  classifyConfig = "{{classifyConfig}}"
+                  dialogStatus = "{{dialogClassifyStatus}}"
+                  bind:save = "saveSelectClassify"
+                  bind:close = "toggleDialogClassify"></dialogClassify>

@@ -1,0 +1,13 @@
+/* components/hotSearch/hotSearch.wxss */
+.hot-search{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 22rpx;
+}
+.hot-search text{
+  color: #ccc;
+}
+.hot-search navigator{
+  color: #fff;
+}

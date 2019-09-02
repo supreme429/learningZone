@@ -1,0 +1,24 @@
+<view class='cancelOrder-mask' hidden='{{flag_visiblity}}' bindtap='toggleDisplayStatus'></view>
+<view class='cancelOrder-container' hidden='{{flag_visiblity}}'>
+  <view class='step1' hidden='{{flag_step1_visiblity}}'>
+    <view class='h3'>请选择取消订单的原因</view>
+    <radio-group>
+      <label wx:for='{{data_options}}' bindtap='getReasonOptionsEvent' data-value='{{item}}'>
+        <view class='radio'><radio value='{{item}}' ></radio></view>
+        <view class='txt'>{{item}}</view>
+      </label>
+    </radio-group>
+    <view class='custom-reason'>
+      <input type='text' value='{{customReason}}' bindinput='getCustomReasonEvent' disabled='{{flag_disabled}}'></input>
+    </view>
+
+    <view class='submit'>
+      <view class='btn c' bindtap='cancelEvent'>取消</view>
+      <view class='btn s' bindtap='submitEvent'>提交</view>
+    </view>
+  </view>
+  <view class='step2' hidden='{{flag_step2_visiblity}}'>
+    <view class='icon'><icon type='success' size="60"></icon></view>
+    <view class='text'>操作成功！</view>
+  </view>
+</view>

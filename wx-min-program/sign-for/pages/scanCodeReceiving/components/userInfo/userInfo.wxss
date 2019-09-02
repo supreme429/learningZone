@@ -1,0 +1,29 @@
+/* pages/scanCodeReceiving/components/userInfo/userInfo.wxss */
+
+.userInfoContent{
+  display: flex;
+  align-items: center;
+  padding: 35rpx 30rpx;
+  background: #fff
+}
+.head-icon{
+  width: 118rpx;
+  height: 118rpx;
+}
+.head-icon image{
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%
+}
+.userInfoDetail{
+  margin-left: 23rpx;
+}
+.userInfoDetail .nickName{
+  font-size: 30rpx;
+  color: #333
+}
+.userInfoDetail .memberType{
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 20rpx;
+}

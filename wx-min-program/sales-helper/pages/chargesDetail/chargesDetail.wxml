@@ -1,0 +1,25 @@
+<!--pages/chargesDetail/chargesDetail.wxml-->
+<view class='container'>
+  <view class='incentiveList'>
+    <view class='incentive-item'>
+      <view class='incentive-head'>
+        <text>扣款</text>
+        <text>{{ pageData.refundAward }}</text>
+      </view>
+      <view class='incentive-content'>
+        <view class='content-item'>
+          <text>大单奖励</text>
+          <text>{{ pageData.largeOrderAward }}</text>
+        </view>
+        <view class='content-item'>
+          <text>新品奖励</text>
+          <text>{{ pageData.newGoodsAward }}</text>
+        </view>
+        <view class='content-item'>
+          <text>床垫奖励</text>
+          <text>{{ pageData.mattressAward }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

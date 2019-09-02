@@ -1,0 +1,99 @@
+/* pages/customerList/customerList.wxss */
+/* 搜索框 start */
+.search-box{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 94rpx;
+  background: #f5f5f5;
+}
+.input-search{
+  width: 680rpx;
+  height: 66rpx;
+  background: #fff;
+  border-radius: 32rpx;
+  padding-left: 89rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+.icon-search{
+  position: absolute;
+  top: 33rpx;
+  left: 86rpx;
+  width: 27rpx;
+  height: 28rpx;
+  z-index: 2;
+
+}
+/* 搜索框 end */
+
+/* 标签页 start */
+.tabs{
+  height: 156rpx;
+}
+.tabs .item{
+  font-size: 32rpx;
+  width: 180rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border: 1px solid #c3c3c3;
+  color: #666666;
+}
+.tabs .item.active{
+  color: #e62318;
+}
+.tabs .item:nth-child(1){
+  border-top-left-radius: 38rpx;
+  border-bottom-left-radius: 38rpx;
+}
+.tabs .item:last-child{
+  border-top-right-radius: 38rpx;
+  border-bottom-right-radius: 38rpx;
+}
+.tabs .item + .item{
+  border-left: 0;
+}
+/* 标签页 end */
+
+/* 客户列表 start */
+.customer-list .item{
+  height: 120rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-left: 46rpx;
+  margin-right: 44rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.name,
+.time{
+  display: block;
+}
+.name, .status{
+  color: #333333;
+  font-size: 28rpx;
+}
+.time{
+  color: #b2b2b2;
+  font-size: 20rpx;
+}
+.status{
+  margin-right: 40rpx;
+}
+.icon-arrow{
+  width: 16rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+.item.overdue text{
+  color: #ddd;
+}
+/* 客户列表 end */
+.none-data{
+  font-size: 28rpx;
+  color: #ccc;
+  text-align: center;
+}

@@ -1,0 +1,86 @@
+/* pages/relevantOrder/relevantOrder.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.orderList{
+  padding: 30rpx;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.order-item{
+  font-size: 30rpx;
+  color: #333
+}
+.order-item + .order-item{
+  margin-top: 30rpx;
+}
+.order-item .order-head{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e5e5;
+  border-radius: 8rpx 8rpx 0 0;
+  font-weight: bold;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.order-item .order-head .order-num{
+  display: flex;
+}
+.order-item .order-head .order-num .order-index{
+  height: 38rpx;
+  line-height: 38rpx;
+  padding: 0 12rpx;
+  border-radius: 20rpx;
+  border: 1px solid #aeaeae;
+  background-color: #bbb;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.order-item .order-content{
+  padding: 0 30rpx
+}
+.order-item .order-content .timeAndSaleNum, .customerName{
+  height: 98rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-item .order-content .timeAndSaleNum{
+  border-bottom: 1px solid #e8e8e8
+}
+
+
+/* 无订单样式 */
+.noOrder{
+  margin-top: 335rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.noOrder .icon-noOrder{
+  width: 231rpx;
+  height: 199rpx;
+}
+.noOrder text{
+  margin-top: 35rpx;
+  font-size: 30rpx;
+  color: #999
+}

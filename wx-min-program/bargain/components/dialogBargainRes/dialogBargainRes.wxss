@@ -1,0 +1,69 @@
+/* components/dialogBargainRes/dialogBargainRes.wxss */
+.dialog{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-body{
+  position: relative;
+  width: 580rpx;
+  height: 583rpx;
+  text-align: center;
+}
+
+.dialog-bg{
+  position: absolute;
+  width: 580rpx;
+  top: 0;
+  left: 0;
+}
+
+.dialog-title{
+  position: absolute;
+  width: 100%;
+  height: 69rpx;
+  top: 170rpx;
+  left: 0;
+}
+
+
+.dialog-close{
+  position: absolute;
+  width: 78rpx;
+  height: 78rpx;
+  bottom: -120rpx;
+  left: 250rpx;
+}
+
+.dialog-content{
+  position: absolute;
+  top: 260rpx;
+  width: 100%;
+  height: 327rpx;
+}
+
+.bargain-text{
+  padding: 35rpx 35rpx 0 35rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+.bargain-text text{
+  color: #e62318;
+}
+
+.btn{
+  position: absolute;
+  bottom: 50rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: #e62318;
+  margin: 0 40rpx;
+  width: 500rpx;
+}

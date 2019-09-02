@@ -1,0 +1,71 @@
+<!--pages/customerRenewal/customerRenewal.wxml-->
+<import src="/components/modal-templates.wxml" />
+<view class='container'>
+  <view class='title'>
+    <text>客户信息</text>
+    <navigator url='/pages/customerData/customerData?id={{customerInfo.id}}' wx:if="{{customerInfo.status !=1}}">
+      <image src='/images/icon-edit.png'></image>
+      <text>编辑</text>
+    </navigator>
+  </view>
+  <view class='content'>
+    <view class='inputBox'>
+      <label>客户姓名</label>
+      <text>{{customerInfo.name}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>性别</label>
+      <text>{{customerInfo.sex==1? '女' : '男'}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>手机号码</label>
+      <text>{{customerInfo.phone}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>地区</label>
+      <text>{{customerInfo.provinceName}} {{customerInfo.cityName}} {{customerInfo.districtName}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>小区</label>
+      <text>{{customerInfo.neighborhood}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>装修进度</label>
+      <text>{{customerInfo.process}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>装修风格</label>
+      <text>{{customerInfo.style}}</text>
+    </view>
+    <view class='inputBox'>
+      <label>美乐乐联系</label>
+      <text>{{customerInfo.contact==1? '是': '否'}}</text>
+    </view>
+    <view class='inputBox textareaBox'>
+      <label>备注信息</label>
+      <text>{{customerInfo.note}}</text>
+    </view>
+  </view>
+  <view class='otherInfo'>
+    <view class='title'>其他信息</view>
+    <view class='content'>
+      <view class='inputBox'>
+        <label>录入时间</label>
+        <text>{{customerInfo.addTime}}</text>
+      </view>
+      <view class='inputBox'>
+        <label>有效截止时间</label>
+        <text>{{customerInfo.endTime}}</text>
+      </view>
+      <view class='inputBox'>
+        <label>状态</label>
+        <text>{{customerInfo.status == 1 ? '已过期' : '生效中'}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='btn-rollover' bindtap='toggleModalRollover' wx:if="{{customerInfo.status !=1}}">续期</view>
+
+  <view class='expireImg' wx:if="{{customerInfo.status ==1}}"><image src='/images/icon-failure.png'></image></view>
+
+  <template is="modalRollover" data="{{note:note, errorTips:errorTips}}" wx:if="{{toggle.isShowRolloverModal}}" />
+</view>

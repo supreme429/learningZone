@@ -1,0 +1,63 @@
+/* components/modalTips/modalTips.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.container .content{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20rpx 40rpx 58rpx 40rpx;
+  background-color: #fff;
+  width: 560rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+.container .content .title{
+  height: 78rpx;
+  line-height: 78rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+}
+.container .content .title image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  right: -20rpx;
+}
+.container .content .infoBox{
+  margin-top: 55rpx;
+}
+.container .content .infoBox .info{
+  width: 100%;
+  font-size: 26rpx;
+  text-align: center;
+  color: #333
+}
+.container .content .infoBox .info + .info{
+  margin-top: 15rpx
+}
+.container .content .btnBox{
+  width: 100%;
+  margin-top: 110rpx;
+}
+.container .content .btnBox button{
+  width: 100%;
+  height: 100rpx;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8rpx;
+}
+button::after {
+  border: none;
+}

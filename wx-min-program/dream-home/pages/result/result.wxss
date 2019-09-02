@@ -1,0 +1,170 @@
+/* miniprogram/pages/result/result.wxss */
+.container{
+  padding: 50rpx;
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box
+}
+.container .content .resultImgBox{
+  position: relative
+}
+.resultImgBox .logoBox{
+  position: absolute;
+  left: 50rpx;
+  top: 51rpx;
+  display: flex;
+}
+.resultImgBox .logoBox .logo{
+  display: flex;
+  margin-top: 10rpx;
+}
+.resultImgBox .logoBox .logo image{
+  width: 47rpx;
+  height: 47rpx;
+  margin-right: 10rpx;
+}
+.resultImgBox .logoBox .logo text{
+  font-size: 44rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.resultImgBox .logoBox .headText{
+  width: 452rpx;
+  height: 100rpx;
+  position: relative;
+}
+.resultImgBox .logoBox .headText .bg-poster-head{
+  width: 452rpx;
+  height: 100rpx;
+}
+.resultImgBox .logoBox .headText .txtContent{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  color: #333
+}
+.resultImgBox .logoBox .randomStr{
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  height: 100%;
+  width: 390rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .content .resultImg{
+  width: 650rpx;
+}
+.container .content .resultImgBox .btn-revise{
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  width: 120rpx;
+  height: 60rpx;
+}
+.container .content .resultImgBox .btn-revise image{
+  width: 100%;
+  height: 100%;
+}
+.container .content .btnBox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+.container .content .btnBox .btn-item{
+  width: 320rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  background-color: #fff;
+  padding: 0;
+  font-size: 28rpx;
+  margin: 0;
+  color: #333;
+  border-radius: 5rpx;
+}
+button::after {
+  border: none;
+}
+
+.footBtn{
+  margin-top: 30rpx;
+}
+.footBtn .btn-item{
+  width: 100%;
+  background: #333;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 8rpx;
+}
+
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: -999px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.showModal{
+  left: 0;
+}
+.modal .content{
+  width: 650rpx;
+  height: 1105rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: #fff;
+}
+.modal .content .icon-close{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 42rpx;
+  height: 42rpx;
+  z-index: 999
+}
+.modal .content .poster{
+  width: 100%;
+  height: 1046rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal .content .wrap-btn{
+  border-top: 1px solid #fdfdfd;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 1046rpx;
+  left: 0;
+}
+.modal .content button{
+  border-radius: 0;
+  background-color: #f5f5f5;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #999;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.modal .content button::after{
+  border: 0;
+}

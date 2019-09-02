@@ -1,0 +1,17 @@
+<!--components/dialogMoveBargain/dialogMoveBargain.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='helpBargain'>
+      <view wx:if="{{showMoveImg}}">
+        <image src='/images/icon-moveBargain.gif'></image>
+      </view>
+      <view class='icon-result {{helpRes.isCrit==1? "firstBargain" : ""}}' wx:else>
+        <image src='/images/img-firstBargain.png' class='img-firstBargain'  wx:if="{{helpRes.isCrit==1}}"></image>
+        <image src='/images/icon-bargainMoney.png' wx:else></image>
+      </view>
+    </view>
+    <view class='helpInfo' wx:if="{{!showMoveImg}}">
+      <rich-text nodes="{{helpBargainInfo}}"></rich-text>
+    </view>
+  </view>
+</view>

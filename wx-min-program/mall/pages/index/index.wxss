@@ -1,0 +1,60 @@
+/**index.wxss**/
+page {
+  background-color: #f4f4f4;
+}
+.index-header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 12rpx 20rpx;
+  background-color: #fff;
+}
+.index-header .logo {
+  margin-right: 10rpx;
+}
+.index-header .logo image {
+  width: 179rpx;
+  height: 57rpx;
+}
+.search-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  /* width: 385rpx; */
+  height: 58rpx;
+  margin-right: 13rpx;
+  border-radius: 8rpx;
+  background-color: #eee;
+}
+.search-icon {
+  margin-right: 5rpx;
+}
+.search-text {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.floor {
+  margin-bottom: 12rpx;
+  background-color: #fff;
+}
+.floor-title {
+  padding: 50rpx 0;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 35rpx;
+  color: #353535;
+}
+.blank-view{
+  height: 100rpx;
+}
+.floor-list{
+  min-height: 830rpx;
+}
+@import 'wxss/floor.wxss';
+@import 'wxss/goods.wxss';
+@import 'wxss/style.wxss';
+@import 'wxss/suit.wxss';
+@import 'wxss/area.wxss';

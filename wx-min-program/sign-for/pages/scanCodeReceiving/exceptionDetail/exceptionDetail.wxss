@@ -1,0 +1,139 @@
+/* pages/scanCodeReceiving/exceptionDetail/exceptionDetail.wxss */
+/* pages/scanCodeReceiving/exceptionHandling/exceptionHandling.wxss */
+button::after{
+  border:none;
+}
+.container{
+  background: #fff;
+  height: 100%;
+  padding: 0 30rpx;
+}
+.container .header{
+  width: 100%;
+  height: 133rpx;
+  margin-top:  30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #dbdbdb;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header .header_left{
+   width: 200rpx;
+  height: 133rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  max-width: 30%;
+}
+.header .header_right{
+ max-width: 70%;
+  display: inline-block;
+  font-size: 26rpx;
+
+}
+.header_right .right_title{
+  width: auto;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.right_common{
+  color: #999;
+}
+
+.container .middle{
+  width: 100%;
+}
+.middle_title{
+  margin: 50rpx 0 30rpx 0;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+.middle_desc{
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.desc-select{
+   border-radius: 6rpx;
+  text-align: center;
+  padding: 0 20rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  background: #666666;
+  font-size: 30rpx;
+}
+.item_desc{
+  font-size: 30rpx;
+  color: #333;
+  margin: 36rpx 0;
+}
+
+
+.middle_img{
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  vertical-align: top;
+}
+
+.middle_deal{
+  padding: 30rpx 0 ;
+  border-top: 1rpx solid #dbdbdb;
+  border-bottom: 1rpx solid #dbdbdb;
+}
+.deal_text{
+   font-size: 26rpx;
+   color: #666;
+   margin-right: 10rpx;
+}
+.deal_button{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+  border:1rpx solid #999999;
+  border-radius: 3rpx;
+  margin-left: 20rpx;
+  background: #fff;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+.container .footer{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 30rpx;
+}
+.big-back{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  z-index: 999;
+}
+.big-img-info{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 20;
+ width: 100%;
+ height: 100%;
+}
+.big-img-desc{
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}

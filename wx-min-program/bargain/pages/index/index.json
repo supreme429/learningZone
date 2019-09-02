@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "tabar": "../../components/tabar/tabar",
+    "loginGetUser": "../../components/loginGetUser/loginGetUser",
+    "modalBargainMoreOne": "../../components/modalBargainMoreOne/modalBargainMoreOne",
+    "customService": "../../components/customService/customService",
+    "dialogBargainRes": "../../components/dialogBargainRes/dialogBargainRes",
+    "dialogClassify": "../../components/dialogClassify/dialogClassify"
+  }
+}

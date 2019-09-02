@@ -1,0 +1,12 @@
+<!--components/swiperNotice/swiperNotice.wxml-->
+<view class="swiper-notice" wx:if="{{ noticeList.length > 0 }}">
+  <view class='mask'></view>
+  <image class="icon" src='/images/icon-congratulation.png'></image>
+  <swiper autoplay="{{ autoplay }}" interval="{{ interval }}" vertical="{{ vertical }}" circular="{{ circular }}">
+    <block wx:for="{{ noticeList }}">
+      <swiper-item>
+        <view class="item-text">恭喜<text class='nickname'>{{ item.nickName }}</text>在{{ item.time }}前以 <text>{{ item.price }}</text> 元成功抢购此商品！</view>
+      </swiper-item>
+    </block>
+  </swiper>  
+</view>

@@ -1,0 +1,21 @@
+<!--pages/footer/footer.wxml-->
+<view class='nav'>
+  <view class='nav-box' data-tab="0" bindtap='switchtab'>
+    <image src="../../statics/tabBar/{{types.value==0?'index_active.png':'index.png'}}"></image>
+    <view class="{{types.value==0?'active':''}}">首页</view>
+  </view>
+  <view class='nav-box' data-tab="1" bindtap='switchtab'>
+    <image src="../../statics/tabBar/{{types.value==1?'category_active.png':'category.png'}}"></image>
+    <view class="{{types.value==1?'active':''}}">分类</view>
+  </view>
+  <view class='nav-box' wx:if="{{!types.status}}">
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' hover-class='none'>
+      <image src="../../statics/tabBar/{{types.value==2?'mine_active.png':'mine.png'}}"></image>
+      <view class="{{types.value==2?'active':''}}">我的</view>
+    </button>
+  </view>
+  <view class='nav-box' wx:if="{{types.status==1}}" data-tab="2" bindtap='switchtab'>
+    <image src="../../statics/tabBar/{{types.value==2?'mine_active.png':'mine.png'}}"></image>
+    <view class="{{types.value==2?'active':''}}">我的</view>
+  </view>
+</view>

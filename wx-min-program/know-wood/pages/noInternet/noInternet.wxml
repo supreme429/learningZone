@@ -1,0 +1,7 @@
+<!--pages/noInternet/noInternet.wxml-->
+<view class='container' >
+
+  <image class='img' src='/images/no-internet.png'></image>
+  <view class="intro-text">世界上最遥远的距离，莫过于网络不给力</view>
+  <view class="refresh-text">下拉刷新试试</view>
+</view>

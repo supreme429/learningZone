@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loginGetUser": "../../components/loginGetUser/loginGetUser",
+    "customService": "../../components/customService/customService"
+  }
+}

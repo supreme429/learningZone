@@ -1,0 +1,4 @@
+<!--components/gotoIndex/gotoIndex.wxml-->
+<view class='container'>
+  <navigator url='/pages/index/index'>回到首页</navigator>
+</view>

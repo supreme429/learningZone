@@ -1,0 +1,173 @@
+/*==================================================
+ * project: meilele mall min-program 
+ * author: leihao
+ * createTime: 2018/09/11
+ * file: serice-counselor.wxss
+ * description: 预约服务顾问
+ ==================================================*/
+
+.counselor-mask{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.counselor-container {
+  width: 80%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1000;
+  top: 20%;
+  left: 10%;
+  border-radius: 10rpx;
+}
+
+.counselor-container .ul {}
+.counselor-container .ul .li {
+  margin-bottom: 25rpx;  
+}
+.counselor-container .ul .li .box {
+  border: solid 1px #ddd;
+  height: 50rpx;
+  padding: 15rpx 30rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.counselor-container .leader {
+   
+}
+.counselor-container .leader .avatar {
+  position: relative;
+  height: 90rpx;
+}
+.counselor-container .leader .avatar .position {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -65rpx;
+}
+.counselor-container .leader .avatar .circle { 
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  padding: 10rpx;
+  background-color: #fff;
+}
+.counselor-container .leader .avatar image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.counselor-container .leader .name {
+  color: #000;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.counselor-container  .signature {
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  margin-top: 35rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+/* step1:店长、签名、手机号码、体验馆 */
+.counselor-container .step1 .content {
+  padding: 0 35rpx 10rpx;
+}
+.counselor-container .step1 .h4 {
+  font-size: 30rpx;
+  color: #000;
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+.counselor-container .step1 .ul {
+  margin-top: 20rpx;
+}
+.counselor-container .step1 .ul .li .box.cur-expr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  position: relative;
+}
+.counselor-container .step1 .ul .li .box.cur-expr icon {
+  width: 15rpx;
+  height: 15rpx;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fff #9d9d9d #9d9d9d #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 30rpx;
+  top: 26rpx;
+}
+.counselor-container .step1 .ul .li .phone-authorize {
+  padding: 0;
+  height: 80rpx;
+  border: 0;
+}
+.counselor-container .step1 .ul .li .phone-authorize button {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  background-color:#00c200;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+.counselor-container .step1 .ul .li .box input {
+  width: 90%;
+  font-size: 28rpx;
+}
+.counselor-container .step1 .btn {
+  border-top: solid 1px #ddd;  
+}
+.counselor-container .step1 .btn button {
+  height: 100rpx;
+  width: 100%;
+  border: 0;
+  font-size: 36rpx;
+  color: #00c200;
+}
+.counselor-container .step1 .ul .captcha {
+  display: flex;
+}
+.counselor-container .step1 .ul image {
+  width: 180rpx;
+  height: 82rpx;
+}
+.counselor-container .step1 .msg {
+  color: #c81c28;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}
+
+/* step2:反馈提示 */
+.counselor-container .step2 {
+  padding: 50rpx;
+}
+.counselor-container .step2 .icon {
+  display: flex;
+  justify-content: center;
+}
+.counselor-container .step2 .text {
+  font-size: 36rpx;
+  color: #000;
+  margin-top: 25rpx;
+  font-weight: bold;
+  text-align: center;
+}

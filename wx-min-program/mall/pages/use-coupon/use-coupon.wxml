@@ -1,0 +1,44 @@
+<!--pages/use-coupon/use-coupon.wxml-->
+<view class='filter-box'>
+  <view class='flex-between search-box'>
+    <view>
+      <input type='text' placeholder='请输入优惠券或红包序列号'></input>
+    </view>
+    <text>添加红包</text>
+  </view>
+  <!-- 可用&不可用 -->
+  <view class='flex-around coupon-tab'>
+    <view class="{{couponTab==0?'checked':''}}" data-type="0" bindtap='clickTab'>可用优惠券</view>
+    <view class="{{couponTab==1?'checked':''}}" data-type="1" bindtap='clickTab'>不可用优惠券</view>
+  </view>
+</view>
+<!-- 优惠券列表 -->
+<view class='coupon-box'>
+  <view class='flex-between coupon-list'>
+    <!-- 优惠券金额 -->
+    <view class='flex-first coupon-money'>
+      <image src='../../images/common/icon-unSelect.png'></image>
+      <view class='money-box'>
+        <view class='flex-first money'>
+          <text >￥</text>
+          <view>6</view>
+        </view>
+        <view class='coupon-state'>满11元可用</view>
+      </view>
+    </view>
+    <!-- 优惠券名字，时间 -->
+    <view class='coupon-info'>
+      <view class='flex-first coupon-name'>
+        <text class='names omit'>
+          红包名称
+        </text>
+      </view>
+      <view class='coupon-time'>2018.8.1-2018.8.31</view>
+    </view>
+  </view>
+</view>
+<view class='marginBottom'></view>
+<view class='flex-first btn-box'>
+  <view>取消</view>
+  <view>确定</view>
+</view>

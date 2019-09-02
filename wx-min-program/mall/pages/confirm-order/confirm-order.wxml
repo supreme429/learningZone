@@ -1,0 +1,84 @@
+<!--pages/confirm-order/confirm-order.wxml-->
+<view class='flex-around addr-content' wx:if="{{goodsInfo.address.address}}" bindtap='editorAddress'>
+  <view class='personal-info'>
+    {{goodsInfo.address.consignee}} {{goodsInfo.address.mobile}}
+  </view>
+  <view class='addr omit'>
+   {{addressText}}
+  </view>
+</view>
+<view class='un-address' bindtap='addReceiverAddress' wx:if="{{!goodsInfo.address.address}}">
+  {{addressText}}
+</view>
+<!-- 订单商品 -->
+<view class='shops-list' wx:for="{{goodsInfo.shopList}}"  wx:key="{{index}}">
+  <view class='goods-content'>
+    <view class='goods-list'>
+      <view class='goods-title'>
+        {{item.shop_name}}
+      </view>
+      <view class='flex-first goods-info'  data-id="{{itemGoods.goods_id}}" bindtap='goodsDetail' wx:for="{{item.goods.list}}" wx:for-item="itemGoods" wx:for-index="indexGoods" wx:key="{{indexGoods}}">
+        <image class='goods-img' src='{{imagesUrl}}/{{itemGoods.goods_thumb_1}}'></image>
+        <view class='flex-around info-content'>
+          <view class='goods-name'>{{itemGoods.goods_name}}</view>
+          <view class='flex-between price-num'>
+            <view>￥ {{itemGoods.EffectPrice}}</view>
+            <text>X{{itemGoods.goods_number}}</text>
+          </view>
+          <!-- 配送方式 -->
+          <view class='flex-first express-type' catchtap='returnTap'>
+            <view>配送方式</view>
+            <picker data-shopid="{{item.shop_id}}" data-id="{{itemGoods.goods_id}}" data-index="{{indexGoods}}" bindchange="deliverystyle" value="{{deliverIndex[itemGoods.goods_id].index}}" range="{{itemGoods.deliveryArr}}">
+              <view class="picker">
+                {{itemGoods.deliveryArr[deliverIndex[itemGoods.goods_id].index]}}
+                <text>∨</text>
+              </view>
+            </picker>
+            <!-- <view class='flex-first picker'>
+              <view>
+                快递
+              </view>
+              <text>∨</text>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 服务 -->
+  <view class='service-content'>
+    <view class='flex-between service-style'>
+      <text class='service-label'>服务方式</text>
+      <view class='flex-first service-type'>
+        <!-- 一期只展示快递到家 -->
+        <!-- <view class='select'>{{item.server.name?item.server.name:'快递到家'}}</view> -->
+        <view class='select'>快递到家</view>
+      </view>
+    </view>
+    <view class='flex-first service-style'>
+      <text class='service-label'>运费/服务费</text>
+      <view class='service-cont omit'>￥{{shops_fee[item.shop_id]?shops_fee[item.shop_id]:'0.00'}}</view>
+    </view>
+  </view>
+  <!-- 服务 -->
+  <view class='service-content'>
+    <view class='flex-first service-style'>
+      <text class='service-label'>给卖家留言</text>
+      <view class='service-cont'>
+        <input type='text' data-id="{{item.shop_id}}" bindinput='shopsRemark' placeholder='选填'/>
+      </view>
+    </view>
+    <!-- 店铺小计 -->
+    <view class='flex-first order-monry'>
+      <text>店铺小计:</text>
+      <view>￥{{item.shop_subtotal+shops_fee[item.shop_id]}}</view>
+    </view>
+  </view>
+</view>
+<view class='blank'></view>
+<view class='flex-first pay-content' wx:if="{{flags}}">
+  <view class='pay-money omit'>
+    应付总额： <text>￥{{(goodsInfo.total+total_fee)?(goodsInfo.total+total_fee):0.00}}</text>
+  </view>
+  <view class='pay-btn' bindtap='submitOrder'>微信支付</view>
+</view>

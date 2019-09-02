@@ -1,0 +1,13 @@
+<!--components/modalBargainMoreOne/modalBargainMoreOne.wxml-->
+  <view class='modalContainer'>
+    <view class='modalContent'>
+      <view class='headImg'><image src='/images/icon-bargainMoney.png'></image></view>
+      <view class='modalInfo'>分享给好友, 您可以多砍一刀哦</view>
+      <button open-type='share' data-name='shareBargainMoreOne' class='btn-share'>去分享</button>
+
+      <form  class='btn-giveup'  bindsubmit='toggleModalBargainMoreOne' report-submit>
+        <button plain="true" form-type='submit'>放弃机会</button>
+      </form>
+      <!-- <view class='btn-giveup' bindtap='toggleModalBargainMoreOne'>放弃机会</view> -->
+    </view>
+  </view>

@@ -1,0 +1,173 @@
+/* pages/scanCodeReceiving/serviceEvaluation/serviceEvaluation.wxss */
+
+.container{
+  padding: 60rpx 30rpx;
+}
+.serviceTitle{
+  font-size: 32rpx;
+  font-weight: bold
+}
+.startEvaList{
+  margin-top: 38rpx;
+}
+.startEvaList .startEvaItem + .startEvaItem{
+  margin-top: 40rpx;
+}
+.startEvaItem .startNum{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.startEvaItem .startNum .startIcon{
+  font-size: 0;
+  margin-left: 40rpx;
+}
+.startEvaItem .startNum .startIcon image{
+  width: 42rpx;
+  height: 38rpx;
+}
+.startEvaItem .startNum .startIcon image + image{
+  margin-left: 36rpx;
+}
+.serviceSonList{
+  display: flex;
+  flex-wrap: wrap
+}
+.serviceSonList .serviceSonItem{
+  padding: 12rpx 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  border: 1px solid #999;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  word-break: break-all;
+}
+.serviceSonList .hasSelect{
+  background-color: #e62318;
+  border-color: #e62318;
+  color: #fff
+}
+.feedbackBox{
+  margin-top: 58rpx;
+  position: relative;
+}
+.feedbackBox textarea{
+  width: 100%;
+  height: 231rpx;
+  overflow-y: auto;
+  border: 1px solid #d8d8d8;
+  border-radius: 10rpx;
+  padding: 20rpx 20rpx 45rpx 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.textarea-placeholder{
+  color: #bbb
+}
+.feedbackBox .countBox{
+  font-size: 24rpx;
+  color: #bbbbbb;
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+
+.btnBox{
+  width: 100%;
+  height: 94rpx;
+  background-color: #e62318;
+  color: #fff;
+  font-size: 33rpx;
+  text-align: center;
+  line-height: 94rpx;
+  border-radius: 5rpx;
+  margin-top: 47rpx;
+}
+.btnBox.disable{
+  background-color: #ccc;
+  color: #666
+}
+
+/* 提交成功 */
+.evaSuccess{
+  text-align: center;
+  font-size: 0;
+  margin-top: 32rpx;
+}
+.evaSuccess .success-icon image{
+  width: 131rpx;
+  height: 131rpx;
+}
+.evaSuccess .success-info{
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #333;
+  margin-top: 30rpx;
+}
+
+/* 红包弹框 */
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5)
+}
+.modalRedConten{
+  position: absolute;
+  left: 50%;
+  top: 315rpx;
+  transform: translateX(-50%)
+}
+.modalRedConten .red-bg image{
+  width: 500rpx;
+  height: 666rpx
+}
+.modalRedConten .red-close{
+  position: absolute;
+  left: 23rpx;
+  top: 23rpx;
+  width: 25rpx;
+  height: 25rpx;
+}
+.modalRedConten .red-close image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.modalRedConten .redInfo{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 64rpx;
+  font-size: 26rpx;
+  color: #ffebaf
+}
+.modalRedConten .redInfo .mllLogo{
+  font-size: 0
+}
+.modalRedConten .redInfo .mllLogo image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.modalRedConten .redInfo .companyName{
+  margin-top: 15rpx;
+}
+.modalRedConten .redInfo .info{
+  margin-top: 15rpx;
+}
+.modalRedConten .red-open{
+  font-size: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 147rpx;
+  width: 155rpx;
+  height: 155rpx;
+  border-radius: 50%;
+}
+.modalRedConten .red-open image{
+  width: 148rpx;
+  height: 148rpx;
+}

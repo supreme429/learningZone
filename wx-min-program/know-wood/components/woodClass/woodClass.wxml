@@ -1,0 +1,19 @@
+<!--components/woodClass/woodClass.wxml-->
+<view class='container'>
+  <view class='title'>
+    <view class='title-txt'>
+      <text>木材小课堂</text> 
+      <view class='title-line'></view>
+    </view>
+    <image class='icon-title-arrow' src='/images/icon-title-arrow.png'></image>
+  </view>
+  <view class='classList'>
+    <view class='class-item' wx:for="{{articleList}}" wx:key="article-{{index}}">
+      <image lazy-load="true" class='articlePicUrl' src='{{item.articlePicUrl}}'></image>
+      <!-- <view class='class-content'>
+        <text>{{item.articleTitle}}</text>
+        <view class='line'></view>
+      </view> -->
+    </view>
+  </view>
+</view>

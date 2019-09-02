@@ -1,0 +1,168 @@
+<!--pages/bargainDetail/bargainDetail.wxml-->
+<import src="/components/templates.wxml" />
+<view class='container {{bargainInfo.status!=4? "noPb": ""}}'>
+  <scroll-view scroll-y='true' style='height: {{ sHeight }}' scroll-top="{{scrollTop}}" bindscroll="noCounter" bindscrolltolower="getHelpBargainRecord">
+    <view class='banner'>
+      <swiperByNum bindtoggle="toggleDialogRule" richText="{{goodsInfo.goodsRule}}" imgs="{{goodsInfo.goodsPicUrls}}">
+        <view slot="goIndex"><gotoIndex wx:if="{{ fromShare == 1 }}"></gotoIndex></view>
+      </swiperByNum>
+    </view>
+    <swiperNotice goodsSn="{{ goodsSn }}"></swiperNotice>
+    <view class='content'>
+      <view class='countTimeBox' wx:if="{{ bargainInfo.countTimeNum > 0 && scene != 2 && !stopCountTime}}">
+        <text>还剩</text>       
+        <countTime bindcallback='goToBargainList' 
+                  timeStamp="{{bargainInfo.countTimeNum}}" 
+                  isSetData="{{isSetData}}"
+                  stopCountTime="{{stopCountTime}}"
+                  countType='ms' layoutType="hasBox" ></countTime>
+        <text>结束</text>
+      </view>
+      <view wx:if="{{bargainInfo.countTimeNum<0 && scene!=2}}" class='countTimeBox'>砍价已结束</view>
+
+      <view class='goodsInfo'>
+        <view class='lowestPrice'>￥{{bargainInfo.lowestPrice}}</view>
+        <view class='bargainInfo'>
+          <text class='startBargainPrice'>原价￥{{bargainInfo.originalPrice}}</text>
+          <text class='bargainJoinNum'>{{goodsInfo.bargainJoinNum}}人正在参与砍价</text>
+        </view>
+        <view class='goodsName'>{{goodsInfo.goodsName}}</view>
+        <view class='infoItem'>{{goodsInfo.goodsSubtitle}}</view>
+        <view class='infoItem'>
+          <text>规格: {{bargainInfo.goodsSkuName}}</text>
+          <text class='carriagePrice'>运费: ￥0</text>
+          <text class='goodsNum'>数量: X1</text>
+        </view>
+        <image src='/images/icon-bargainSuccess.png' class='icon-bargainSuccess' wx:if="{{bargainInfo.status==3}}"></image>
+      </view>
+
+      <view class='bargainResult' hidden="{{scene!=1}}">
+        <view class='tips-price'>
+          <view class='tip originalPrice'>
+            <!-- <image src='/images/icon-startBargainPrice.png'></image> -->
+            <text>原价￥{{bargainInfo.originalPrice}}</text>           
+          </view>
+          <view class='tip lowestPrice'>
+            <!-- <image src='/images/icon-lowestPrice.png'></image> -->
+            <text>最低价￥{{bargainInfo.lowestPrice}}</text>  
+          </view>
+        </view>
+        <view class='progressBox'>
+          <view class='priceProgress'>
+            <view class='staticPriceProgress' style='width:{{progressData.staticProgressWidth}}%'>
+              <image class='line-buyNowPrice' src='/images/line-buyNowPrice.png'></image>
+              <view 
+              class='dealPriceNum {{alignLeft.dealAlignLeft?(alignLeft.dealAlignLeft=="dealAlignRight"?"dealAlignRight":"dealAlignLeft"):""}}' 
+              id='dealAlignLeft'>
+              起砍价
+                <text class='moneyMark'>￥</text>
+                <text>{{bargainInfo.startBargainPrice}}</text>
+              </view>
+            </view>
+            <view class='wrap-bargainProgress'>
+              <view class='bargainProgress' style='width:{{progressData.bargainProgressWidth}}%'></view>
+              <view class='hasBargainNum {{alignLeft.hasBargainNum?"alignLeft":""}}' id='hasBargainNum' style='left:{{progressData.bargainProgressWidth}}%'>已砍至{{bargainInfo.bargainToPrice}}元</view>
+              <image class='icon-markPrice' src='/images/line-markerPrice.png' style='left:{{progressData.markerProgressWidth}}%'></image>
+              <view id='markPrice' 
+              class='markPrice {{alignLeft.markerAlignLeft?"markerAlignLeft":""}}' 
+              style='left:{{progressData.markerProgressWidth}}%'>一口价 <text>￥{{bargainInfo.buyNowPrice}}</text></view>
+            </view>            
+          </view>
+        </view>
+        <!-- <view class='btnBox'>
+          <button open-type='share' data-name='shareByOwn' class='btnShareBarMoreOne' wx:if="{{bargainInfo.bargainNum < 2}}">分享好友, 多砍一刀</button>
+        </view> -->
+        <view class='helpInfo'>
+          目前购买价<text>{{buyNowConfig.buyNowPrice}}</text>元，已砍<text>{{bargainInfo.bargainAmount}}</text>元，还差<text>{{bargainInfo.distanceLowestPrice}}</text>元！
+        </view>
+        <!-- <view class='helpInfo' wx:else>
+          当前还没有好友帮你砍哦，继续分享好友，帮砍一刀吧！
+        </view> -->
+        <view class='prompt-box'>
+          <view class='title'>温馨提示</view>
+          <view class='prompt-tip'>当您的砍价进度达到起砍价（未达到一口价）时，您可以直接以起砍价金额购买</view>
+          <view class='prompt-tip'>当您的砍价进度达到一口价（未达到最低价）时，您砍掉多少就能优惠多少，以当前优惠价格直接购买</view>
+        </view>
+      </view>
+
+      <!-- 支付 -->
+      <view class='payContent' wx:if="{{scene==2}}">
+        <view class='payDetail'>
+          <text class='payPrice'>￥{{buyNowConfig.buyNowPrice}}购买, 待支付</text>
+          <text class='orderNo'>订单号: {{bargainInfo.bargainOrderNo}}</text>
+          <view class='payCountTime' wx:if="{{bargainInfo.payCountTime>0 && !stopCountTime}}">
+            <text>支付剩余时间</text>
+            <countTime bindcallback='goToBargainList' 
+                        timeStamp="{{bargainInfo.payCountTime}}" 
+                        stopCountTime="{{stopCountTime}}"
+                        countType='ms' layoutType="hasBox countPayTime"></countTime>
+          </view>
+        </view>
+        <!-- 未支付去支付 -->
+        <form wx:if="{{ bargainInfo.status < 4 }}" class='btnPay'  bindsubmit='payNow' report-submit>
+          <button plain="true" form-type='submit'>马上支付</button>
+        </form>
+        <!-- 已支付查看订单 -->
+        <form wx:if="{{ bargainInfo.status > 4 }}" class='btnPay'  bindsubmit='goToOrderDetail' report-submit>
+          <button plain="true" form-type='submit'>查看订单</button>
+        </form>
+      </view>
+
+      <!-- 更多商品 -->
+      <view class='moreBargainGoodsBox'>
+        <moreBargainGoods></moreBargainGoods>
+      </view>
+
+      <!-- 好友砍价与商品详情 -->
+      <view class='tabContainer'>
+        <view class='tabBox'>
+          <form  class='tabItem {{tabActive==1? "active":""}}'  bindsubmit='toggleTab' data-tab='1' report-submit>
+            <button plain="true" form-type='submit'>好友砍价</button>
+          </form>
+          <form  class='tabItem {{tabActive==2? "active":""}}'  bindsubmit='toggleTab' data-tab='2' report-submit>
+            <button plain="true" form-type='submit'>商品详情</button>
+          </form>
+        </view>
+        <view class='tabContent'>
+          <friendsBargain friendsBargainList="{{friendsBargainList}}" 
+                          goodsSn="{{goodsSn}}" 
+                          goodsSkuSn="{{goodsSkuSn}}" 
+                          bindgetHelpBargainRecord="getHelpBargainRecord"
+                          isShow="{{tabActive==1 && isShowHelpBargainFriends}}"></friendsBargain>
+          <detailInfo isShow="{{tabActive==2}}" content="{{ goodsInfo.goodsDetails }}" imgs="{{ goodsInfo.pictureList }}"></detailInfo>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <!-- 只有在砍价中的状态才显示 -->
+  <view id="foot" class='foot' hidden="{{ bargainInfo.status!=4 }}">
+    <view class='btn-buy' bindtap='toggleDialogBuyNow'>
+      <text>￥{{buyNowConfig.buyNowPrice}}</text>
+      <text>立即购买</text>
+    </view>
+    <button open-type='share' class='btn-share {{bargainInfo.status != 4?"btn-disabled":""}}' disabled='{{bargainInfo.status != 4}}'>找人帮砍</button>
+  </view>
+</view>
+  <!-- 多砍一刀弹框提示 -->
+  <template is="modalBargainMoreOne" 
+            data="{{bargainAmount: bargainInfo.bargainAmount, status: bargainInfo.status, lowestPrice:bargainInfo.lowestPrice}}" 
+            wx:if="{{toggle.isShowModalBargainMoreOne}}"/>
+
+  <!-- 登录 -->
+  <loginGetUser bind:close="toggleModalLoginShow" bind:callback="changeLoginState" wx:if="{{ modalLoginShow }}"></loginGetUser>
+
+  <!-- 客服图标 -->
+  <customService></customService>
+
+  <!-- 分享自砍或自砍两刀 -->
+  <block wx:if="{{ dialogBargainRes.isShow }}">
+    <dialogBargainRes scene="{{ dialogBargainRes.scene }}" price="{{ dialogBargainRes.price }}" isShow="{{ dialogBargainRes.isShow }}"></dialogBargainRes>
+  </block>
+  <!-- 立即购买弹窗 -->
+  <dialogBuyNow bind:buy="tabBuyNowPrice" 
+    bind:close="toggleDialogBuyNow" 
+    bargainInfo="{{ bargainInfo }}"
+    buyNowConfig="{{ buyNowConfig }}"
+    isShow="{{ dialogBuyNow }}"></dialogBuyNow>

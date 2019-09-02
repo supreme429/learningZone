@@ -1,0 +1,38 @@
+<!--pages/scanCodeReceiving/serviceEvaluationComplate/serviceEvaluationComplate.wxml-->
+<import src="../components/modal.wxml" />
+
+<view class='container'>
+  <view class='content' wx:if="{{toggle.isOpenRed}}">
+    <view class='title'>恭喜您，获得</view>
+    <view class='couponBox'>
+      <view class='couponBg'><image src='../../../assets/images/quan-bg.png'></image></view>
+      <view class='couponContent'>
+        <view class='amount'>￥{{redAmount}}</view>
+        <view class='line'></view>
+        <view class='couponName'>{{redName}}</view>
+      </view>
+    </view>
+    <view class='codeBox'>
+      <view class='code'>优惠券码: {{redCode}}  <view class='btn-copyCode' bindtap='copyCode'>复制</view></view>
+      <navigator class='go-index' open-type='reLaunch' url="/pages/scanCodeReceiving/index/index">继续扫码签收</navigator>
+    </view>
+    <!-- 使用说明 -->
+    <view class='useInfoBox'>
+      <view class='userInfoTitle'>使用说明:</view>
+      <view class='useInfoItem'>1、您可以复制优惠券码，或前往订单收货手机查收券码短信。</view>
+      <view class='useInfoItem'>2、优惠券使用规则，请查看短信内容。</view>
+      <view class='useInfoItem'>3、您可在下单页面，通过添加优惠券使用本优惠券。</view>
+      <view class='useInfoItem'>4、请在有效期内使用本优惠券，有效期随短信一并发送，敬请留意。</view>
+      <view class='useInfoItem'>5、本活动最终解释权归美乐乐所有。</view>
+    </view>
+
+  </view>
+  <view class='evaSuccess' wx:else>
+    <view class='success-icon'><image src='../../../assets/images/success-icon.png'></image></view>
+    <view class='success-info'>评价提交成功</view>
+    <navigator class='go-index' open-type='redirect' url="/pages/scanCodeReceiving/index/index">继续扫码签收</navigator>
+    <template is="modal-red" wx:if="{{toggle.isShowRedModal}}"/>
+  </view>
+
+  <template is="signIn-toast" data="{{info:toast.info}}" wx:if="{{toggle.isShowCopyToast}}"/>
+</view>

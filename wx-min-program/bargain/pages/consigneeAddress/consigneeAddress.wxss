@@ -1,0 +1,148 @@
+/* pages/consigneeAddress/consigneeAddress.wxss */
+page{
+  background: #f2f2f2;
+}
+.container{
+  padding-bottom: 98rpx;
+}
+.consignee{
+  margin-top: 20rpx;
+  height: 1100rpx;
+}
+.consignee .item{
+  background: #fff;
+  width: 100%;
+  padding: 35rpx;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 24rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+.consignee .item.disabled{
+  opacity: 0.6;
+}
+.first-line{
+  margin-bottom: 35rpx;
+  font-weight: bold;
+}
+.first-line .name{
+  font-size: 36rpx;
+}
+.first-line .phone{
+  font-size: 30rpx;
+  float: right;
+}
+
+
+
+.no-consignee{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.no-consignee image{
+  width: 180rpx;
+  height: 180rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.btn-add{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0;
+  background: #e62318;
+  color: #fff;
+  height: 98rpx;
+}
+
+/* 收货人弹窗 start */
+.dialog-consignee{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog-body{
+  position: relative;
+  width: 600rpx;
+  height: 570rpx;
+  background: #fff;
+  border-radius: 6rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.dialog-close{
+  position: absolute;
+  top: 18rpx;
+  right: 18rpx;
+  width: 23rpx;
+  height: 23rpx;
+  padding: 15rpx;
+}
+.dialog-title{
+  font-size: 30rpx;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #e8e8e8;
+  box-sizing: border-box;
+}
+.form-item{
+  box-sizing: border-box;
+  height: 100rpx;
+  border-bottom: 1px solid #e8e8e8;
+}
+.input-consignee-phone{
+  display: flex;
+}
+.input-consignee-phone input{
+  height: 99rpx;
+  line-height: 99rpx;
+  padding: 0 30rpx;
+}
+.inputProvinces{
+  line-height: 99rpx;
+  padding: 0 30rpx;
+}
+.inputAddress{
+  height: 160rpx;
+  box-sizing: border-box;
+}
+.inputAddress textarea{
+  padding: 35rpx 30rpx;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.inputAddress.hide {
+  opacity: 0;
+}
+.dialog-footer{
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog-footer button{
+  width: 520rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #e62318;
+  color: #fff;
+  font-size: 30rpx;
+}
+/* 收货人弹窗 end */

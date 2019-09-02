@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<view class='login-title'>
+  <text>请登录后继续操作</text>
+</view>
+
+<view class='login-handle'>
+  <button class='login-wx' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>微信手机号快捷登录</button>
+  <!-- <button class='login-mobile' bind:tap='loginMobile'>手机号登录</button> -->
+</view>

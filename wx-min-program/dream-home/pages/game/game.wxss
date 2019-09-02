@@ -1,0 +1,164 @@
+/* miniprogram/pages/game/game.wxss */
+.canvas-box{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.game-ctx{
+  width: 100%;
+  background: #eee;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 270rpx;
+  background: #eee;
+}
+
+/* 保存按钮 start */
+button.btn-save{
+  position: fixed;
+  bottom: 300rpx;
+  right: 30rpx;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  z-index: 99;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+.icon-save{
+  width: 20rpx;
+  height: 24rpx;
+  margin-left: 13rpx;
+}
+/* 保存按钮 end */
+
+/* 选择空间 start */
+.nav-rooms{
+  position: absolute;
+  left: 30rpx;
+  bottom: 300rpx;
+  width: 160rpx;
+  /* height: 60rpx; */
+  /* max-height: 300rpx; */
+  z-index: 99;
+  font-size: 24rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  opacity: 0.8;
+}
+.nav-rooms.open{
+  opacity: 1;
+}
+.nav-rooms .select-value{
+  font-weight: 800;
+  padding: 15rpx 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+}
+.icon-arrows{
+  width: 17rpx;
+  height: 10rpx;
+  display: inline-block;
+  margin-left: 14rpx;
+}
+.rooms-list{
+  max-height: 240rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  overflow: hidden;
+}
+.rooms-list .item {
+  display: flex;
+  align-items: center;
+  padding: 15rpx 20rpx;
+}
+.rooms-list .item.active{
+  background-color: #f5f5f5;
+}
+.rooms-list .item .thumbnail{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  background-color: #eee;
+}
+/* 选择空间 end */
+
+/* 空间物品 start */
+.nav-room-res{
+  width: 100%;
+  height: 150rpx;
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+.nav-room-res .item{
+  position: relative;
+  width: 150rpx!important;
+  height: 150rpx!important;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+  color: #999;
+}
+.nav-room-res .item.active{
+  color: #333;
+  font-weight: 800;
+}
+  /* 三角 */
+.nav-room-res .item.active::after{
+  content: ' ';
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+  top: 0;
+  left: 65rpx;
+	pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+	border-top-color: #f5f5f5;
+	border-width: 10rpx;
+}
+.nav-room-res .item image{
+  width: 70rpx;
+  height: 70rpx;
+}
+/* 空间物品 end */
+
+/* 空间物品样式 start */
+.nav-room-style{
+  width: 100%;
+  height: 120rpx;
+  background-color: #f5f5f5;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.nav-room-style .item{
+  display: inline-block;
+  width: auto!important;
+  height: 80rpx;
+  padding: 20rpx 10rpx;
+  box-sizing: border-box;
+}
+.nav-room-style .item image{
+  /* width: 80rpx; */
+  max-width: 160rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* 空间物品样式 end */
+image[src=""]{
+  visibility: hidden;
+}

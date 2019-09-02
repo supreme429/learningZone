@@ -1,0 +1,141 @@
+/* miniprogram/pages/goodsList/goodsList.wxss */
+.border-top-10{
+  border-top: 10rpx solid #f7f7f7;
+}
+.goods-box{
+  width: 690rpx;
+  height: 240rpx;
+  display: flex;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  justify-content: space-between;
+  position: relative;
+}
+.goods-box image.goods-img{
+  width: 240rpx;
+  height: 240rpx;
+}
+.goods-box image.img-cart{
+  position: absolute;
+  width: 80rpx;
+  height: 50rpx;
+  bottom: 10rpx;
+  right: 40rpx;
+}
+.goods-box .right{
+  width: 430rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goods-box .right text{
+  display: block;
+}
+.goods-box .right text.title{
+  font-size: 30rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow:ellipsis;  
+  -webkit-box-orient: vertical;    
+  -webkit-line-clamp: 2;
+  color: #000;
+}
+.goods-box .right text.sub-title{
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price-box .price{
+  color: #c81c28;
+  font-size: 36rpx;
+  font-weight: 800;
+}
+.price-box .original-price{
+  color: #999999;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+.series-ad{
+  padding:0 30rpx;
+  margin-top: 30rpx;
+}
+.series-ad .ad{
+  width: 690rpx;
+  height: 240rpx;
+}
+
+.store-info{
+  text-align: center;
+  color: #333;
+  padding: 70rpx 50rpx;
+}
+.store-info .title{
+  font-size: 36rpx;
+}
+.store-info .title text{
+  color: #fb4d46;
+}
+.store-info .sub-title{
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 3;
+}
+.store-info .tel{
+  font-size: 60rpx;
+  line-height: 1;
+}
+.store-info .call{
+  margin-top: 30rpx;
+  background: #ffd926;
+  color:　#333;
+  font-weight: 800;
+}
+.store-info .call::after{
+  border: 0;
+}
+.input-box{
+  position: relative;
+  height: 100rpx;
+  margin-top: 30rpx;
+}
+.input-text{
+  width: 650rpx;
+  height: 100rpx;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 0 90rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.icon-phone{
+  position: absolute;
+  top: 20rpx;
+  left: 29rpx;
+  width: 36rpx;
+  height: 60rpx;
+  display: inline-block;
+}
+
+.staff-service{
+  position: fixed;
+  bottom: 100rpx;
+  right: 30rpx;
+  width: 120rpx;
+  height: 150rpx;
+  background: none;
+}
+.staff-service image{
+  width: 120rpx;
+  height: 150rpx;
+}
+
+.banner-ad{
+  width: 690rpx;
+  height: 310rpx;
+  background: #eee;
+  margin: 0 30rpx;
+  margin-bottom: 30rpx;
+}

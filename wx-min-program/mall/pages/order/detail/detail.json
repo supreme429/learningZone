@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/order/detail/detail"
+  ],
+
+  "usingComponents": {
+    "cancel-order": "../components/cancel-order/cancel-order"
+  }
+}

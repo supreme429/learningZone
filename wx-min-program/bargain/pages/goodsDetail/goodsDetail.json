@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "specification": "../../components/specification/specification",
+    "detailInfo": "../../components/detailInfo/detailInfo",
+    "swiperByNum": "../../components/swiperByNum/swiperByNum",
+    "loginGetUser": "../../components/loginGetUser/loginGetUser",
+    "modalBargainMoreOne": "../../components/modalBargainMoreOne/modalBargainMoreOne",
+    "customService": "../../components/customService/customService",
+    "gotoIndex": "../../components/gotoIndex/gotoIndex",
+    "dialogBargainRes": "../../components/dialogBargainRes/dialogBargainRes",
+    "swiperNotice": "../../components/swiperNotice/swiperNotice"
+  }
+}

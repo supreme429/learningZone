@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "阅木搜索",
+  "usingComponents": {
+    "formSearch": "../../components/formSearch/formSearch"
+  }
+}

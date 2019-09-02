@@ -1,0 +1,23 @@
+<!--pages/scanCodeReceiving/receivingPower/receivingPower.wxml-->
+<import src="../components/modal.wxml" />
+<user-info></user-info>
+<view class="container">
+  <image class="icon-warn" src="/assets/images/icon-warning.png"></image>
+  <text class="strong">您不具有当前送货单收货权限</text>
+  <!-- 图片验证码 -->
+  <view class='item' wx:if="{{!isSend}}">
+    <text class="sub" >您可以请求收货人{{ consigneePhone }}授权收货</text>
+    <view class='pic-code-box' wx:if="{{ isNeedCapCode }}">
+      <input type='text' class='input-pic-code' placeholder='输入图形码' value='{{ capCode }}' bindinput="inputCapCode"></input>
+      <image class='img-code' src="{{ capCodeSrc }}" bindtap='getCapCodeSrc'></image>
+    </view>
+    <button type="primary" class="btn {{ capCode.length < 4 && isNeedCapCode ? 'disabled':'' }}" bindtap="sendCode">发送请求</button>
+    <button type="default" class="btn btn-bak" wx:if="{{ isShowBtnBak }}" bindtap="setBakPhone">请求备用电话号码授权</button>
+  </view>
+  <!-- 短信验证码 -->
+  <view class='item' wx:if="{{isSend}}">
+    <text class="sub" >请输入收货人{{ consigneePhone }}提供的授权验证码</text>
+    <input type="number" class="input-code" focus="{{focus}}" bindinput="inputSmsCode" value='{{ smsCode }}'></input>
+    <button type="primary" class="btn {{ smsCode.length < 6 ? 'disabled':'' }}" bindtap="submitCode">确认</button>
+  </view>
+</view>

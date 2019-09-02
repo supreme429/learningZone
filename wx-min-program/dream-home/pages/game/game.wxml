@@ -1,0 +1,92 @@
+<!--miniprogram/pages/game/game.wxml-->
+<view class='canvas-box'>
+  <canvas class="game-ctx" id="game-ctx" canvas-id='game-ctx' style="height:{{ GCHeight }};"></canvas>
+</view>
+<gameContainer 
+  gcheight="{{ GCHeight }}" 
+  locations="{{ locations }}" 
+  bg="{{ roomBgUrl }}" 
+  bind:setbg="setBgWH"
+></gameContainer>
+<!-- 选择空间 start -->
+<view class="nav-rooms {{ isShowModalRoomsList ? 'open' : '' }}">
+  <scroll-view class="rooms-list" scroll-y="1" hidden='{{ !isShowModalRoomsList }}'>
+    <view class="item {{ item.roomUuid == roomUuid ? 'active' : '' }}" wx:for="{{ roomList }}" bindtap='changeRoom' data-item="{{ item }}">
+      <image class='thumbnail' src="{{ item.roomCartoonPicUrl }}"></image><text>{{ item.roomName }}</text>
+    </view>
+  </scroll-view>
+  <!-- 方案只有一套暂时先隐藏，后续再开启 -->
+  <view class='select-value' bindtap='toggleModalRoomsList' wx:if="{{ !1 }}">
+    <text>选择空间</text>
+    <image class='icon-arrows' src='/images/icon-arrows-down.png'></image>
+  </view>
+</view>
+<!-- 选择空间 end -->
+<view class='footer' id="footer">
+  <scroll-view 
+    scroll-x 
+    scroll-left="{{ styleScrollLeft }}" 
+    scroll-with-animation
+    class="nav-room-style"
+  >
+    <view 
+      class='room-style-item item' 
+      wx:for="{{ roomResStyleList }}" 
+      bindtap='changeStyle' 
+      data-item="{{ item }}"
+      data-index="{{ index }}"
+    >
+      <image mode='aspectFit' src="{{item.cartoonSmallPicUrl}}"></image>
+    </view>
+  </scroll-view>
+  <!-- <swiper 
+    class="nav-room-style" 
+    current="{{ swiperCurrent }}" 
+    bindchange='changeStyleBySwiper'
+  >
+    <swiper-item class='item'  wx:for="{{ roomResStyleList }}" bindtap='changeStyle' data-item="{{ item }}" data-index="{{ index }}">
+      <view>
+        <image mode='aspectFit' src="{{item.cartoonSmallPicUrl}}"></image>
+      </view>
+    </swiper-item>
+  </swiper> -->
+  <scroll-view 
+    scroll-x 
+    scroll-left="{{ roomResScrollLeft }}" 
+    scroll-with-animation
+    class='nav-room-res'
+  >
+    <view 
+      class='room-res-item  item {{ item.resUuid == resUuid ? "active" : "" }}' 
+      wx:for="{{ roomResList }}" 
+      bindtap='changeRoomRes' 
+      data-resUuid="{{ item.resUuid }}"
+      data-index="{{ index }}"
+    >
+      <image src='{{ item.resUuid == resUuid ? item.thumbnail : item.unThumbnail }}'></image>
+      <text>{{ item.resName }}</text>
+    </view>
+  </scroll-view>
+  <!-- <swiper
+    class="nav-room-res" 
+    current="{{ roomResCurrent }}" 
+    bindchange='changeRoomResBySwiper'
+  >
+    <swiper-item 
+      class='item {{ item.resUuid == resUuid ? "active" : "" }}' 
+      wx:for="{{ roomResList }}" 
+      bindtap='changeRoomRes' 
+      data-index="{{ index }}"
+      data-resUuid="{{ item.resUuid }}"
+    >
+      <image src='{{ item.resUuid == resUuid ? item.thumbnail : item.unThumbnail }}'></image>
+      <text>{{ item.resName }}</text>
+    </swiper-item>
+  </swiper> -->
+</view>
+<button class='none btn-save' bindtap='saveCanvas'>评分<image class='icon-save' src='/images/icon-save.png'></image></button>
+
+<!-- 预加载图片 -->
+<view hidden='{{ true }}'>
+  <image wx:for="{{ preViewImgs }}" src='{{ item }}'></image>
+</view>

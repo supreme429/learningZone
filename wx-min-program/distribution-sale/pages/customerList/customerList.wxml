@@ -1,0 +1,25 @@
+<!--pages/customerList/customerList.wxml-->
+<view class='container'>
+  <view id="box">
+    <view class='search-box'>
+      <image class='icon-search' src='/images/icon-search.png'></image>
+      <input class='input-search' type='text' placeholder='客户电话/姓名' placeholder-class='color-a1' value="{{ searchValue }}" bindconfirm="search" bindinput='inputSearchValue'></input>
+    </view>
+    <view class='flex-center tabs'>
+      <text wx:for="{{ tabs }}" class='item {{ item.value == status ? "active" : "" }}' data-status='{{ item.value }}' bindtap='changeTab'>{{ item.title }}</text>
+    </view>
+  </view>
+  <view class='none-data' wx:if="{{ listData.length === 0 }}">暂时没有客户~</view>
+  <scroll-view wx:if="{{ listData.length > 0 }}" class='customer-list' style='height: {{ listHeight }}' scroll-y="{{ true }}" bindscrolltolower="getData">
+    <navigator url="{{ '/pages/customerRenewal/customerRenewal?id=' + item.id }}" class='flex-center item {{ item.status == 1 ? "overdue" : "" }}' wx:for="{{ listData }}">
+      <view>
+        <text class='name'>{{ item.name }}</text>
+        <text class='time'>{{ item.endDate }}</text>
+      </view>
+      <view>
+        <text class='status'>{{ statusToString[item.status] }}</text>
+        <image class='icon-arrow' src='/images/icon-arrow.png'></image>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/order/list/list.wxml-->
+<view class='order-search-wrap'>
+  <view class="order-search">
+      <icon class="search-icon" color="#aaa" size="14" type="search"></icon>
+      <input class="search-text" confirm-type='search' placeholder='商品名称' bind:confirm='searchSubmit'></input>
+  </view>
+</view>
+
+<view class='order-tab'>
+  <view wx:for='{{tabList}}' wx:key="{{index}}" bind:tap='tabTap' class='tab-item {{item.active ? "active" : ""}}' data-filter-key='{{item.filterKey}}'>
+    {{item.name}}
+  </view>
+</view>
+
+<view class='order-list'>
+  <view class='order-detail' wx:key="{{index}}" wx:for='{{orderListCurrent}}' bind:tap='navigatorToDetail' data-order-sn='{{item.order_sn}}' wx:if="{{currentStatus == '全部订单'|| currentStatus==item.order_status_format}}">
+    <view class='order-header'>
+      <view class='order-state'>
+        <text>订单状态：</text>
+        {{item.order_status_format}}
+      </view>
+      <view class='add-time'>{{item.order_time}}</view>
+    </view>
+
+    <scroll-view scroll-x class='goods-list'>
+        <image wx:for='{{item.goods_info}}' wx:key="{{index}}" wx:for-item='goods' src='https:{{goods.img_266_176}}'></image>
+    </scroll-view>
+
+    <view class='order-total'>
+      共{{item.goods_info_length}}件商品 合计
+      <text>￥{{item.total_fee}}</text>
+    </view>
+
+    <view class='order-handle' wx:if='{{item.handler}}'>
+      <view class='button {{handlerText == "付款" || handlerText == "确认收货" ? "red" : ""}}' wx:for='{{item.handler}}' wx:key="{{index}}" wx:for-item='handlerText' wx:if='{{handlerText == "付款" || handlerText == "确认收货" || handlerText == "取消订单"}}' data-order-status='{{handlerText}}' data-order-id='{{item.order_id}}' data-order-sn='{{item.order_sn}}' catch:tap='orderHandler'>{{handlerText}}</view>
+    </view>
+  </view>
+</view>
+<view class='orderNoData' wx:if='{{orderNoData}}'>抱歉，没有找到符合条件的订单！</view>
+
+<!-- / 取消订单组件 START / -->
+<cancel-order id='cancelOrderContainer' order-id='{{selectOrderId}}' bindcancelOrderCallback='cancelOrderCallback'></cancel-order>
+<!-- / 取消订单组件 END / -->

@@ -1,0 +1,8 @@
+/* pages/agreement/agreement.wxss */
+.container{
+  padding: 30rpx 36rpx;
+}
+rich-text{
+  color: #666;
+  font-size: 26rpx;
+}

@@ -1,0 +1,210 @@
+<template name="wood-info">
+  <view class='woodInfo'>
+    <view class='title'>
+      <view class='title-txt'>
+        <text>{{woods_name}}</text>
+        <view class='title-line'></view>
+      </view>
+      <image class='icon-title-arrow' src='/images/icon-title-arrow.png'></image>
+    </view>
+    <view class='woodImg'>
+      <image src='{{woods_pic}}'></image>
+    </view>
+  </view>
+</template>
+
+<!-- 亮点信息 -->
+<template name="liangdianxinxi">
+  <view class='liangdianxinxi'>
+    <view class='xinxi-item' wx:for="{{attr_group_list}}">
+      <text>{{item.attr_group_name}}:</text>
+      <text class='xinxi-info'>{{item.attr_ext_value}}</text>
+    </view>
+  </view>
+</template>
+
+<!-- 基本介绍 -->
+<template name="jibenjieshao">
+  <view class='jibenjieshao'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='desc' wx:for="{{attr_group_list}}">
+      {{item.attr_ext_value}}
+    </view>
+  </view>
+</template>
+
+
+<!-- 基本信息 -->
+<template name="jibenxinxi">
+  <view class='jibenxinxi'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='xinxi-list' wx:for="{{attr_group_list}}">
+      <view class='xinxi-item' wx:if="{{item.attr_group_pinyin=='jibenxinxitupian'}}">
+        <text>{{item.attr_group_name}}:</text>
+        <image src='{{item.attr_ext_value}}' mode='widthFix'></image>
+      </view>
+      <view class='xinxi-item' wx:elif="{{item.attr_group_pinyin=='jibenxinxishipin'}}">
+        <!-- <text>{{item.attr_group_name}}:</text> -->
+        <video src="{{item.jibenxinxishipin}}" poster='{{item.jibenxinxishipin_cover}}'></video>
+      </view>
+      <view class='xinxi-item' wx:else>
+        <text class='xinxi-name'>{{item.attr_group_name}}:</text>
+        <text class='xinxi-info'>{{item.attr_ext_value}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 加工性 -->
+<template name="jiagongxingheyongtu">
+  <view class='jiagongxingheyongtu'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='xinxi-list' wx:for="{{attr_group_list}}">
+
+    </view>
+    <view class='xinxi-list' wx:for="{{attr_group_list}}">
+      <view class='xinxi-item' wx:if="{{item.attr_group_pinyin == 'jiagongxingheyongtu_pic'}}">
+        <image src="{{item.attr_ext_value}}" mode='widthFix'></image>
+      </view>
+      <view class='xinxi-item' wx:else>
+        <text class='xinxi-name'>{{item.attr_group_name}}:</text>
+        <text class='xinxi-info'>{{item.attr_ext_value}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 使用历史start -->
+<template name="shiyonglishijieshao">
+  <view class='shiyonglishijieshao'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='desc'>{{shiyonglishijieshao_desc}}</view>
+    <view class='pic_list'>
+      <view class='pic_item' wx:if="{{index<shiyonglishijieshao_pic_list.length-1 ||(index+1)%2===0}}" wx:for="{{shiyonglishijieshao_pic_list}}">
+        <image src='{{item}}'></image>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 优缺点 -->
+<template name="youdianjiquedian">
+  <view class='youdianjiquedian'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='xinxi-list' wx:for="{{attr_group_list}}">
+      <view class='xinxi-item'>
+        <text class='xinxi-name'>{{item.attr_group_name}}:</text>
+        <text class='xinxi-info'>{{item.attr_ext_value}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 常见家居展示 -->
+<template name="woodGoodsInfo">
+  <view class='woodGoodsInfo'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>常见家居展示
+    </view>
+    <view class='wrap-swiper'>
+      <swiper class="swiper" autoplay='true' next-margin="135rpx" circular="true" current-item-id="{{currentItemId}}" previous-margin="135rpx" bindchange="swiperChange">
+        <block wx:for="{{woodGoodsInfo}}" wx:key="index">
+          <swiper-item item-id="{{index}}" data-woodid="{{item.woods_goods_id}}">
+            <image src='{{item.h_goods_img}}'></image>
+            <view class='woodName'>
+              <text>{{item.h_goods_name}}</text>
+              <image src='/images/img-woodName-bg.png'></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='indicator-dots'>
+        <view class='dots {{index == bannerIndex? "active":""}}' wx:for="{{woodGoodsInfo}}"></view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 分布范围 -->
+<template name="fenbufanwei">
+  <view class='fenbufanwei'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='desc' wx:for="{{attr_group_list}}">
+      {{item.attr_ext_value}}
+    </view>
+  </view>
+</template>
+
+<!-- 形态特征 -->
+<template name="mucaixingtaitezheng">
+  <view class='mucaixingtaitezheng'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='xingtai_img'>
+      <image src='{{mucaixingtaitezheng_pic}}'></image>
+    </view>
+    <view class='desc'>{{mucaixingtaitezheng_desc}}</view>
+    <view class='xinxi-list'>
+      <view class='xinxi-item' wx:for="{{attr_group_list}}">
+        <text class='xinxi-name'>{{item.attr_group_name}}:</text>
+        <text class='xinxi-info'>{{item.attr_ext_value}}</text>
+      </view>
+    </view>
+    <view class='pic_desc_list'>
+      <view class='pic_item' wx:for="{{pic_desc_list}}" wx:for-index="key" wx:for-item="value">
+        <view class='wood_img'>
+          <image src='{{value.pic}}'></image>
+        </view>
+        <view class='wood_name'>
+          <image class='name_bg' src='/images/img-woodName-bg.png'></image>
+          <text class='name'>{{value.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 差异对比 -->
+<template name="chayiduibi">
+  <view class='chayiduibi'>
+    <view class='xinxi_title'>
+      <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>{{attr_group_title}}
+    </view>
+    <view class='desc'>{{chayiduibi_desc}}</view>
+    <view class='duibi_pic'>
+      <view class='pic_item'>
+        <view class='wood_img'>
+          <image src='{{chayiduibi_pic_desc_1.chayiduibi_pic1}}'></image>
+        </view>
+        <view class='wood_name'>
+          <image class='name_bg' src='/images/img-woodName-bg.png'></image>
+          <text class='name'>{{chayiduibi_pic_desc_1.chayiduibi_pic1_desc}}</text>
+        </view>
+      </view>
+      <image class='icon-vs' src='/images/icon-vs.png'></image>
+      <view class='pic_item'>
+        <view class='wood_img'>
+          <image src='{{chayiduibi_pic_desc_2.chayiduibi_pic2}}'></image>
+        </view>
+        <view class='wood_name'>
+          <image class='name_bg' src='/images/img-woodName-bg.png'></image>
+          <text class='name'>{{chayiduibi_pic_desc_2.chayiduibi_pic2_desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

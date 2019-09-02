@@ -1,0 +1,95 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
+	"appid": "wxd43dc6861890ab39",
+	"projectname": "bargain-mp",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "商品详情",
+					"pathName": "pages/goodsDetail/goodsDetail",
+					"query": "goodsSn=YH-HKD1Y-A-CB&fromShare=1"
+				},
+				{
+					"id": 1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "brUuid=01913760-6af8-40c8-a0fc-337919d1ad8a"
+				},
+				{
+					"id": -1,
+					"name": "我的砍价列表",
+					"pathName": "pages/bargainList/bargainList",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "砍价详情",
+					"pathName": "pages/bargainDetail/bargainDetail",
+					"query": "brUuid=3fad059d-7472-4102-a40f-7c0d057b0487&goodsSn=DMY-LC-B552-DFLR-L&goodsSkuSn=DMY-LC-B552-DFLR-L&fromShare=1"
+				},
+				{
+					"id": -1,
+					"name": "收货人地址",
+					"pathName": "pages/consigneeAddress/consigneeAddress",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "物流列表",
+					"pathName": "pages/logisticsLog/logisticsLog",
+					"query": "orderNo=11118080700013"
+				},
+				{
+					"id": -1,
+					"name": "活动地址页面选择",
+					"pathName": "pages/location/location",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "无网络页面",
+					"pathName": "pages/noInternet/noInternet",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "帮砍",
+					"pathName": "pages/helpBargainDetail/helpBargainDetail",
+					"query": "brUuid=01f14cd3-b02f-4c33-b592-74e888aa90d0&goodsSn=DFJ-MI-01-B&goodsSkuSn=DFJ-MI-01-B&initiatorOpenId=oGGP64gK86RyfYkZ0n4NNxL9W1CI"
+				}
+			]
+		}
+	}
+}

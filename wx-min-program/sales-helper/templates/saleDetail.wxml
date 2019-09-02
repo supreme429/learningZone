@@ -1,0 +1,63 @@
+<!-- orderType 订单类型（退单扣除没有），1=收款，2=退款，3=销量，4=发货量，5=大单，6=新品，7=床垫，8=扣款-大单,9=扣款-新品,10=扣款-床垫, 11= 销量总额, 12= 扣除金额-->
+<template name="saleDetail">
+  <view class='saleDetail'>
+    <view class='title'>
+      {{ title }}
+       <picker mode="date"
+              fields="month"
+              start="{{ start }}" 
+              end="{{ end }}" 
+              bindchange="bindDateChange"
+              wx:if="{{ isShowDatePicker }}"
+              >
+          <view class="picker">
+            <image class='icon-date' src='/images/icon-date.png'></image>
+          </view>
+        </picker>
+    </view>
+    <view class='saleGather'>
+      <text class='saleTips'>奖励金额</text>
+      <text class='saleMount'>{{ pageData.rewardAmout }}</text>
+      <navigator url='/pages/incentiveInfo/incentiveInfo?month={{ month }}'>查看详情</navigator>
+    </view>
+    <view class='mountList'>
+      <view class='mount-item mountGather'>
+        <text>绩效工资</text>
+        <text>{{ pageData.salary }}</text> 
+      </view>
+      <view class='mount-item mountGather'>
+        <text>净销量</text>
+        <text>{{ pageData.saleCount }}</text> 
+      </view>
+      <navigator url='/pages/relevantOrder/relevantOrder?month={{ month }}&orderType=11' class='mount-item mountDetail'>
+        <text>销售总额</text>
+        <text>{{ pageData.saleAmount }}</text> 
+        <image class='icon-arrow' src='/images/icon-arrow.png'></image>
+      </navigator>
+      <navigator url='/pages/relevantOrder/relevantOrder?month={{ month }}&orderType=12' class='mount-item mountDetail'>
+        <text>扣除总额</text>
+        <text>{{ pageData.deductAmount }}</text> 
+        <image class='icon-arrow' src='/images/icon-arrow.png'></image>
+      </navigator>
+      <view class='mount-item mountGather'>
+        <text>净回款</text>
+        <text>{{ pageData.receiveAmount }}</text> 
+      </view>
+      <navigator url='/pages/relevantOrder/relevantOrder?month={{ month }}&orderType=1' class='mount-item mountDetail'>
+        <text>收款</text>
+        <text>{{ pageData.receive }}</text> 
+        <image class='icon-arrow' src='/images/icon-arrow.png'></image>
+      </navigator>
+      <navigator url='/pages/relevantOrder/relevantOrder?month={{ month }}&orderType=2' class='mount-item mountDetail'>
+        <text>退款</text>
+        <text>{{ pageData.refund }}</text> 
+        <image class='icon-arrow' src='/images/icon-arrow.png'></image>
+      </navigator>
+      <navigator url='/pages/relevantOrder/relevantOrder?month={{ month }}&orderType=4' class='mount-item mountGather'>
+        <text>发货量</text>
+        <text>{{ pageData.deliverCount }}</text> 
+        <image class='icon-arrow' src='/images/icon-arrow.png'></image>
+      </navigator>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,22 @@
+<!--components/swiperByNum/swiperByNum.wxml-->
+<view class='swiper-box'>
+  <swiper autoplay="{{ autoplay }}" interval="{{ interval }}" bindchange="changeCurrent">
+      <swiper-item wx:for="{{imgsList}}"><image mode='aspectFill' src="{{item}}" class="slide-image" /></swiper-item>
+  </swiper>
+  <!-- <view wx:if="{{imgsList.length > 1}}" class='swiper-page'>{{current}}/{{imgsList.length}}</view> -->
+  <view class='indicatorDots'>
+    <view class='{{index == current? "active":""}}' wx:if="{{imgsList.length > 1}}" wx:for="{{imgsList.length}}"></view>
+  </view>
+  <slot name="goIndex"></slot>
+  <view class='swiper-rule' wx:if="{{ showRule }}" bindtap="toggleDialogRule">活动规则</view>
+</view>
+<view class='dialog-rule' wx:if="{{dialogRule}}">
+  <view class='dialog-body'>
+    <text class='title'>活动规则</text>
+    <scroll-view class='content' scroll-y="true">
+      <rich-text nodes="{{ richText }}"></rich-text>
+    </scroll-view>
+  </view>
+  <image class='btn-close' bindtap="toggleDialogRule" src='/images/icon-close.png'></image>
+</view>
+<loginGetUser></loginGetUser>

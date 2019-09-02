@@ -1,0 +1,2 @@
+<!--components/btnShare/btnShare.wxml-->
+<button open-type='share' class='btn-share'>{{btnText}}</button>

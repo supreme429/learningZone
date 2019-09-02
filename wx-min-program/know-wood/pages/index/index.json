@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "modalSwiper": "../../components/modalSwiper/modalSwiper",
+    "woodClass": "../../components/woodClass/woodClass",
+    "cascadeScreening": "../../components/cascadeScreening/cascadeScreening",
+    "hotSearch": "../../components/hotSearch/hotSearch",
+    "ourRecommend": "../../components/ourRecommend/ourRecommend",
+    "furnitureRecommend": "../../components/furnitureRecommend/furnitureRecommend"
+  }
+}

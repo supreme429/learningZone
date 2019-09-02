@@ -1,0 +1,13 @@
+<!--pages/more/more.wxml-->
+<view class='container'>
+  <view class='firstList' wx:for="{{firstLabelList}}" wx:for-index="firstIndex" wx:for-item="firstItem">
+    <view class='firstName'><image src='/images/icon-title-arrow.png'></image>{{firstItem.firstName}}</view>
+    <view class='secondList'>
+      <navigator class='secondName'
+            url='/pages/search/search?labelName={{secondItem.labelName}}&labelId={{secondItem.labelId}}'
+            wx:for-index="secondIndex" 
+            wx:for-item="secondItem"
+            wx:for="{{firstItem.secondLabelList}}">{{secondItem.labelName}}</navigator>
+    </view>
+  </view>
+</view>

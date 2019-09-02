@@ -1,0 +1,83 @@
+/* components/woodClass/woodClass.wxss */
+.container{
+  padding: 0 35rpx;
+  margin-top: 90rpx;
+}
+.title{
+  color: #333;
+  text-align: center;
+  padding-bottom: 22rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.icon-title-arrow{
+  position: absolute;
+  width: 18rpx;
+  height: 14rpx;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.title-txt{
+  position: relative;
+  font-size: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  width: auto;
+  font-weight: bold;
+}
+.title-line{
+  position: absolute;
+  height: 6rpx;
+  width: 100%;
+  background-color: #e1c195;
+  bottom: 0;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.classList{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin-top: 21rpx;
+}
+.classList .class-item{
+  width: 320rpx;
+  height: 160rpx;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+  color: #fff;
+  position: relative;
+}
+.classList .class-item:nth-child(2n){
+  margin-left: 40rpx;
+}
+.classList .class-item .articlePicUrl{
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.classList .class-item .class-content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8rpx;
+}
+.classList .class-item .class-content .line{
+  width: 24rpx;
+  height: 3rpx;
+  background-color: #fff;
+  margin-top: 5rpx;
+}

@@ -1,0 +1,55 @@
+/* components/countTime/countTime.wxss */
+.countTime{
+  display: flex;
+  align-items: center
+}
+.noBox{
+  margin-top: 0;
+}
+.countTime view{
+  padding: 6rpx 10rpx;
+  text-align: center;
+  overflow: hidden;
+  background: #333;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 5rpx;
+  box-sizing: border-box;
+  width: 46rpx;
+}
+.countTime .hours {
+  max-width: 68rpx;
+}
+.countTime.noBox view{
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #999;
+  line-height: 20rpx;
+  width: auto
+}
+.countTime text{
+  font-size: 22rpx;
+  color: #333;
+  line-height: 24rpx;
+  margin: 0 8rpx;
+}
+.noBox text{
+  font-size: 20rpx;
+  line-height: 20rpx;
+  margin: 0;
+  color: #999
+}
+.countPayTime text{
+  color: #999;
+  margin: 0 5rpx;
+  margin-right: 5rpx!important;
+}
+.countPayTime view{
+  padding: 6rpx 4rpx;
+  background-color: #5b110d;
+  color: #fefefe;
+  width: 36rpx;
+}
+.countPayTime .hours{
+  max-width: 50rpx;
+}

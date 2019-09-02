@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收货",
+  "usingComponents": {
+    "user-info": "../components/userInfo/userInfo"
+  }
+}

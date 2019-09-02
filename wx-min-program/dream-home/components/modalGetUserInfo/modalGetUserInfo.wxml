@@ -1,0 +1,20 @@
+<!--components/modalGetUserInfo/modalGetUserInfo.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='title'>
+      免费申请设计
+      <image src='/images/icon-close.png' bindtap='close'></image>
+    </view>
+    <view class='phoneBox'>
+      <input type='number' placeholder='输入电话, 预约搭配顾问' maxlength='11' data-field="phone" bindinput='inputValue'></input>
+    </view>
+    <view class='btnBox'>
+      <button bindtap='saveUserInfo'>确认提交</button>
+      <view class='errorTips' wx:if="{{isShowErrorTips}}">
+        <image class='icon-error' src='/images/icon-error.png'></image>
+        <text>请输入正确的手机号</text>
+      </view>
+    </view>
+  </view>
+</view>
+

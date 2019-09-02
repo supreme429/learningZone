@@ -1,0 +1,27 @@
+<!--pages/scanCodeReceiving/serviceEvaluationDetail/serviceEvaluationDetail.wxml-->
+
+<view class='container'>
+  <view>
+    <view class='serviceTitle'>服务评价</view>
+    <view class='startEvaList'>
+      <view class='startEvaItem' wx:for-index="evaItemIndex" wx:for="{{evaDataList}}">
+        <view class='startNum'>
+          <text class='serviceItemTitle'>{{item.serviceItem}}</text>
+          <view class='startIcon'>
+            <image src='../../../assets/images/start-red.png' wx:for="{{item.serviceStar-0}}" data-index='{{index}}' data-evaItemIndex='{{evaItemIndex}}'></image>
+            <image src='../../../assets/images/start-gray.png' wx:for="{{5-item.serviceStar}}" data-index='{{index+evaFormData.evaluateList[evaItemIndex].serviceStar}}' data-evaItemIndex='{{evaItemIndex}}'></image>
+          </view>
+        </view>
+        <view class='serviceSonList' wx:if="{{item.serviceStar==1 || item.serviceStar==2}}">
+          <view class='serviceSonItem' wx:for="{{item.serviceList}}" wx:for-item="serviceSonItem" data-evaItemIndex='{{evaItemIndex}}' data-index='{{index}}'>
+            {{serviceSonItem.serviceSonItem}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 反馈意见 -->
+    <view class='feedbackBox'>{{feedback}}</view>
+
+  </view>
+</view>

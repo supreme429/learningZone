@@ -1,0 +1,108 @@
+/* pages/order/detail/detail.wxss */
+page {
+  background-color: #efeff4;
+}
+
+.order-info {
+  padding: 30rpx 35rpx;
+  font-size: 28rpx;
+  color: #353535;
+  background-color: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.order-info .p {
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.order-handle {
+  padding: 60rpx 30rpx;
+  background-color: #efeff4;
+}
+.order-handle .button {
+  height: 88rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d6d5d6;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  line-height: 86rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #000;
+  background-color: #fff;
+}
+.order-handle .button:last-child {
+  margin-bottom: 0;
+}
+.order-handle .button.pay, .order-handle .button.confirm {
+  border-color: #c81c28;
+  color: #fff;
+  background-color: #c81c28;
+}
+
+.goods-list {
+  /* padding: 0 35rpx; */
+  background-color: #fff;
+}
+.goods-list .goods {
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.goods-list .goods navigator {
+  display: flex;
+  padding: 35rpx;
+}
+.goods .goods-img {
+  flex-shrink: 0;
+  width: 266rpx;
+  height: 176rpx;
+  margin-right: 24rpx;
+}
+.goods .goods-img image {
+  width: 100%;
+  height: 100%;
+}
+.goods .goods-title {
+  height: 68rpx;
+  margin-bottom: 10rpx;
+  line-height: 34rpx;
+  font-size: 28rpx;
+  color: #353535;
+  overflow: hidden;
+}
+.goods .goods-price {
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+  color: #c81c28;
+}
+.goods .goods-num {
+  font-size: 26rpx;
+  color: #888;
+}
+
+.group-info {
+  padding-left: 35rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-top: 12rpx;
+  background-color: #fff;
+}
+.group-info .group-item {
+  display: flex;
+  align-items: center;
+  min-height: 88rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+  
+  font-size: 32rpx;
+  color: #666;
+}
+.group-info .group-item:last-child {
+  border-bottom: none;
+}
+.group-info .group-item text {
+  display: block;
+  width: 203rpx;
+  color: #000;
+}
+.group-info .group-item view{
+  width: 472rpx;
+  line-height: 50rpx;
+}

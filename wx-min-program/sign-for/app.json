@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/scanCodeReceiving/index/index",
+    "pages/scanCodeReceiving/login/login",
+    "pages/scanCodeReceiving/exceptionHandling/exceptionHandling",
+    "pages/scanCodeReceiving/exceptionDetail/exceptionDetail",
+    "pages/scanCodeReceiving/receivingPower/receivingPower",
+    "pages/scanCodeReceiving/serviceEvaluation/serviceEvaluation",
+    "pages/scanCodeReceiving/signIn/signIn",
+    "pages/scanCodeReceiving/serviceEvaluationComplate/serviceEvaluationComplate",
+    "pages/scanCodeReceiving/serviceEvaluationDetail/serviceEvaluationDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "收货",
+    "navigationBarTextStyle": "white"
+  }
+}

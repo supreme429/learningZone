@@ -1,0 +1,75 @@
+<!--pages/order/detail/detail.wxml-->
+<view class='order-info'>
+  <view class='p'>订单号：{{data_order.order_sn}}</view>
+  <view class='p'>订单金额：{{data_order.formated_order_amount}}</view>
+  <view class='p'>下单时间：{{data_order.formated_add_time}}</view>
+  <view class='p'>订单状态：{{data_order.order_new_status}}</view>
+</view>
+
+<view class='order-handle' wx:if="{{data_order.order_new_status == '待付款'||data_order.order_new_status == '待收货'}}">
+  <view class='button pay' bindtap='payEvent' wx:if='{{data_order.order_new_status == "待付款"}}'>去支付</view>
+  <view class='button confirm' bindtap='confirmReceiptEvent' wx:if='{{data_order.order_new_status == "待收货"}}' data-orderid='{{data_order.order_id}}'>确认收货</view>
+  <view class='button cancel' bindtap='cancelOrderEvent' wx:if='{{data_order.order_new_status == "待付款"}}' hidden='{{flag_isHiddenCancelBtn}}'>取消订单</view>
+</view>
+
+<view class='goods-list'>
+  <view class='goods' wx:for='{{data_goods}}'>
+    <navigator url='/pages/goods/goods?goods_id={{item.goods_id}}' hover-stay-time='{{hoverStayTime}}'>
+      <view class='goods-img'>
+        <image lazy-load='true' src='{{imagesUrl}}/{{item.goods_thumb_1}}'></image>
+      </view>
+      <view class='goods-info'>
+        <view class='goods-title'>{{item.goods_name}}</view>
+        <view class='goods-price'>￥{{item.new_subtotal}}</view>
+        <view class='goods-num'>x {{item.goods_number}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class='group-info'>
+  <view class='group-item'>
+    <text>收货人姓名</text> {{data_order.consignee}}
+  </view>
+  <view class='group-item'>
+    <text>配送区域</text>
+    <view>
+      {{data_order.province_list}}{{data_order.city_list}}{{data_order.district_list}}
+    </view>
+  </view>
+  <view class='group-item'>
+    <text>详细地址</text>
+    <view>
+    {{data_order.address}}
+    </view>
+  </view>
+  <view class='group-item'>
+    <text>手机号码</text> {{data_order.mobile}}
+  </view>
+</view>
+
+<view class='group-info'>
+  <view class='group-item'>
+    <text>商品总价</text>
+    <view>
+    ￥{{data_payment.goods_amount_format}}
+    </view>
+  </view>
+  <view class='group-item'>
+    <text>订单总金额</text>
+    <view>
+    ￥{{data_payment.order_amount_format}}
+    </view>
+  </view>
+  <view class='group-item'>
+    <text>应付金额</text>
+    <view>
+    ￥{{data_payment.should_pay_format}}
+    </view>
+  </view>
+</view>
+
+
+<!-- / 取消订单组件 START / -->
+<cancel-order id='cancelOrderContainer' order-id='{{data_order.order_id}}' bindcancelOrderCallback='cancelOrderCallback'></cancel-order>
+<!-- / 取消订单组件 END / -->

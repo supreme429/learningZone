@@ -1,0 +1,42 @@
+<!-- 全屋套系模版 -->
+<template name='suit'>
+  <view class='floor suit'>
+    <view class='floor-title'>
+      <text>{{floor.title}}</text>
+    </view>
+    <view class='suit-tab'>
+      <view wx:for='{{floor.tab}}' wx:key="{{index}}" class='{{item.active ? "active" : ""}}' bind:tap='suitTabTap' data-index='{{index}}'>{{item.name}}</view>
+    </view>
+    
+    <swiper class='floor-list' current='{{floor.swiperCurrent}}' bindchange='swiperChange' data-floor='{{floor.name}}' style='height:{{floor.swiperHeight}}px;'>
+      <swiper-item wx:for='{{floor.list}}' wx:key="{{index}}">
+        <view class='floor-content {{floor.name}}'>
+          <navigator url='{{item.url}}' class='floor-img' hover-stay-time='{{hoverStayTime}}'>
+            <image mode="aspectFit" src='{{item.show ? "https:" + item.src : "/images/common/placeholder.png"}}'></image>
+            <view wx:if='{{item.goodsList.length}}' class='floor-img-icon'></view>
+          </navigator>
+
+          <view class='goods-list'>
+            <view wx:for='{{item.goodsList}}' wx:key="{{index}}" wx:for-item='goods' class='goods'>
+              <navigator url='/pages/goods/goods?goods_id={{goods.id}}' class='goods-img' hover-stay-time='{{hoverStayTime}}'>
+                <image mode="aspectFit" src='{{item.show ? "https:" + goods.src : "/images/common/placeholder.png"}}'></image>
+              </navigator>
+
+              <view wx:if='{{goods.tags}}' class='goods-tag'>
+                <text>{{goods.tags}}</text>
+              </view>
+
+              <view class='goods-title'>
+                <navigator url='/pages/goods/goods?goods_id={{goods.id}}' hover-stay-time='{{hoverStayTime}}'>{{goods.title}}</navigator>
+              </view>
+
+              <view class='goods-price'>
+                <text>¥{{goods.price}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</template>

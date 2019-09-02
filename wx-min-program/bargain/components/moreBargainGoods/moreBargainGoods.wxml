@@ -1,0 +1,23 @@
+<!--components/moreBargainGoods/moreBargainGoods.wxml-->
+<view class='moreGoodsBox'>
+  <view class='title'>
+    <text>更多砍价商品</text>
+    <navigator url='/pages/index/index'>查看全部</navigator>
+  </view>
+  <view class='goodsList'>
+    <view class='goodsItem'
+          data-bargainStatus='{{item.bargainStatus}}' 
+          data-goodsSn='{{item.goodsSn}}' 
+          data-goodsSkuSn='{{item.goodsSkuSn}}'
+          data-brUuid='{{item.brUuid}}'
+          bindtap="goToGoodsDetail" 
+          wx:for="{{recommendGoods}}">
+      <view class='goodsImg'><image src='{{item.goodsPicUrl}}'></image></view>
+      <view class='goodsInfo'>
+        <view class='goodsName'>{{item.goodsName}}</view>
+        <view class='lowerPrice'>￥{{item.lowestPrice}}</view>
+        <view class='goodsPrice'>起砍价￥{{item.originalPrice}}</view>
+      </view>
+    </view>
+  </view>
+</view>

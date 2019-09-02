@@ -1,0 +1,66 @@
+/* pages/scanCodeReceiving/serviceEvaluationDetail/serviceEvaluationDetail.wxss */
+/* pages/scanCodeReceiving/serviceEvaluation/serviceEvaluation.wxss */
+page{
+  height: 100%;
+  overflow-y: auto
+}
+.container{
+  padding: 60rpx 30rpx;
+  background: #f1f1f1;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box
+}
+.serviceTitle{
+  font-size: 32rpx;
+  font-weight: bold
+}
+.startEvaList{
+  margin-top: 38rpx;
+}
+.startEvaList .startEvaItem + .startEvaItem{
+  margin-top: 40rpx;
+}
+.startEvaItem .startNum{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.startEvaItem .startNum .startIcon{
+  font-size: 0;
+  margin-left: 40rpx;
+}
+.startEvaItem .startNum .startIcon image{
+  width: 42rpx;
+  height: 38rpx;
+}
+.startEvaItem .startNum .startIcon image + image{
+  margin-left: 36rpx;
+}
+.serviceSonList{
+  display: flex;
+  flex-wrap: wrap
+}
+.serviceSonList .serviceSonItem{
+  padding: 12rpx 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  border: 1px solid #999;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  word-break: break-all;
+}
+.serviceSonList .hasSelect{
+  background-color: #e62318;
+  border-color: #e62318;
+  color: #fff
+}
+.feedbackBox{
+  margin-top: 58rpx;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #787878
+}

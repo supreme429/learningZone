@@ -1,0 +1,40 @@
+<view class='property-mask' hidden='{{flag_propertyVisiblity}}' bindtap='toggleProperyPanel'></view>
+<view class='property-container {{flag_propertyAnimation}}' hidden='{{flag_propertyVisiblity}}'>
+  <view class='header'>
+    <text class='title'>已选商品</text>
+    <text class='clear' bindtap='toggleProperyPanel'>关闭</text>
+  </view>
+  <view class='content'>
+    <view class='goods'>
+      <view class='thumb'><image src='{{data_thumb}}'></image></view>
+      <view class='info'>
+        <view class='gt'>[{{goodsInfo.brand}}] {{goodsInfo.style}} {{goodsInfo.title}}</view>
+        <view class='gp'>￥{{goodsInfo.effect_price}}</view>
+      </view>
+    </view>
+    <scroll-view scroll-y class='prop'>
+
+      <view class='dl' wx:for='{{data_attr}}' wx:for-index='catOrder' wx:key='cat' hidden='{{!item.list}}'>
+        <view class='dt'>{{item.name}}</view>
+        <view class='dd'>
+          <text wx:for='{{item.list}}' wx:for-item='subItem' wx:for-index='itemOrder' wx:key='opt' class='{{subItem.selected ? "selected" : ""}} {{subItem.disabled ? "disabled" : ""}}' bindtap='bindSelectEvent' data-cat='{{item.cat}}' data-name='{{subItem.name}}' data-cat_order='{{catOrder}}' data-item_order='{{itemOrder}}'>{{subItem.name}}</text>
+        </view>
+      </view>
+
+      <view class='dl spec' hidden='{{!data_goodsInfo.goods_spec_show}}'>
+        <view class='dt'>规格</view>
+        <view class='dd'>
+          {{data_goodsInfo.goods_spec_show}}
+        </view>
+      </view>
+      <view class='num-comp'>
+        <text>购买数量</text>
+        <view class='opt'><image src='{{flag_minusActive ? image_numberIcon.minus[1] : image_numberIcon.minus[0]}}' class='minus' bindtap='bindChangeGoodsNumEVent' data-label='-1'></image><text class='num'>{{num}}</text><image src='{{flag_plusActive ? image_numberIcon.plus[1] : image_numberIcon.plus[0]}}' class='plus' bindtap='bindChangeGoodsNumEVent' data-label='1'></image></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='btn'>
+    <view class='reset' bindtap='bindResetEvent'>重置</view>
+    <view class='buy {{flag_hiddenShoppingBtn ? "hidden" : ""}}' bindtap='bindBuyEvent'>立即购买</view>
+  </view>
+</view>

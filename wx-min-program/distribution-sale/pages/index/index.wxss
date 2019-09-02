@@ -1,0 +1,52 @@
+.container{
+  padding: 105rpx 44rpx 0 44rpx;
+}
+.head{
+  font-size: 0;
+  display: flex;
+  justify-content: center;
+}
+.head image{
+  width: 252rpx;
+  height: 233rpx;
+}
+.goTo{
+  width: 100%;
+  height: 86rpx;
+  text-align: center;
+  line-height: 86rpx;
+  color: #fff;
+  background-color: #e62318;
+  border-radius: 8rpx;
+  margin-top: 80rpx;
+  font-size: 30rpx;
+}
+.incomeInfo{
+  margin-top: 120rpx;
+}
+.incomeInfo .date{
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+.incomeInfo .incomeContent{
+  display: flex;
+  font-size: 26rpx;
+  color: #333;
+  margin-top: 35rpx;
+}
+.incomeInfo .incomeContent .incomeItem+ .incomeItem{
+  margin-left: 135rpx;
+}
+.incomeInfo .incomeContent .incomeItem label{
+  margin-right: 28rpx;
+}
+.incomeInfo .incomeContent .colorRed{
+  color: #e62318
+}
+.noCustomer{
+  font-size: 28rpx;
+  color: #ccc;
+  text-align: center;
+  margin-top: 115rpx;
+}

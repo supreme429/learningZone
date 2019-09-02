@@ -1,0 +1,52 @@
+<!--pages/favorite/favorite.wxml-->
+<view class='favorite-title-wrap'>
+  <view class='favorite-title' bind:tap="filterIconTap">
+    <text>{{filterContentCurrent.name}}({{filterContentCurrent.count}})</text>
+    <image src='../../statics/favorite/arrow-right.png' class='filter-icon {{filterIconActive ? "active" : ""}}'></image>
+  </view>
+  <view class='filter-content-bg' hidden='{{filterContentHidden}}' bind:tap='filterContentBgTap'></view>
+  <view class='filter-content' hidden='{{filterContentHidden}}'>
+    <view wx:for="{{filterContentItemList}}" bind:tap="filterContentTap" data-filter-key="{{item.key}}" class='filter-item'>
+      <view class='filter-name'>
+        <image class='icon' src='{{item.active ? "../../statics/favorite/success.png" : "../../statics/favorite/default.png"}}'></image>
+        {{item.name}}({{item.count}})
+      </view>
+      <image src='../../statics/favorite/success_no_circle.png' hidden='{{!item.iconShow}}' class='success-no-circle'></image>
+    </view>
+  </view>
+</view>
+
+<view class='goods-list'>
+  <scroll-view 
+  scroll-x
+  scroll-left='{{item.left}}'
+  scroll-with-animation='{{true}}'
+  wx:for="{{goodsListCurrent}}" 
+  class='goods' 
+  data-index='{{index}}'
+  bind:touchstart='addressTouchStart'
+  bind:touchend='addressTouchEnd'>
+    <view class='goods-detail'>
+      <view class='goods-img'>
+        <navigator url='/pages/goods/goods?goods_id={{item.id}}' hover-stay-time='{{hoverStayTime}}'>
+          <image src='https:{{item.src}}'></image>
+        </navigator>
+      </view>
+      <view class='goods-info'>
+        <view class='goods-title'>
+          <navigator url='/pages/goods/goods?goods_id={{item.id}}' hover-stay-time='{{hoverStayTime}}'>{{item.title}}</navigator>
+        </view>
+        <view class='goods-price'>
+          <text>¥{{item.price}}</text>
+        </view>
+        <view class='goods-sale'>
+          <text>已售{{item.sales}}</text>
+        </view>
+        <navigator class='goods-similar' url='/pages/search/search?filterUrl=/list-f{{item.cat_id}}-s{{item.style_id}}/' hover-stay-time='{{hoverStayTime}}'>查看相似</navigator>
+      </view>
+    </view>
+    <view class='goods-handle'>
+      <view class='delete' data-collection-id='{{item.rec_id}}' data-goods-id='{{item.id}}' bind:tap='handleDelete'>取消收藏</view>
+    </view>
+  </scroll-view>
+</view>

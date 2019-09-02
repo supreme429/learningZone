@@ -1,0 +1,151 @@
+/* components/cascadeScreening/cascadeScreening.wxss */
+.container{
+  /* position: relative; */
+}
+.cade{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35rpx 0 35rpx;
+  border-bottom: 1px solid #e8e8e8;
+  box-sizing: border-box;
+}
+.cade .cade-item{
+  font-size: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  padding: 30rpx 0;
+}
+.cade .cade-item .word-icon{
+  display: flex;
+  align-items: center
+}
+.cade .cade-item .word-icon image{
+  width: 18rpx;
+  height: 14rpx;
+  margin-left: 10rpx;
+}
+
+.modal-allTags{
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+.container.show{
+  height: 100%;
+}
+.container .cade-item.active{
+  color: #f57724
+}
+.container cade.hasSaved .cade-item.active{
+  color: #f57724
+}
+.container.show .cade-item.active .word-icon image{
+  transform: rotate(180deg)
+}
+.modal-allTags .tag-content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff
+}
+.modal-allTags .tag-content .tags{
+  display: flex;
+  flex-wrap: wrap;
+  align-content:flex-start;
+  background-color: #fff
+}
+.modal-allTags .tag-content .tags .tag-item{
+  color: #666;
+  text-align: center;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  padding: 10rpx;
+  margin: 15rpx 25rpx;
+}
+.modal-allTags .tag-content .tags .tag-item.active{
+  color: #f57724
+}
+.modal-allTags .tag-content .thirdTags{
+  display: flex;
+  flex-wrap: wrap;
+  align-content:flex-start;
+  background-color: #fff;
+  position: absolute;
+  left: 0
+}
+.modal-allTags .tag-content .thirdTags{
+  background-color: #f6f3f0;
+  width: 100%
+}
+.modal-allTags .tag-content .thirdTags .tag-item{
+  margin: 10rpx 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  padding: 10rpx
+}
+.modal-allTags .tag-content .thirdTags.close{
+  display: none;
+}
+.modal-allTags .tag-content .thirdTags.show{
+  display: flex;
+}
+.modal-allTags .tag-content .thirdTags.show .tag-item.active{
+  color: #f57724
+}
+.modal-allTags .tag-content .thirdTags .trigle{
+  width: 0;
+  height: 0;
+  border-left: 16rpx solid transparent;
+  border-right: 16rpx solid transparent;
+  border-bottom: 16rpx solid #f6f3f0;
+  top: -12rpx;
+  position: absolute;
+  transform: translateX(-50%)
+}
+.modal-allTags.close{
+  display: none;
+}
+.modal-allTags.show{
+  display: block;
+}
+
+.modal-allTags .foot{
+  height: 142rpx;
+  padding-top: 28rpx;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.modal-allTags .foot button{
+  width: 160rpx;
+  height: 70rpx;
+  padding: 0;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  margin: 0;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.modal-allTags .foot .btn-save{
+  background-color: #f57724;
+  color: #fff
+}
+.modal-allTags .foot .btn-save.cancel{
+  background-color: #ccc
+}
+.modal-allTags .foot .btn-more{
+  border: 1px solid #f57724;
+  color: #f57724;
+  margin-left: 80rpx;
+}
+
+button::after{
+  border: 0;
+}

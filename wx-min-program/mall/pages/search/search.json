@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/search/search",
+    "pages/logs/logs"
+  ],
+
+  "navigationBarTitleText": "搜索",
+
+  "onReachBottomDistance": 200
+}

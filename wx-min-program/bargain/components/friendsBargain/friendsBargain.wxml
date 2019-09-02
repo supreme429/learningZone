@@ -1,0 +1,27 @@
+<!--components/friendsBargain/friendsBargain.wxml-->
+<!-- <scroll-view class='friendsBargainList' scroll-y="true" bindscrolltolower="getHelpBargainRecord" hidden='{{ !isShow }}'> -->
+<view hidden='{{ !isShow }}'>
+  <view class='friendsBargainItem' wx:for="{{friendsBargainList}}">
+    <view class='personInfo'>
+      <image class='headUrl' src='{{item.helpHeadImgUrl}}'></image>
+      <view class='textInfo'>
+        <text class='nickName'>{{item.helpNickName}}</text>
+        <text>{{item.helpWords}}</text>
+      </view>
+      <view class='firstHelp' wx:if="{{item.critStatus==1}}">
+        <image src='/images/icon-firstBargain.png' class='icon-firstBargain'></image>
+        <image src='/images/icon-violentAttack.png' class='icon-violentAttack'></image>
+      </view>
+    </view>
+    <view class='wrap-bargainInfo'>
+      <view class='bargainInfo'>
+        <image class='knifeIcon' src='/images/icon-knife.png' wx:for="{{item.helpNum}}"></image>
+        <text class='bargainPrice'>砍掉{{item.helpBargainAmount}}元</text>
+      </view>
+      <view class='helpTime'>{{item.createTime}}</view>
+    </view>
+    
+  </view>
+</view>
+  
+<!-- </scroll-view> -->

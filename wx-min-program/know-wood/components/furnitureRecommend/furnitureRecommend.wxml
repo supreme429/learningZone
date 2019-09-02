@@ -1,0 +1,12 @@
+<!--components/furnitureRecommend/furnitureRecommend.wxml-->
+<import src="/templates/title.wxml"/>
+
+<view class='furniture-recommend'>
+  <template is="hotItemTitle" data="{{ ...hotItemData }}"></template>
+  <view class='goods-list'>
+    <view class='item' wx:for="{{ list }}" data-goodsid="{{ item.furnitureId }}" bindtap="goMini">
+      <image lazy-load="true" class='goods-img' src='{{ item.furniturePicUrl }}'></image>
+      <view class="goods-tit">{{ item.furnitureName }}</view>
+    </view>
+  </view>
+</view>

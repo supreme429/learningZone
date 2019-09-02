@@ -1,0 +1,76 @@
+/* components/modalGetUserInfo/modalGetUserInfo.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.container .content{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20rpx 40rpx 58rpx 40rpx;
+  background-color: #fff;
+  width: 560rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+.container .content .title{
+  height: 78rpx;
+  line-height: 78rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+}
+.container .content .title image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  right: -20rpx;
+}
+.container .content .phoneBox{
+  margin-top: 55rpx;
+}
+.container .content .phoneBox input{
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+  padding: 0 28rpx;
+}
+.container .content .btnBox{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.container .content .btnBox button{
+  width: 100%;
+  height: 100rpx;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8rpx;
+}
+button::after {
+  border: none;
+}
+.container .content .btnBox .errorTips{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  color: #333
+}
+.container .content .btnBox .icon-error{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}

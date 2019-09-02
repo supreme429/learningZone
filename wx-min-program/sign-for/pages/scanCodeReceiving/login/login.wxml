@@ -1,0 +1,5 @@
+<!--pages/scanCodeReceiving/login/login.wxml-->
+<view class="container">
+  <text>请登录查看您的待收货信息</text>
+  <button class="btn-login" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信手机号快捷登录</button>
+</view>

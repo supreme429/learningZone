@@ -1,0 +1,33 @@
+<template name="modal-confirm-sigbIn">
+  <view class='modal'>
+    <view class='modalConten'>
+      <view class='modalTitle'>签收确认</view>
+      <view class='modalInfo'>请确认您已收到送货单中所有商品</view>
+      <view class='modalFoot'>
+        <view class='btn btnCancel' bindtap='toggleSignInModal'>取消</view>
+        <view class='btn btnConfirm' bindtap='signIn'>确定</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name='signIn-toast'>
+  <view class='toast'>
+    <view class='toast-content'>
+      <view class='toast-icon'>
+        <image src='../../../assets/images/signSuccess-icon.png'></image>
+      </view>
+      <view class='toast-info'>{{info}}</view>
+    </view>
+  </view>
+</template>
+
+<template name='modal-red'>
+  <view class='modal'>
+    <view class='modalRedConten'>
+      <view class='red-bg'><image src='../../../assets/images/getRed.png'></image></view>
+      <view class='red-close' bindtap='toggleModalRed'></view>
+      <view class='red-open' bindtap='openRed'></view>
+    </view>
+  </view>
+</template>

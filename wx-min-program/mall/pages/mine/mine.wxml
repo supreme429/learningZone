@@ -1,0 +1,74 @@
+<!--pages/mine/mine.wxml-->
+<view class='mine-header'>
+  <view class='user-info'>
+    <view class='user-img'>
+      <image src="{{avatar?'https:'+avatar:'../../statics/goods/head.png'}}"></image>
+    </view>
+    <view>
+      <text class='name'>{{userName?userName:'匿名'}}</text>
+      <text class='vip'>{{levelName?levelName:'暂无'}}</text>
+    </view>
+  </view>
+  <!-- <view class='user-change'>
+    <text>切换账号</text>
+  </view> -->
+</view>
+
+<view class='mine-floor mine-order'>
+  <view class='mine-floor-title'>
+    <navigator url='/pages/order/list/list' hover-stay-time='{{hoverStayTime}}'>
+      <text>我的订单</text>
+      <image src='../../statics/mine/arrow-right.png' class='arrow-right'></image>
+    </navigator>
+  </view>
+
+  <view class='mine-order-nav'>
+    <navigator wx:for='{{orderTab}}' url='/pages/order/list/list?filterKey={{item.filterKey}}' hover-stay-time='{{hoverStayTime}}'>
+      <image class='nav-img' src='../../statics/mine/dfk.png'></image>
+      <text>{{item.name}}</text>
+      <text class='order-num' wx:if='{{item.num}}'>{{item.num > 99 ? "..." : item.num}}</text>
+    </navigator>
+  </view>
+</view>
+
+<view class='mine-floor mine-favorite'>
+  <view class='mine-floor-title'>
+    <navigator url='/pages/favorite/favorite' hover-stay-time='{{hoverStayTime}}'>
+      <text>我的收藏</text>
+      <image src='../../statics/mine/arrow-right.png' class='arrow-right'></image>
+    </navigator>
+  </view>
+
+  <!-- <view class='mine-order-nav'> -->
+    <!-- <navigator url='/pages/favorite/favorite' hover-stay-time='{{hoverStayTime}}'>
+      <image class='nav-img' src='../../statics/mine/favorite.png'></image>
+      <text>我的收藏</text>
+    </navigator> -->
+    <!-- <navigator hover-stay-time='{{hoverStayTime}}'>
+      <image class='nav-img' src='../../statics/mine/zj.png'></image>
+      <text>我的足迹</text>
+    </navigator> -->
+  <!-- </view> -->
+</view>
+
+<view class='mine-floor'>
+  <view class='mine-floor-title'>
+    <navigator url='/pages/address/list/list' hover-stay-time='{{hoverStayTime}}'>
+      <text>收货地址</text>
+      <image src='../../statics/mine/arrow-right.png' class='arrow-right'></image>
+    </navigator>
+  </view>
+</view>
+
+<!-- <view class='mine-floor'>
+  <view class='mine-floor-title'>
+    <navigator url='/pages/evaluate/evaluate' hover-stay-time='{{hoverStayTime}}'>
+      <text>待评价</text>
+      <image src='../../statics/mine/arrow-right.png' class='arrow-right'></image>
+    </navigator>
+  </view>
+</view> -->
+
+<!-- <footer types="{{types}}"></footer> -->
+<!-- 登录弹框 -->
+<modal hidden="{{hidden}}" title="请先登录" confirm-text="确定"  bindcancel="cancel" bindconfirm="confirm" no-cancel="true"></modal>

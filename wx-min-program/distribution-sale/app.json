@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/agreement/agreement",
+    "pages/customerData/customerData",
+    "pages/customerRenewal/customerRenewal",
+    "pages/certificationProcess/certificationProcess",
+    "pages/customerList/customerList",
+    "pages/myCenter/myCenter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "美乐乐分销",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#e62318",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/nav-home.png",
+        "selectedIconPath": "./images/nav-home-active.png"
+      },
+      {
+        "pagePath": "pages/customerList/customerList",
+        "text": "客户",
+        "iconPath": "./images/nav-customer.png",
+        "selectedIconPath": "./images/nav-customer-active.png"
+      },
+      {
+        "pagePath": "pages/myCenter/myCenter",
+        "text": "我的",
+        "iconPath": "./images/nav-my-center.png",
+        "selectedIconPath": "./images/nav-my-center-active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+/* pages/helpBargainDetail/helpBargainDetail.wxss */
+@import "../bargainDetail/bargainDetail.wxss"

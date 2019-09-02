@@ -1,0 +1,4 @@
+<!--components/countTime/countTime.wxml-->
+<view class='countTime {{layoutType}}'>
+  <view class='hours'>{{hours}}</view><text>:</text><view>{{minutes}}</view><text>:</text><view>{{seconds}}</view><text wx:if="{{countType == 'ms'}}">:</text><view wx:if="{{countType == 'ms'}}">{{milliseconds}}</view>
+</view>

@@ -1,0 +1,92 @@
+/* pages/scanCodeReceiving/receivingPower/receivingPower.wxss */
+page{
+  background: #f4f4f4;
+}
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;  
+}
+
+.container .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container text{
+  font-size: 36rpx;
+  line-height: 2;
+  display: block;
+}
+
+text.strong{
+  font-weight: bold;
+}
+
+text.sub{
+  color: #666666;
+  margin-bottom: 30rpx;
+}
+
+.icon-warn{
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.pic-code-box{
+  width: 560rpx;
+  height: 94rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #dadada;
+  border-radius: 6rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+}
+
+.pic-code-box .input-pic-code{
+  display: inline-block;
+  width: 340rpx;
+  height: 100%;
+  padding: 0 19rpx;
+  box-sizing: border-box;
+}
+
+.pic-code-box .img-code{
+  width: 220rpx;
+  height: 90rpx;
+  background: #cbf1f8;
+}
+
+.input-code{
+  border: 2px solid #d8d8d8;
+  border-radius: 5px;
+  height: 80rpx;
+  padding: 0 15rpx;
+  margin-top: 15rpx;
+  margin-bottom: 30rpx;
+  background: #fff;
+  width: 560rpx;
+  box-sizing: border-box;
+}
+
+.btn{
+  width: 560rpx;
+  font-size: 36rpx;
+}
+
+.btn.disabled{
+  background: #aaa;
+}
+
+.btn-bak{
+  margin-top: 30rpx;
+}

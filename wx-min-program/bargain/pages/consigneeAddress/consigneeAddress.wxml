@@ -1,0 +1,46 @@
+<!--pages/consigneeAddress/consigneeAddress.wxml-->
+<view class='container'>
+  <scroll-view class='consignee' scroll-y="{{1}}" scroll-top="{{ scrollTop }}">
+    <view class='item {{ item.status !=1 ? "disabled" : "" }}' wx:for="{{ consigneeList }}" bindtap='selectConsigneeAddress' data-index="{{ index }}">
+      <view class='first-line'>
+        <text class='name'>{{ item.userName }}</text>
+        <text class='phone'>{{ item.userPhone }}</text>
+      </view>
+      <text>收货地址：{{ item.province }}{{ item.city }}{{ item.district }}{{ item.address }}</text>
+    </view>
+    
+  </scroll-view>
+  <!-- 没有收货人记录 -->
+  <view class="no-consignee" wx:if="{{ consigneeList.length == 0 }}">
+    <image src='/images/icon-positioning2.png'></image>
+    <text>还没有收货地址，请点击新增</text>
+  </view>
+  <button class='btn-add' bindtap='toggleDialogConsignee'>新增收货地址</button>
+</view>
+<!-- 收货人弹窗 -->
+<view class='dialog-consignee' hidden='{{ !dialogConsigneeShow }}' catchtap='dialogConsigneeScroll'>
+  <view class='dialog-body'>
+    <image class='dialog-close' src='/images/icon-close2.png' catchtap='toggleDialogConsignee'></image>
+    <view class='dialog-title'>填写收货地址</view>
+    <view class='dialog-content'>
+      <view class='form-item input-consignee-phone'>
+        <input type="text" placeholder='姓名' data-field="userName" bindinput='inputValue'></input>
+        <input type='number' placeholder='电话' maxlength='11' data-field="userPhone" bindinput='inputValue'></input>
+      </view>
+      <!--  -->
+      <view class='form-item inputProvinces' bindtap='toggleActivitiesAddressShow'>
+        <text>{{ consigneeInfo.province && consigneeInfo.city && consigneeInfo.district ? consigneeInfo.province + ',' + consigneeInfo.city + ',' + consigneeInfo.district : '请选择' }}</text>
+      </view>
+      <view class='form-item inputAddress'  hidden='{{ activitiesAddressShow }}'>
+        <textarea placeholder='详细地址(如街道、小区、乡镇、村)' wx:if="{{ dialogConsigneeShow }}" data-field="address" bindinput='inputValue' value="{{ consigneeInfo.address }}"></textarea>
+      </view>
+    </view>
+    <view class='dialog-footer'>
+      <button bindtap='saveConsignee'>保存</button>
+    </view>
+  </view>
+</view>
+<activitiesAddress sku="{{ goodsSkuSn }}" bind:toggle="toggleActivitiesAddressShow" bind:save="saveThreeId" wx:if="{{ activitiesAddressShow }}"></activitiesAddress>
+
+<!-- 客服图标 -->
+  <customService></customService>

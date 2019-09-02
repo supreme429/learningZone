@@ -1,0 +1,79 @@
+/* pages/logisticsLog/logisticsLog.wxss */
+.logistics{
+  margin-top: 20rpx;
+  margin-left: 110rpx;
+  position: relative;
+}
+/* .logistics::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50rpx;
+  width: 2rpx;
+  height: 100%;
+  background: #e8e8e8;
+} */
+.logistics .item{
+  position: relative;
+  box-sizing: border-box;
+  padding: 50rpx 50rpx 50rpx 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.logistics .item text{
+  display: inline;
+  font-size: 30rpx;
+  color: #999;
+  margin-right: 30rpx;
+}
+
+.logistics .item text.sign{
+  color: #333;
+}
+
+.logistics .item::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50rpx;
+  width: 2rpx;
+  height: 100%;
+  background: #e8e8e8;
+}
+  /* 首个与尾个线条长度处理 start */
+  .logistics .item.first text{
+    color: #e62318;
+  }
+  .logistics .item.first::before{
+    height: 69%;
+    top: 43%;
+  }
+  .logistics .item.last::before{
+    height: 31%;
+    top: 0;
+  }
+  /* 首个与尾个线条长度处理 end */
+.logistics .item::after{
+  content: "";
+  position: absolute;
+  top: 65rpx;
+  left: -55rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #e8e8e8;
+  border-radius: 50%;
+}
+.logistics .item.first::after{
+  background: #e62318;
+  border: 6rpx solid #ffe6e5;
+  left: -61rpx;
+}
+.icon-sign,
+.icon-truck-loading{
+  position: absolute;
+  top: 60rpx;
+  left: -75rpx;
+  width: 50rpx;
+  height: 50rpx;
+  z-index: 2;
+}

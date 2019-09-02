@@ -1,0 +1,72 @@
+/* components/dialogBuyNow/dialogBuyNow.wxss */
+.dialog{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-body{
+  position: relative;
+  width: 580rpx;
+  height: 445rpx;
+  text-align: center;
+  background: #fff;
+  padding: 40rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+.dialog-close{
+  position: absolute;
+  width: 78rpx;
+  height: 78rpx;
+  bottom: -120rpx;
+  left: 250rpx;
+}
+
+.dialog-content{
+  width: 100%;
+}
+
+.tips{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 165rpx;
+  font-size: 30rpx;
+  color: #333;
+  padding: 10rpx 30rpx 35rpx;
+  box-sizing: border-box;
+}
+.tips text {
+  color: #e62318;
+}
+
+button.btn{
+  width: 500rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: #e62318;
+}
+button.btn::after{
+  border: 1px solid #e62318;
+}
+
+button.btn + .btn{
+  margin-top: 20rpx;
+}
+
+button.btn-buy{
+  background: #fff;
+  color: #e62318;
+}

@@ -1,0 +1,118 @@
+/* pages/category.wxss */
+page {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+}
+.search-wrap {
+  padding: 16rpx 35rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.search-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 58rpx;
+  border-radius: 8rpx;
+  background-color: #eee;
+}
+.search-icon {
+  margin-right: 5rpx;
+}
+.search-text {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.category-content {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+}
+.category-nav {
+  width: 178rpx;
+  background-color: #f4f4f4;
+}
+.category-nav-content {
+  flex: 1;
+}
+.nav-item {
+  height: 50rpx;
+  padding: 23rpx 0;
+}
+.nav-item text {
+  display: block;
+  height: 50rpx;
+  border-left: 5rpx solid #f4f4f4;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #353535;
+}
+.nav-active {
+  /* font-family: PingFangSC-Medium; */
+  background-color: #fff;
+}
+.nav-active text {
+  border-color: #c81c28;
+  color: #c81c28;
+  background-color: #fff;
+}
+
+.category-nav-content {
+  
+}
+.nav-content-title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  padding: 0 35rpx 0 45rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  color: #353535;
+}
+.nav-content-title .title-text {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+}
+.nav-content-title .more {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  color: #b2b2b2;
+}
+.nav-content-list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 25rpx 0 35rpx;
+  background-color: #fff;
+}
+.nav-content-list .list-item {
+  width: 33.3%;
+  margin-bottom: 20rpx;
+}
+.nav-content-list .list-item image {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 auto;
+}
+.nav-content-list .list-item text {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 24rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  color: #353535;
+  overflow: hidden;
+}
+.blank-view{
+  height: 100rpx;
+}

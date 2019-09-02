@@ -1,0 +1,311 @@
+/*==================================================
+ * project: meilele mall min-program 
+ * author: leihao
+ * createTime: 2018/08/27
+ * file: search.wxss
+ * description: 搜索样式文件
+ ==================================================*/
+
+
+/*------------------------------
+ * 搜索 
+ ------------------------------*/
+.search-form {
+	padding: 16rpx 35rpx;
+  border-bottom: solid 1px #ddd;
+}
+.search-form .layout {
+  display: flex;
+}
+.search-form .col-input {
+  border-radius: 10rpx;
+	background-color: #eee;
+  padding: 14rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  align-items: center;
+}
+.input-box{ display: flex;justify-content: flex-start;align-items: center;}
+.col-input image{width: 30rpx;height: 30rpx;margin-right: 20rpx;}
+.search-form input {
+  width: 420rpx;
+	border-radius: 10rpx;
+	background-color: #eee;
+	height: 31rpx;
+  font-size: 28rpx;
+}
+.search-form .cancel {
+	width: 40rpx;
+	height: 40rpx;
+}
+.cancel image{margin: 0;}
+.search-form .col-btn {
+  width: 65rpx;
+  color: #ff5541;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left:30rpx;
+}
+.search-form .col-btn.hide {
+  display: none;
+}
+
+/*------------------------------
+ * 默认搜索界面
+ * 包括历史搜索、热门搜索 
+ ------------------------------*/
+.search-default-container {
+  
+}
+.search-default-container .list {
+  padding: 30rpx;
+}
+.search-default-container .dl {
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.search-default-container .dl>.dt {
+  display: flex;
+  justify-content: space-between;
+}
+.search-default-container .dl>.dt text {
+  font-size: 32rpx;
+  color: #353535;
+  font-weight: bold;
+}
+.search-default-container .dl>.dt image{
+  width: 36rpx;
+  height: 41rpx;
+}
+.search-default-container .dl>.dd {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25rpx;
+}
+.search-default-container .dl>.dd text {
+  font-size: 26rpx;
+  height: 58rpx;
+  padding: 0 30rpx;
+  border-radius: 10rpx;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;  
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+}
+
+.search-default-container .suggest {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.search-default-container .suggest scroll-view {
+  flex: 1;
+}
+.search-default-container .suggest .res-item {
+  padding: 20rpx 40rpx;
+  position: relative;
+  font-size: 28rpx;
+}
+.search-default-container .suggest .res-item::after{
+  content: " ";
+  position: absolute;
+  left: 40rpx;
+  right: 0;
+  height: 1px;
+  bottom: 0;
+  border-bottom: 1rpx solid #ddd;
+  color: #ddd;
+}
+.search-default-container .suggest .res-item text {
+  font-weight: bold;
+}
+
+/* 选择排序类型图层 */
+.sort-panel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 195rpx;
+  
+}
+.sort-panel .mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.sort-panel .content {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 195rpx;
+  z-index: 5;
+}
+.sort-panel .opt {
+  padding: 26rpx 40rpx;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  position: relative;
+}
+.layout .opt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sort image,.price image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.filter image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.sort-panel .opt::before{
+  content: " ";
+  position: absolute;
+  left: 40rpx;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid #ddd;
+  color: #ddd;
+}
+.sort-panel .opt:first-child::before {
+  display: none;
+}
+.sort-panel .opt:last-child {
+  border-bottom: none;
+}
+.sort-panel .opt .circle {
+  margin-right: 20rpx;
+}
+.sort-panel .opt text {
+  font-size: 32rpx;
+  width: 80%;
+  flex: 1;
+}
+
+/*------------------------------
+ * 根据关键字得到的搜索结果界面
+ * 包括筛选和列表
+ ------------------------------*/
+.operator-panel {
+	padding: 20rpx 35rpx;
+	height: 40rpx;
+	border-bottom: solid 1px #ddd;
+}
+.operator-panel .layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.operator-panel .opt {
+  font-size: 32rpx;
+  display: flex;
+  height: 40rpx;
+}
+.operator-panel .opt text {
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.operator-panel .sort text.light,
+.operator-panel .sale text.light {
+  color: #c81c28;
+}
+
+.operator-panel .price text.up,
+.operator-panel .price text.down {
+  color: #c81c28;
+}
+
+.result {
+	padding: 23rpx;
+}
+
+.list {
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list .item {
+	width: 50%;
+}
+.list .item-in {
+	padding: 12rpx;
+}
+.list .item image {
+	width: 328rpx;
+	height: 217rpx;
+  background-color: #ddd;
+}
+.list .item text {
+	display: block;
+  line-height: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list .item .price {
+	color: #c81c28;
+	font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.list .item .name {
+	color: #353535;
+	font-size: 28rpx;
+}
+.list .item .num {
+	color: #b2b2b2;
+	font-size: 26rpx;
+}
+
+.result .nodata {
+  font-size: 28rpx;
+  text-align: center;
+  padding-top: 100rpx;
+}
+.result .nodata text {
+  font-weight: bold;
+}
+
+/* 快捷图标 */
+.fast-link {
+  width: 80rpx;
+  position: fixed;
+  right: 24rpx;
+  bottom: 180rpx;
+}
+.fast-link .home,
+.fast-link .totop {
+  width: 80rpx;
+  height: 80rpx;
+  border: solid 1px #ebebeb;
+  border-radius: 50%; 
+  background-color: #fff;
+}
+.fast-link .home {
+  margin-bottom: 35rpx;
+  text-align: center;
+}
+.home image{
+  width: 45rpx;
+  height: 45rpx;
+  padding: 17.5rpx;
+}
+.totop image{
+  width: 40rpx;
+  height: 17rpx;
+  padding: 31.5rpx 20rpx;
+}
+.back-top{
+  visibility: hidden;
+}
+
+
+
+

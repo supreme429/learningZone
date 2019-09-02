@@ -1,0 +1,9 @@
+<!--components/specification/specification.wxml-->
+<view class='specification' hidden='{{ !isShow }}'>
+  <block wx:for="{{ content }}">
+    <view class='item' wx:for="{{ item.value }}" wx:for-item="val">
+      <text>{{ val.name }}</text>
+      <text>{{ val.value }}</text>
+    </view>
+  </block>
+</view>

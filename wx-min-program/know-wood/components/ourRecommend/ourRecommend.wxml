@@ -1,0 +1,29 @@
+<!--components/ourRecommend/ourRecommend.wxml-->
+<import src="/templates/title.wxml"/>
+
+<view class='our-recommend'>
+  <template is="hotItemTitle" data="{{ ...hotItemData }}"></template>
+
+  <view class='goods-list'>
+    <view class='item' wx:for="{{ list }}" data-woodid="{{ item.materialId }}" bindtap="goPageWiki">
+      <image class='goods-img' src='{{ item.materialPicUrl }}'></image>
+      <view class='info'>
+        <view class='title'>
+          <text>{{ item.materialName }}</text>
+          <!-- <view class='evaluation'>
+          <!-- start-{1~5} 1到5星 
+            <image class='start-4' mode='widthFix' src="/images/stars.png"></image>
+          </view> -->
+        </view>
+        <view class='price'>
+          <text class='label'>市场价：</text>
+          <text>{{ item.materialPrice }}</text>
+        </view>
+        <view class='level'>
+          <text class='label'>档位级别：</text>
+          <text>{{ item.materialLevel }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

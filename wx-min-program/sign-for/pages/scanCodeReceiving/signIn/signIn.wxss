@@ -1,0 +1,202 @@
+/* pages/scanCodeReceiving/signIn/signIn.wxss */
+page{
+  height: 100%
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: #f4f4f4;
+  height: 100%;
+  padding-bottom: 20rpx;
+  justify-content: space-between;
+  align-items: flex-start
+}
+.container>.content{
+  width: 100%
+}
+
+.orderBox{
+  font-size: 28rpx;
+  color: #333;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.orderBox .orderHead{
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 30rpx;
+  border-bottom: 1px solid #eee;
+  align-items: center
+}
+.orderBox .orderHead .orderDate{
+  font-size: 22rpx;
+  color: #c5c5c5
+}
+.orderBox .orderHead text+text{
+  margin-left: 25rpx;
+}
+.orderBox .orderDetail{
+  padding: 30rpx;
+}
+.orderBox .orderDetail .detail-item + .detail-item{
+  margin-top: 25rpx;
+}
+.orderBox .orderDetail .detail-item text+text{
+  margin-left: 20rpx;
+}
+
+.goodsBox{
+  padding-left: 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.goodsBox .goodsItem{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 30rpx 30rpx 30rpx 0;
+  justify-content: space-between;
+}
+.goodsBox .goodsItem + .goodsItem{
+  border-top: 1px solid #f0f0f0;
+}
+.goodsBox .goodsItem .goodsDetail{
+  display: flex;
+  align-items: center
+}
+.goodsBox .goodsItem .goodsImg{
+  width: 177rpx;
+  height: 118rpx;
+}
+.goodsBox .goodsItem .goodsImg image{
+  width: 177rpx;
+  height: 118rpx;
+}
+.goodsBox .goodsItem .goodsInfo{
+  margin-left: 24rpx;
+}
+.goodsBox .goodsItem .goodsInfo .goodsName{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 250rpx;
+}
+.goodsBox .goodsItem .goodsNum{
+  color: #999;
+  margin-top: 25rpx;
+}
+.goodsBox .goodsItem .goExc{
+  width: 188rpx;
+  height: 66rpx;
+  border: 1px solid #aaaaaa;
+  color: #aaa;
+  text-align: center;
+  line-height: 66rpx;
+  border-radius: 5rpx;
+}
+
+/* 签收按钮 */
+.signBox{
+  padding: 0 35rpx;
+  width: 100%;
+  box-sizing: border-box
+}
+.signBox .signBtn{
+  width: 100%;
+  height: 95rpx;
+  background-color: #e62318;
+  color: #fff;
+  text-align: center;
+  line-height: 95rpx;
+  font-size: 32rpx;
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+}
+.signBox .signInfo{
+  font-size: 28rpx;
+  color: #a5a5a5;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+/* 弹框 */
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5)
+}
+.modal .modalConten{
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  width: 611rpx;
+  border-radius: 16rpx;
+}
+.modal .modalConten .modalTitle{
+  padding-top: 72rpx;
+  font-size: 38rpx;
+  font-weight: bold
+}
+.modal .modalConten .modalInfo{
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 30rpx;
+}
+.modal .modalConten .modalFoot{
+  border-top: 1px solid #d8d8d8;
+  display: flex;
+  margin-top: 70rpx;
+}
+.modal .modalConten .modalFoot .btn{
+  flex: 1;
+  padding: 30rpx 0;
+  font-size: 33rpx;
+}
+.modal .modalConten .modalFoot .btn + .btn{
+  border-left: 1px solid #d8d8d8
+}
+.modal .modalConten .modalFoot .btnCancel{
+  color: #999
+}
+.modal .modalConten .modalFoot .btnConfirm{
+  color: #e62318
+}
+
+/* toast */
+.toast{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15rpx;
+}
+.toast .toast-content{
+  width: 328rpx;
+  height: 328rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  padding-top: 50rpx;
+  box-sizing: border-box
+}
+.toast .toast-icon{
+  width: 129rpx;
+  height: 129rpx;
+}
+.toast .toast-icon image{
+  width: 129rpx;
+  height: 129rpx;
+}
+.toast .toast-info{
+  margin-top: 50rpx;
+}

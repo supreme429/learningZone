@@ -1,0 +1,53 @@
+<!--miniprogram/pages/result/result.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='resultImgBox'>
+      <view class='logoBox'>
+        <view class='logo'>
+          <image src='/images/icon-logo.png'></image>
+        </view>
+        <view class='headText'>
+          <image class='bg-poster-head' src='/images/bg-poster-head.png'></image>
+          <view class='txtContent'>
+            <view class='randomStr'>{{randomStr}}</view>
+          </view>
+        </view>
+      </view>
+      <image src='{{layoutPicUrl}}' mode='widthFix' class='resultImg'></image>
+      <navigator url="/pages/game/game?roomUuid={{roomUuid}}" open-type="redirect" class='btn-revise' wx:if="{{isShareScene!=1}}">
+        <image src='/images/btn-revise.png'></image>
+      </navigator>
+    </view>
+    <view class='btnBox'>
+      <button class='btn-item' bindtap='toggleModalGetUserInfo'>{{appointDesignerBtnTxt}}</button>
+      <navigator class='btn-item' url='/pages/goodsList/goodsList?layoutUuid={{layoutUuid}}'>{{gotoGoodsBtnTxt}}</navigator>
+    </view>
+    <view class='footBtn'>
+      <button class='btn-item' bindtap='toggleModalShare'>{{resultBtnTxt}}</button>
+    </view>
+  </view>
+
+<!-- 画海报弹框 -->
+  <view class='modal' style='left: {{posterLeft}}px'>
+    <view class='content' style='width: {{canvasWidth}}px'>   
+      <canvas id='poster' canvas-id='poster' disable-scroll="true" bindtouchstart="cancelMove" class='poster'>
+        <cover-image bindtap='closePoster' class='icon-close' src='/images/icon-close.png'></cover-image>
+      </canvas>
+      <view class='wrap-btn'>
+        <button bindtap='savePosterToLocal'>保存到本地</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<modalGetUserInfo bind:close="closeModalGetUserInfo" 
+                  wx:if="{{isShowModalGetUserInfo}}"></modalGetUserInfo>
+
+<!-- 分享弹框 -->
+<modalShare bind:close="toggleModalShare"
+            bind:proPoster="proPoster"
+            wx:if="{{isShowModalShare}}"></modalShare>
+
+<!-- 提示已提交过信息弹框 -->
+<modalTips bind:close="toggleModalTips"
+           wx:if="{{isShowModalTips}}"></modalTips>

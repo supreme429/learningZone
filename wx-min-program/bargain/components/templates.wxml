@@ -1,0 +1,23 @@
+<!-- <template name="modalFirstShare">
+  <view class='modalContainer'>
+    <view class='modalContent'>
+      <view class='headImg'><image src='/images/icon-bargainMoney.png'></image></view>
+      <view class='modalInfo'>分享给好友, 您可以多砍一刀哦</view>
+      <button open-type='share' class='btn-share'>去分享</button>
+      <view class='btn-giveup'>放弃机会</view>
+    </view>
+  </view>
+</template> -->
+
+<template name="modalBargainMoreOne">
+  <view class='modalContainer' bindtap='toggleModalBargainMoreOne'>
+    <view class='modalContent' catchtap="preventBubbles">
+      <view class='headImg'><image src='/images/icon-bargainMoney.png'></image></view>
+      <view class='modalInfo' wx:if="{{status==4}}">成功发起砍价，自砍{{bargainAmount}}元， 马上分享好友，暴击砍至最低价！</view>
+      <view class='modalInfo' wx:else>成功发起砍价，恭喜您自砍{{bargainAmount}}元，直接砍到了最低价{{lowestPrice}}元</view>
+      <!-- <button open-type='share' data-name='shareByOwn' class='btn-share' wx:if="{{status==4}}">分享好友, 多砍一刀</button> -->
+      <btnShare wx:if="{{status==4}}" btnText="分享好友，暴击帮砍"></btnShare>
+      <button class='btn-share' bindtap='payNow' wx:else>马上支付</button>
+    </view>
+  </view>
+</template>

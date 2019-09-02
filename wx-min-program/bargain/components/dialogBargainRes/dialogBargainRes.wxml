@@ -1,0 +1,15 @@
+<!--components/dialogBargainRes/dialogBargainRes.wxml-->
+<view class="dialog" wx:if="{{ isShow }}">
+  <view class='dialog-body'>
+    <image mode="widthFix" class="dialog-bg" src='/images/dialog-bargain-success.png'></image>
+    <image wx:if="{{ scene == 'shareBargainByOwn' }}" mode="aspectFit" class="dialog-title" src='/images/text-share-ok.png'></image>
+    <image wx:elif="{{ scene == 'twoBargainByOwn' }}" mode="aspectFit" class='dialog-title' src='/images/text-help-ok.png'></image>
+    <image mode="aspectFit" class='dialog-close' src='/images/icon-close.png' catchtap='close'></image>
+
+    <view class='dialog-content'>
+      <view wx:if="{{ scene == 'shareBargainByOwn' }}" class='bargain-text'>分享成功，恭喜您多砍了<text>{{ price }}元</text>，再接再厉，继续找人帮砍吧！</view>
+      <view wx:if="{{ scene == 'twoBargainByOwn' }}" class='bargain-text'>恭喜您成功砍了<text>2刀</text>，砍掉<text>{{ price }}元</text>，再接再厉，继续找人帮砍吧！</view>
+      <button open-type='share' data-name="dialogBargainRes" class="btn">找人帮砍</button>
+    </view>
+  </view>
+</view>

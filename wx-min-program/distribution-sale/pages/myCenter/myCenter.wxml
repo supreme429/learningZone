@@ -1,0 +1,21 @@
+<!--pages/myCenter/myCenter.wxml-->
+<view class='container'>
+  <view class='login-info'>
+    <image class='icon-head' src='{{ headUrl }}'></image>
+    <view class='info'>
+      <text>{{ userName }}</text>
+      <text>{{ phone }}</text>
+    </view>
+    <button class='btn-logout' bindtap="logout">退出登录</button>
+  </view>
+ 
+  <view class='menu-list'>
+    <view class='flex-center item'>
+      <text>分销资质</text>
+      <view>
+        <text>{{ !app.globalData.isCertification ? '未认证' : '已认证' }}</text>
+        <navigator wx:if="{{ !app.globalData.isCertification }}" bindtap="goCentification">如何认证？</navigator>
+      </view>
+    </view>
+  </view>
+</view>

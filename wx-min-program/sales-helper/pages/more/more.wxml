@@ -1,0 +1,7 @@
+<!--pages/more/more.wxml-->
+<view class='container'>
+  <view class='noMore'>
+    <image class='icon-function' src='/images/icon-function.png'></image>
+    <text>正在开发中, 敬请期待~</text>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+/* components/customService/customService.wxss */
+.icon-service{
+  position: fixed;
+  right: 21rpx;
+  bottom: 117rpx;
+  font-size: 0;
+}
+.icon-service image{
+  width: 100rpx;
+  height: 100rpx;
+}

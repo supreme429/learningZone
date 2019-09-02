@@ -1,0 +1,55 @@
+/* components/modalShare/modalShare.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.container .content{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20rpx 0 76rpx 0;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+.container .content .title{
+  width: 100%;
+  height: 76rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  position: relative
+}
+.container .content .title image{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 0;
+  right: 20rpx;
+}
+.container .content .handleBox{
+  width: 100%;
+  padding: 0 135rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.container .content .handleBox .handle-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 22rpx;
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  line-height: normal
+}
+.container .content .handleBox .handle-item image{
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,122 @@
+/*==================================================
+ * project: meilele mall min-program 
+ * author: leihao
+ * createTime: 2018/08/27
+ * file: search-filter.wxss
+ * description: 搜索-筛选样式文件
+ ==================================================*/
+
+.filter {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.filter .content {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+.filter .content .padding {
+  padding: 35rpx 24rpx 10rpx;
+}
+.filter .content scroll-view {
+  height: 100%;
+  padding-bottom: 10rpx;
+  box-sizing: content-box;
+}
+.filter .content .dl {
+  margin-bottom: 20rpx;
+}
+.filter .content .dl>.dt {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 21rpx;
+  padding-left: 11rpx;
+}
+.filter .content .dl>.dt icon {
+  width: 16rpx;
+  height: 16rpx;
+  transform: rotate(45deg);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fff #090909 #090909 #fff;
+  display: flex;
+  align-items: baseline;
+  margin-top: 6rpx;
+}
+.filter .content .dl.expand>.dt icon {
+  transform: rotate(225deg);
+  margin-top: 16rpx;
+}
+.filter .content .dl>.dt text {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.filter .content .dl>.dt .selected {
+  width: 70%;
+  font-size: 26rpx;
+  text-align: right;
+  padding: 0 10rpx;
+  color: #c81c28;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.filter .content .dl>.dd {
+  display: flex;
+  justify-content: flex-start; 
+  margin-top: 20rpx; 
+  flex-flow: row wrap;
+}
+.filter .content .dl>.dd text {
+  height: 58rpx;
+  background-color: #f5f5f5;
+  border-radius: 10rpx;
+  width: 212rpx;
+  margin: 0 9rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #fff;
+}
+.filter .content .dl>.dd text.hidden {
+  display: none;
+}
+.filter .content .dl>.dd text.selected {
+  border-color: #c81c28;
+}
+.filter .toolbar {
+  display: flex;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.filter .toolbar .reset,
+.filter .toolbar .sure {
+  width: 50%;
+  height: 96rpx;
+  font-size: 32rpx;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.filter .toolbar .reset {
+  border: solid 1px #ddd;
+  box-sizing: border-box;
+}
+.filter .toolbar .sure{
+  background-color: #c81c28;
+  color: #fff;
+}

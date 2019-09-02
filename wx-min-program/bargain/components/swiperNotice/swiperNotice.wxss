@@ -1,0 +1,47 @@
+/* components/swiperNotice/swiperNotice.wxss */
+.swiper-notice{
+  display: flex;
+  height: 70rpx;
+  align-items: center;
+  background: #fff;
+  border-bottom: 20rpx solid #f5f5f5;
+  position: relative;
+}
+.swiper-notice .mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.swiper-notice .icon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 24rpx;
+  margin-right: 12rpx;
+}
+.swiper-notice swiper{
+  width: 650rpx;
+  height: 70rpx;
+}
+.swiper-notice .item-text{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 70rpx;
+  color: #333;
+  font-size: 26rpx;
+  overflow: hidden;
+}
+.swiper-notice .item-text text{
+  color: #e62318;
+}
+.nickname{
+  flex-shrink: 0;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100rpx;
+}

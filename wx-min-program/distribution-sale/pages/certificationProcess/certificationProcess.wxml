@@ -1,0 +1,53 @@
+<!--pages/certificationProcess/certificationProcess.wxml-->
+<view class='container'>
+  <view class='process'>
+    <view class='processItem'>
+      <view class='title'>1.自行注册账号及申请账号认证</view>
+      <view class='processItemInfo'>
+        <view class='infoItem'>操作步骤：</view>
+        <view class='infoItem'>1.复制链接
+          <text class='link' bindtap='copyLink'>http://zx.meilele.com</text> 粘贴在浏览器中打开</view>
+        <view class='infoItem'>2.进行账号注册</view>
+        <view class='infoItem'>3.注册成功后点击认证账号，填写认证信息并提交</view>
+        <view class='infoItem'>4.等待审核通过后即可拥有分销资质</view>
+      </view>
+    </view>
+    <view class='processItem'>
+      <view class='title'>2.联系我们</view>
+      <view class='processItemInfo'>
+        <view class='infoItem'>若您还有其他问题，您可以留下联系方式，我们将有专门的人员与您联系，为您解答相关问题。</view>
+      </view>
+    </view>
+  </view>
+  <view class='personInfo'>
+    <view class='infoBox'>
+      <label>姓名 <text class='mustPoint'>*</text></label>
+      <input data-key='name' value='{{formData.name}}' bindinput='changeFormData'></input>
+    </view>
+    <view class='infoBox'>
+      <label>您的手机号 <text class='mustPoint'>*</text></label>
+      <input data-key='phone' type="number" value='{{formData.phone}}' maxlength='11' placeholder='请填写11位手机号码' placeholder-class="input-placeholder" bindinput='changeFormData'></input>
+    </view>
+    <view class='infoBox' wx:if="{{toggle.isNeedCapCode}}">
+      <label>图形验证码 <text class='mustPoint'>*</text></label>
+      <input data-key='capCode' value='{{formData.capCode}}' bindinput='changeFormData'></input>
+      <view class='capCode'><image src='{{capCodeSrc}}'></image></view>
+      <view class='refresh' bindtap='getCapCodeSrc'><image src='/images/icon-refresh.png'></image></view>
+    </view>
+    <view class='infoBox'>
+      <label>验证码 <text class='mustPoint'>*</text></label>
+      <input data-key='verCode' type="number" value='{{formData.verCode}}' bindinput='changeFormData'>
+      </input>
+      <view class='code' bindtap='getCode' wx:if="{{ !isGetSMS }}">获取验证码</view>
+        <view class='code' wx:if="{{ isGetSMS }}">{{ counter }}s</view>
+    </view>
+    <view class='infoBox'>
+      <label>备注 <text class='mustPoint'>*</text></label>
+      <textarea data-key='note' value='{{formData.note}}' bindinput='changeFormData'></textarea>
+    </view>
+  </view>
+  <view class='btnSubmitBox'>
+    <view class='errorTips'>{{errorTips}}</view>
+    <view class='btn-submit' bindtap='submitFormData'>提交</view>
+  </view>
+</view>

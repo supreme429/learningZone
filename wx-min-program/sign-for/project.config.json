@@ -1,0 +1,94 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.0",
+	"appid": "wx6a41b1e9d754380c",
+	"projectname": "sign-mp",
+	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/scanCodeReceiving/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收货授权",
+					"pathName": "pages/scanCodeReceiving/receivingPower/receivingPower",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收货页面",
+					"pathName": "pages/scanCodeReceiving/signIn/signIn",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "服务评价页面",
+					"pathName": "pages/scanCodeReceiving/serviceEvaluation/serviceEvaluation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领取红包成功",
+					"pathName": "pages/scanCodeReceiving/serviceEvaluationComplate/serviceEvaluationComplate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "异常",
+					"pathName": "pages/scanCodeReceiving/exceptionHandling/exceptionHandling",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "签收",
+					"pathName": "pages/scanCodeReceiving/signIn/signIn",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "异常详情",
+					"pathName": "pages/scanCodeReceiving/exceptionDetail/exceptionDetail",
+					"query": ""
+				}
+			]
+		}
+	}
+}

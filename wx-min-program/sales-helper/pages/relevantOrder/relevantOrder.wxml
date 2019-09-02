@@ -1,0 +1,25 @@
+<!--pages/relevantOrder/relevantOrder.wxml-->
+<view class='container'>
+  <scroll-view class='orderList' scroll-y scroll-with-animation enable-back-to-top bindscrolltolower="getOrderList">
+    <view class='order-item' wx:for="{{ orderList }}" key="{{index}}">
+      <view class='order-head'>
+        <view class='order-num'>
+          <text class='order-index'>{{index<9?'0'+(index+1): index+1}}</text>
+          <text>{{ item.orderSn }}</text>
+        </view>
+        <view class='payPer'>提成: {{ item.percentage }}</view>
+      </view>
+      <view class='order-content'>
+        <view class='timeAndSaleNum'>
+          <text>下单时间: {{ item.orderTime }}</text>
+          <text>{{ item.amountName }}: {{ item.amount }}</text>
+        </view>
+        <view class='customerName'>客户姓名: {{ item.customer }}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='noOrder' wx:if="{{orderList.length == 0}}">
+    <image class='icon-noOrder' src='/images/icon-function.png'></image>
+    <text>还没订单哦, 快去努力吧~</text>
+  </view>
+</view>

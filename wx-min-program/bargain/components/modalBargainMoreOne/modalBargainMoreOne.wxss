@@ -1,0 +1,59 @@
+/* components/modalBargainMoreOne/modalBargainMoreOne.wxss */
+.modalContainer{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0
+}
+.modalContainer .modalContent{
+  padding: 100rpx 40rpx 50rpx 40rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 580rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  text-align: center;
+  color: #333;
+  border-radius: 10rpx;
+}
+.modalContainer .modalContent .headImg{
+  font-size: 0
+}
+.modalContainer .modalContent .headImg image{
+  width: 312rpx;
+  height: 307rpx;
+}
+.modalContainer .modalContent .modalInfo{
+  margin-top: 66rpx;
+}
+.modalContainer .modalContent .btn-share{
+  height: 88rpx;
+  background-color: #e62318;
+  color: #fff;
+  border: none;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  margin-top: 68rpx;
+}
+.modalContainer .modalContent .btn-giveup{
+  /* width: 100%;
+  border: 1px solid #d5d5d5;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  height: auto */
+}
+.modalContainer .modalContent .btn-giveup button{
+  margin-top: 30rpx;
+  border: 1px solid #d5d5d5;
+  border-radius: 10rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+}

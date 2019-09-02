@@ -1,0 +1,40 @@
+<!--pages/address/addEdit/addEdit.wxml-->
+<form class='address-form' bindsubmit='addressFormSubmit'>
+  <view class='input-list'>
+    <view class='input-item'>
+      <text>收货人</text>
+      <view class='input-area'>
+        <input name='name' bindinput='inputHandle' focus='{{nameInputFocus}}' data-input-type='name' value='{{nameInputText}}'></input>
+        <image src='../../../statics/address/clear-input.png' class='clear-input' hidden='{{!nameInputText.length}}' bind:tap='clearInput' data-input-type='name'></image>
+      </view>
+    </view>
+    <view class='input-item'>
+      <text>联系方式</text>
+      <view class='input-area'>
+        <input type='number' name='phone' bindinput='inputHandle' focus='{{phoneInputFocus}}' data-input-type='phone' value='{{phoneInputText}}'></input>
+        <image src='../../../statics/address/clear-input.png' class='clear-input' hidden='{{!phoneInputText.length}}' bind:tap='clearInput' data-input-type='phone'></image>
+      </view>
+    </view>
+    <view class='input-item'>
+      <text>所在地区</text>
+      <picker mode='multiSelector' class='input-area' range='{{regionArray}}' range-key='region_name' bindcolumnchange="columnChange" bind:tap='openPicker' value='{{regionIndex}}'>
+        <input name='areaText' placeholder='省份 城市 区县' disabled='{{true}}' value='{{areaInputText}}'></input>
+        <input class='area-id' name='areaId' type='hidden' value='{{areaInputId}}'></input>
+        <image src='../../../statics/address/area-select.png' class='area-select'></image>
+      </picker>
+    </view>
+    <view class='input-item'>
+      <text>详细地址</text>
+      <view class='input-area'>
+        <input name='address' bindinput='inputHandle' focus='{{addressInputFocus}}' data-input-type='address' value='{{addressInputText}}'></input>
+        <image src='../../../statics/address/clear-input.png' class='clear-input' hidden='{{!addressInputText.length}}' bind:tap='clearInput' data-input-type='address'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='error-tip' hidden='{{errorIsHidden}}'>
+    {{errorText}}
+  </view>
+
+  <button class='submit-button' form-type='submit'>确定</button>
+</form>

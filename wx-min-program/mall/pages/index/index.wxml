@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='index-header'>
+  <view class='logo'>
+    <image mode="aspectFit" lazy-load="true" src='../../statics/index/mll-logo.png'></image>
+  </view>
+  <navigator url='/pages/search/search' hover-stay-time='{{hoverStayTime}}' class='search-btn'>
+    <icon class='search-icon' color='#aaa' size='14' type='search'></icon>
+    <text class='search-text'>搜索商品</text>
+  </navigator> 
+</view>
+
+<import src='template/style.wxml'/>
+<import src='template/area.wxml'/>
+<import src='template/suit.wxml'/>
+
+<block wx:for='{{floorSort}}' wx:key="{{index}}">
+  <template is='{{item.templateId}}' data='{{floor: floorData[item.floor]}}'/>
+</block>
+<!-- <view class='blank-view'></view> -->
+<!-- <footer types="{{types}}"></footer> -->

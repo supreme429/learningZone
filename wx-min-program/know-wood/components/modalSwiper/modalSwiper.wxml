@@ -1,0 +1,30 @@
+<!--components/modalSwiper/modalSwiper.wxml-->
+<view class='container'>
+  <view class='title'>
+    <view class='title-txt'>
+      <text>热门木材</text> 
+      <view class='title-line'></view>
+    </view>
+    <image class='icon-title-arrow' src='/images/icon-title-arrow.png'></image>
+    <view class='more' bindtap='gotoMore'>
+      更多
+      <image src='/images/icon-more-arrow.png'></image>
+    </view>
+  </view>
+  <view class='wrap-swiper'>
+    <swiper class="swiper" autoplay='true' next-margin="135rpx" circular="true" current-item-id="{{currentItemId}}" previous-margin="135rpx" bindchange="swiperChange">  
+      <block wx:for="{{hotWoodList}}" wx:key="{{ index }}">
+        <swiper-item item-id="{{index}}" data-woodid="{{item.woodId}}" bindtap='goToEncylopedia'>  
+          <image lazy-load="true" src='{{item.woodPicUrl}}'></image>
+          <view class='woodName'>
+            <text>{{item.woodName}}</text>
+            <image src='/images/img-woodName-bg.png'></image>
+          </view>
+        </swiper-item>  
+      </block>
+    </swiper>
+    <view class='indicator-dots'>
+      <view class='dots {{index == bannerConfig.index? "active":""}}' wx:for="{{hotWoodList}}" wx:key="dot-{{index}}"></view>
+    </view>
+  </view>
+</view>

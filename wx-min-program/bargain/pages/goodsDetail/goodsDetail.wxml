@@ -1,0 +1,66 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<!-- 商品详情  -->
+<view class='container'>
+  <swiperByNum richText="{{ goodsRule }}" imgs="{{ goodsPicUrls }}">
+    <view slot="goIndex"><gotoIndex wx:if="{{ fromShare }}"></gotoIndex></view>
+  </swiperByNum>
+  <swiperNotice goodsSn="{{ goodsSn }}"></swiperNotice>
+  <view class='goods-info'>
+    <text class='goods-title'>{{ goodsName }}</text>
+    <text>{{ goodsSubtitle }}</text>
+    <text>{{ bargainJoinNum }}人正在参与砍价</text>
+    <text>数量：X1</text>
+    <block wx:if="{{ app.globalData.userShowInfo == null }}">
+      <button class='btn-share' bindtap='toggleModalLoginShow'><image src='/images/btn-share.png'></image></button>
+    </block>
+    <block wx:else>
+      <button class='btn-share' open-type="share" data-goodssn="{{ goodsSn }}"><image src='/images/btn-share.png'></image></button>
+    </block>
+  </view>
+
+  <view class='goods-specification'>
+    <text class='h2'>规格</text>
+    <view class='content'>
+      <view class='item' wx:for="{{ specificationShowList }}">
+        <view class='info'>
+          <view class='info-item'>
+            <text class='title'>{{ item.goodsSkuName }}</text>
+          </view>
+          <view class='info-item'>
+            <text class='price'>¥ {{ item.lowestPrice }}</text>
+            <text class='original-price'>原价：￥{{ item.originalPrice }}</text>
+          </view>
+        </view>
+        <form bindsubmit='goBargain' report-submit="true">
+          <button form-type='submit' data-sn="{{ item.goodsSn }}" data-skusn="{{ item.goodsSkuSn }}">发起砍价</button>
+        </form>
+      </view>
+    </view>
+    <view class="footer" wx:if="{{ specificationList.length > 3 }}" bindtap="setSpecificationShowAll">
+      <image class="{{ specificationShowAll ? 'flip' : '' }}" src="/images/icon-arrow-bottom.png"></image>
+    </view>
+  </view>
+  <view class='tabs'>
+    <form report-submit='true' bindsubmit='changeTab'>
+      <view class='tab-title'>
+          <button form-type='submit' class="{{ tabIndex == 0 ? 'active' : '' }}" data-index="0">商品详情</button>
+          <button form-type='submit' class="{{ tabIndex == 1 ? 'active' : '' }}" data-index="1">规格参数</button>
+      </view>
+    </form>
+    <view class='tab-content'>
+      <detailInfo isShow="{{ tabIndex == 0 }}" content="{{ tabGoodsDetails }}" imgs="{{ pictureList }}"></detailInfo>
+      <specification isShow="{{ tabIndex == 1 }}" content="{{ tabSpecification }}"></specification>
+    </view>
+  </view>
+</view>
+<loginGetUser bind:close="toggleModalLoginShow"  wx:if="{{ modalLoginShow }}"></loginGetUser>
+<!-- 首次分享弹框 -->
+<modalBargainMoreOne bind:toggleModal="toggleModal" wx:if='{{isShowModalBargainMoreOne}}'></modalBargainMoreOne>
+
+<!-- 客服图标 -->
+  <customService></customService>
+
+ <!-- 分享自砍或自砍两刀 -->
+  <block wx:if="{{ dialogBargainRes.isShow }}">
+    <dialogBargainRes scene="{{ dialogBargainRes.scene }}" price="{{ dialogBargainRes.price }}" isShow="{{ dialogBargainRes.isShow }}"></dialogBargainRes>
+  </block>

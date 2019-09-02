@@ -1,0 +1,128 @@
+/* pages/order/list/list.wxss */
+page {
+  background-color: #f4f4f4;
+}
+
+.input-placeholder {
+  color: #aaa;
+}
+.order-search-wrap {
+  padding: 16rpx 35rpx;
+  background-color: #fff;
+}
+.order-search {
+  display: flex;
+  width: 680rpx;
+  height: 58rpx;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8rpx;
+  background-color: #eee;
+}
+.order-search .search-icon {
+  margin-left: 230rpx;
+}
+.order-search input {
+  width: 330rpx;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.order-tab {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  background-color: #fff;
+}
+.order-tab .tab-item {
+  padding: 24rpx 0 27rpx;
+  border-bottom: 4rpx solid transparent;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+.order-tab .tab-item.active {
+  border-color: #353535;
+  color: #353535;
+} 
+
+.order-detail {
+  margin-bottom: 12rpx;
+  background-color: #fff;
+}
+.order-detail .order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+}
+.order-detail .order-state {
+  color: #666;
+}
+.order-detail .order-state text {
+  /* font-family: PingFangSC-Medium; */
+  color: #333;
+}
+.order-detail .add-time {
+  color: #b2b2b2;
+}
+.order-detail .goods-list {
+  height: 166rpx;
+  white-space: nowrap;
+  font-size: 0;
+}
+.order-detail .goods-list image {
+  display: inline-block;
+  width: 276rpx;
+  height: 166rpx;
+  margin-right: 20rpx;
+}
+.order-detail .goods-list image:first-child {
+  margin-left: 35rpx;
+}
+.order-detail .goods-list image:last-child {
+  margin-right: 35rpx;
+}
+
+.order-detail .order-total {
+  padding: 35rpx;
+  line-height: 28rpx;
+  text-align: right;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #666;
+}
+.order-detail .order-total text {
+  color: #c81c28;
+}
+
+.order-detail .order-handle {
+  padding: 16rpx 35rpx;
+  border-top: 1rpx solid #e5e5e5;
+  text-align: right;
+}
+.order-detail .order-handle .button {
+  display: inline-block;
+  height: 54rpx;
+  padding: 0 35rpx;
+  border: 1rpx solid #b2b2b2;
+  border-radius: 100rpx;
+  margin-left: 20rpx;
+  line-height: 54rpx;
+  font-size: 26rpx;
+  color: #b2b2b2;
+}
+.order-detail .order-handle .button.red {
+  border-color: #c81c28;
+  color: #c81c28;
+}
+
+.orderNoData {
+  padding-top: 100rpx; 
+  text-align: center;
+  font-size: 28rpx;
+}

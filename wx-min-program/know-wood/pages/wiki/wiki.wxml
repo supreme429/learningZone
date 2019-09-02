@@ -1,0 +1,60 @@
+<!--pages/wiki/wiki.wxml-->
+<import src="/templates/detailModule.wxml"/>
+<view class='container'>
+
+  <template is="wood-info" data="{{...woodDetail.woodInfo}}" wx:if="{{woodDetail.woodInfo}}"></template>
+
+  <!-- 亮点信息 -->
+  <template is="liangdianxinxi" data="{{attr_group_list: woodDetail.liangdianxinxi.attr_group_list}}"></template>
+
+  <!-- 加工性能用途 -->
+  <template is="jiagongxingheyongtu" 
+            data="{{...woodDetail.jiagongxingheyongtu}}" wx:if="{{woodDetail.jiagongxingheyongtu.is_show}}"></template>
+
+  <!-- 历史使用信息 -->
+  <template is="shiyonglishijieshao" data="{{...woodDetail.shiyonglishijieshao}}" wx:if="{{woodDetail.shiyonglishijieshao}}"></template>
+
+  <!-- 优缺点 -->
+  <template is="youdianjiquedian" data="{{...woodDetail.youdianjiquedian}}" wx:if="{{woodDetail.youdianjiquedian}}"></template>
+
+  <!-- 常见家居展示 -->
+  <template is="woodGoodsInfo" data="{{woodGoodsInfo: woodDetail.woodGoodsInfo, bannerIndex: bannerConfig.index}}" wx:if="{{woodDetail.woodGoodsInfo}}"></template>
+
+  <!-- 基本介绍 -->
+  <template is="jibenjieshao" data="{{...woodDetail.jibenjieshao}}" wx:if="{{woodDetail.jibenjieshao}}"></template>
+
+  <!-- 基本信息 -->
+  <template is="jibenxinxi" data="{{...woodDetail.jibenxinxi}}" wx:if="{{woodDetail.jibenxinxi}}"></template>
+
+  <!-- 分布范围 -->
+  <template is="fenbufanwei" data="{{...woodDetail.fenbufanwei}}" wx:if="{{woodDetail.fenbufanwei}}"></template>
+
+  <!-- 木材形态特征 -->
+  <template is="mucaixingtaitezheng" data="{{...woodDetail.mucaixingtaitezheng}}" wx:if="{{woodDetail.mucaixingtaitezheng}}"></template>
+
+  <!-- 差异对比 -->
+  <template is="chayiduibi" data="{{...woodDetail.chayiduibi}}" wx:if="{{woodDetail.chayiduibi}}"></template>
+
+  <!-- 相关木材 -->
+  <view class='related_wood'>
+    <view class='hot-item-title'>
+      <view class='title'>
+        <view>
+          <image class='icon-title-arrow' src="/images/icon-title-arrow.png"></image>相关木材</view>
+        <view class='refresh' bindtap='searchWoodByWikiId'>
+          <image class='icon-refresh' src='/images/icon-refresh.png'></image>换一批</view>
+      </view>
+    </view>
+    <view class='wood_list'>
+      <view class='wood_item' bindtap='goToRelatedWood' data-woodid='{{item.woodId}}' wx:for="{{relatedWoodList}}">
+        <view class='wood_img'>
+          <image src='{{item.woodPicUrl}}'></image>
+        </view>
+        <view class='wood_name'>
+          <image class='name_bg' src='/images/img-woodName-bg.png'></image>
+          <text class='name'>{{item.woodName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

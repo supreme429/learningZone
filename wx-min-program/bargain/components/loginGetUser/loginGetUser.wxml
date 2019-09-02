@@ -1,0 +1,8 @@
+<!--components/loginGetUser/loginGetUser.wxml-->
+<view class='login-user-info'>
+  <view>
+    <image src="/images/logo.png"></image>
+    <text>{{ appName }}</text>
+  </view>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录</button>
+</view>

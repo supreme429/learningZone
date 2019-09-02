@@ -1,0 +1,6 @@
+{
+    "usingComponents": {},
+    "navigationBarTitleText": "验货宝",
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"dark"
+}

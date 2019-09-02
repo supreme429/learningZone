@@ -1,0 +1,19 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="container">
+  <image class='logo' src='/images/logo-index.png'></image>
+  <image class='mina-title' mode='widthFix' src='/images/mina-title.png'></image>
+  <view class='text-title'>
+    <view>有的人看起来很有钱</view>
+    <view>但他的家居品味却一言难尽</view>
+  </view>
+  <image class='content-img' src="/images/img-main.gif"></image>
+  <view class="btn-box">
+    <button class='none' bindtap='goPageGame' wx:if="{{ userShowInfo }}">
+      <image src='/images/btn-start.png'></image>
+    </button>
+    <button class='none' open-type='getUserInfo' bindgetuserinfo="handleUserInfo" wx:else>
+      <image src='/images/btn-start.png'></image>
+    </button>
+  </view>
+  <!-- <view class='tips'>点击按钮设计你“{{ appName }}”</view> -->
+</view>
