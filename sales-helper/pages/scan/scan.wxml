@@ -1,0 +1,104 @@
+<!--pages/scan/scan.wxml-->
+
+<view class='container'>
+  <view class='scan-container' hidden='{{hide_step_scanner}}'>
+    <view class='scaner' bindtap="bindScanEvent">
+      <view class='top-shell'></view>
+      <view class='middle-shell'><view class='line'></view></view>
+      <view class='bottom-shell'></view>
+    </view>
+  </view>
+  
+  <!--校验step start-->
+  <view class='step-container' hidden='{{hide_step_container}}'>
+    <view class='step-item ok'>
+      <view class='num'>1</view>
+      <view class='text'>扫码</view>
+    </view>
+    <view class='step-line'></view>
+    <view class='step-item ok'>
+      <view class='num'>2</view>
+      <view class='text'>手机号校验</view>
+    </view>
+    <view class='step-line'></view>
+    <view class="step-item {{step_success_icon ? 'ok' : ''}}">
+      <view class='num'>3</view>
+      <view class='text'>核销成功</view>
+    </view>
+  </view>
+  <!--校验step end-->
+
+  <!--手机号码校验 start-->
+  <view class='checkout-phone' hidden='{{hide_checkoutPhone_container}}'>
+    <view class='legend'>手机号校验</view>
+    <view class='ul'>
+      <view class='li'>
+        <view class='inner'>
+          <input type='text' maxlength='11' placeholder='请输入手机号码' bindinput='getInputPhone' value='{{phone}}'></input>
+        </view>
+      </view>
+      <view class='li'>
+        <view class='inner'>
+          <input type='text' maxlength='4' placeholder='请输入图形验证码' bindinput='getInputImgCode' value='{{imgCode}}'></input>
+          <image src='{{imgCaptchaUrl}}' mode="aspectFit" class='imgcaptch' bindtap='getImgCaptcha'></image>
+        </view>
+      </view>
+      <view class='li'>
+         <view class='inner'>
+          <input type='text' maxlength='6' placeholder='请输入短信验证码' bindinput='getInputSmsCode' value='{{smsCode}}'></input>
+          <view class='sms' bindtap='getSmsCaptcha'>{{smsCaptchaText}}</view>
+        </view>
+      </view>
+      <view class='li'><button bindtap='{{switchInterface}}'>校验</button></view>
+    </view>
+  </view>
+  <!--手机号码校验 end-->
+  
+  <!--核销成功 start-->
+  <view class='verification-success' hidden='{{hide_verificationSuccess_container}}'>
+    <view class='legend'>
+      <view class='icon'></view>
+      <view class='text'>核销成功</view>
+    </view>
+    <view class='ul'>
+      <view class='li'>
+        <view class='inner'>
+          <text class='key'>微信名</text>
+          <text class='val'>{{nickName}}</text>
+        </view>
+      </view>
+      <view class='li'>
+         <view class='inner'>
+          <text class='key'>手机号</text>
+          <text class='val'>{{mobile}}</text>
+        </view>
+      </view>
+      <!-- <view class='li'>
+         <view class='inner'>
+          <text class='key'>礼品名称</text>
+          <text class='val'>{{giftName}}</text>
+        </view>
+      </view> -->
+      <view class='li'><button bindtap='jumpToUserPage'>立即查看</button></view>
+    </view>
+  </view>
+  <!--核销成功 end-->
+</view>
+
+<!-- / 图层 START / -->
+<view class='layer-mask' hidden='{{layer_visiblity}}'></view>
+<view class='layer-container' hidden='{{layer_visiblity}}'>
+  <view class='title'>
+    <view class='close' bindtap='closeLayer'><text></text></view>
+  </view>
+  <view class='content'>
+    <view class='row-msg'>
+      <view class='icon {{scanMsg.icon}}'></view>
+      <view class='msg'>
+        <view class='msg-text'>{{scanMsg.title}}</view>
+        <view class='msg-note'>{{scanMsg.note}}</view>
+      </view>
+    </view>
+    <button class='sure' bindtap='closeLayer'>确定</button>
+  </view>
+</view>

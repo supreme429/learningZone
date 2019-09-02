@@ -1,0 +1,9 @@
+<!--pages/estimate/estimate.wxml-->
+<import src="/templates/saleDetail.wxml"/>
+<view class='container'>
+  <template is="saleDetail" data="{{...saleDetailData}}"></template>
+  <view class='tips' wx:if="{{tipsData.showStatus==1}}">
+    <image src='/images/icon-tips.png'></image>
+    <text>{{tipsData.estimateTips}}</text>
+  </view>
+</view>

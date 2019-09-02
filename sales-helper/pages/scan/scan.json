@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/scan/scan"
+  ],
+  "usingComponents": {
+    "layer-msg": "./components/layer/layer"
+  },
+  "navigationBarTitleText": "扫码核销"
+}

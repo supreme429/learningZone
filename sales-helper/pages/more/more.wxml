@@ -1,0 +1,22 @@
+<!--pages/more/more.wxml-->
+<view class='container'>
+  <!--<view class='noMore'>
+    <image class='icon-function' src='/images/icon-function.png'></image>
+    <text>正在开发中, 敬请期待~</text>
+  </view>-->
+  <view class='icon-menu'>
+    <navigator url="/pages/gifts/gifts"  class='item'>
+      <view class='icon'><image src='/images/icon_gift.png'></image></view>
+      <view class='text'>到店礼品</view>
+    </navigator >
+    <navigator url="/pages/scan/scan"  class='item'>
+      <view class='icon'><image src='/images/hx.png'></image></view>
+      <view class='text'>扫码核销</view>
+    </navigator >
+    <!-- <navigator url="/pages/scan/scan"  class='item'>
+      <view class='icon'><image src='/images/hx.png'></image></view>
+      <view class='text'>我的卡包</view>
+    </navigator > -->
+
+  </view>
+</view>

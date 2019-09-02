@@ -1,0 +1,30 @@
+/* pages/more/more.wxss */
+
+
+.icon-menu {
+  display: flex;
+  padding: 30rpx;
+}
+.icon-menu .item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.icon-menu .item .icon {
+  width: 88rpx;
+  height: 88rpx;
+}
+.icon-menu .item .icon image {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+.icon-menu .item .text {
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,48 @@
+{
+  "pages": [    
+    "pages/index/index",
+    "pages/estimate/estimate",
+    "pages/history/history",
+    "pages/more/more",
+    "pages/scan/scan",
+    "pages/user/user",
+    "pages/goods/goods",
+    "pages/incentiveInfo/incentiveInfo",
+    "pages/chargesDetail/chargesDetail",
+    "pages/relevantOrder/relevantOrder",
+    "pages/userNoExist/userNoExist",
+    "pages/gifts/gifts"
+  ],
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#e82915",
+    "color": "#999",
+    "list": [
+      {
+        "pagePath": "pages/estimate/estimate",
+        "iconPath": "images/icon-dollar.png",
+        "selectedIconPath": "images/icon-dollar-selected.png",
+        "text": "本月预估"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "iconPath": "images/icon-history.png",
+        "selectedIconPath": "images/icon-history-selected.png",
+        "text": "历史查询"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "iconPath": "images/icon-more.png",
+        "selectedIconPath": "images/icon-more-selected.png",
+        "text": "更多功能"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f08200",
+    "navigationBarTitleText": "销售小助手",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

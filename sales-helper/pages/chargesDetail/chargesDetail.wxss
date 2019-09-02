@@ -1,0 +1,4 @@
+/* pages/chargesDetail/chargesDetail.wxss */
+.container{
+  padding: 30rpx;
+}

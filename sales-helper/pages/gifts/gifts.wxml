@@ -1,0 +1,7 @@
+<view class='container'>
+  <image src="../../images/gift_bg.jpg"/>
+  <image class="scanCode" src="{{scanCodeImgUrl}}" />
+  <navigator url="/pages/scan/scan">
+    <view class="scanBtn">{{btnMsg}}</view>
+  </navigator> 
+</view>

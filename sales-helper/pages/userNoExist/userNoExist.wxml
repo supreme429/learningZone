@@ -1,0 +1,5 @@
+<!--pages/userNoExist/userNoExist.wxml-->
+<view class='container'>
+  <image class='img' src='/images/img-no-cid.png'></image>
+  <view class='text'>身份未验证，请到管理后台绑定微信</view>
+</view>

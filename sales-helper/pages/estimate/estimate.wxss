@@ -1,0 +1,16 @@
+/* pages/estimate/estimate.wxss */
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f08200;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.tips image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+  display: block;
+}

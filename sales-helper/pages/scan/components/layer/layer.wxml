@@ -1,0 +1,16 @@
+<view class='layer-mask' hidden='{{flag_visiblity}}'></view>
+<view class='layer-container' hidden='{{flag_visiblity}}'>
+  <view class='title'>
+    <view class='close' bindtap='close'><text></text></view>
+  </view>
+  <view class='content'>
+    <view class='row-msg'>
+      <view class='icon {{params.icon}}'></view>
+      <view class='msg'>
+        <view class='msg-text'>{{params.title}}</view>
+        <view class='msg-note'>{{params.note}}</view>
+      </view>
+    </view>
+    <button class='sure' bindtap='close'>确定</button>
+  </view>
+</view>

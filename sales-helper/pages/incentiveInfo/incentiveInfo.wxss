@@ -1,0 +1,4 @@
+/* pages/incentiveInfo/incentiveInfo.wxss */
+.container{
+  padding: 30rpx;
+}

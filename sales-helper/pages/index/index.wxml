@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class='container'>
+  <!-- 首次登录 [首次密码验证及未开启指纹识别显示]-->
+  <view class='pwd-login' wx:if="{{ showPwdLogin }}">
+    <image class="logo" src='/images/login-logo.png'></image>
+    <view class='login-panel'>
+      <input class='login-txt' type='text' password data-field="password" bindinput='ipnutValue' placeholder='请输入管理后台密码'></input>
+      <view class='captcha-box'>
+        <input type="text" placeholder='请输入验证码' data-field="captchaCode" bindinput='ipnutValue' cursor-spacing="50px"></input>
+        <image src="{{ captchaImgUrl }}" bindtap='refreshCaptcha'></image>
+      </view>
+      <button class='login-btn' bindtap='login'>登录</button>
+      <view class='open-fingerprint' bindtap='openFingerprint' wx:if="{{ isSupperFingerPrint && !globalData.openFingerprint }}">开启指纹解锁</view>
+    </view>
+  </view>
+  <!-- 指纹登录 [首次密码验证及开启指纹识别后才可显示] -->
+  <view class='fingerprint-login' wx:if="{{ showFingerprintLogin }}">
+    <view class='login-panel'>
+      <image class='icon-fingerprint' src='/images/icon-fingerprint.png' bindtap='startSoterAuthentication'></image>
+      <view class='check-tips'>请验证指纹</view>
+      <view class='open-fingerprint' bindtap='cancelFingerprint'>后台密码登录</view>
+    </view>
+  </view>
+</view>
+<getUserInfo wx:if="{{ showWXLogin }}" bindclose="closeWxLogin"></getUserInfo>

@@ -1,0 +1,90 @@
+<!--pages/user/user.wxml-->
+<view class='user-profile'>
+  <!--<view class='avatar'><image src='{{userInfo.headImgUrl}}'></image></view>-->
+  <view class='profile'>
+    <!--<view class='attented' wx:if="{{userInfo.subscribe == 1}}"><text>已关注官微</text></view>-->
+    <!--<view class='name'>{{userInfo.nickName}}</view>-->
+    <view class='tags' wx:if="{{userTags.length > 0}}">
+      <text wx:for="{{userTags}}">{{item.LABEL_NAME}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='tab-view'>
+  <view class='tab-controller'>
+    <view class="tab-controller-item {{currentTab == 0 ? 'current' : ''}}" data-index="0" bindtap='switchTab'>浏览轨迹</view>
+    <view class="tab-controller-item {{currentTab == 1 ? 'current' : ''}}" data-index="1" bindtap='switchTab'>跟进记录</view>
+  </view>
+  <view class='tab-response'>
+    <!-- 浏览轨迹 -->
+    <view class="tab-response-item {{currentTab == 0 ? 'current' : ''}} track-view">
+      <block wx:if="{{tarckJson}}">
+        <view class='track-item' wx:for="{{tarckJson}}">
+          <view class='time'>
+            <text class='t1'>{{item.date[2]}}</text>
+            <text class='t2'>{{item.date[1]}}/{{item.date[0]}}</text>
+          </view>
+          <view class='goods'>
+            <view class='goods-item' wx:for='{{item.info}}' wx:for-item='goods'>
+              <view class='cover'><image src='{{goods.thumb}}' mode='scaleToFill'></image></view>
+              <view class='info'>
+                <view class='title'>{{goods.goods_name}}</view>
+                <view class='url' bindtap="viewGoods" data-url='{{goods.curr_url}}'>...{{goods.url}} </view>
+                <view class='extra'>
+                  <text class='price'>￥{{goods.effect_price}}</text>
+                  <text class='times'>{{goods.count_num}}次</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <block wx:else>
+        <view class="nodata">暂无浏览轨迹</view>
+      </block>
+    </view>
+
+    <!-- 跟进记录 -->
+    <view class="tab-response-item {{currentTab == 1 ? 'current' : ''}} record-view">
+      <block wx:if="{{recordJson}}">
+        <view class='record-item'>
+          <view class='row'>
+            <view class='label'>体验馆</view>
+            <view class='val'>{{recordJson.h_expr_name}}</view>
+          </view>
+          <view class='row'>
+            <view class='label'>采集时间</view>
+            <view class='val'>{{recordJson.CREATE_DATE}}</view>
+          </view>
+          <view class='row'>
+            <view class='label'>跟进时间</view>
+            <view class='val'>{{recordJson.h_CREATE_DATE}}</view>
+          </view>
+        </view>
+        <view class='record-item' wx:for="{{recordJson.h_json}}">          
+          <view class='row'>
+            <view class='label'>联系方式</view>
+            <view class='val'>{{item.contactTpye}}</view>
+          </view>
+          <view class='row'>
+            <view class='label'>到店时间</view>
+            <view class='val'>{{item.toShopTime}}</view>
+          </view>
+          <view class='row'>
+            <view class='label'>跟进记录</view>
+            <view class='val'>{{item.note}}</view>
+          </view>
+          <view class='row'>
+            <view class='label'>结束记录</view>
+            <view class='val'>{{item.endReason}}</view>
+          </view>
+        </view>
+      </block>
+
+      <block wx:else>
+        <view class="nodata">暂无跟进记录</view>
+      </block>
+    </view>
+  </view>
+</view>
