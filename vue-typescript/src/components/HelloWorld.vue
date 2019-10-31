@@ -4,6 +4,7 @@
     <h3 @click="showMe">Installed CLI Plugins</h3>
     <button @click="add">+</button>
     <div class="divStyle">{{ countNum }}</div>
+    <div class="box">{{hello}}</div>
     <button @click="minus">-</button>
   </div>
 </template>
@@ -16,6 +17,7 @@ export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 
   private countNum: number = 0;
+  hello: string = 'helloworld'
 
   showMe(this: any) {
     const that = this;
@@ -49,6 +51,14 @@ li {
 }
 a {
   color: #42b983;
+}
+.hello {
+  border: 1px solid green;
+  .box {
+    border: 1px solid red;
+    width: 500px;
+    margin: 0 auto;
+  }
 }
 .divStyle {
   width: 30px;
